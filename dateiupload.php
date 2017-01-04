@@ -1,7 +1,4 @@
 <?php
-
-
-
 echo "<pre>";
 echo "FILES:<br />";
 print_r ($_FILES );
@@ -83,7 +80,7 @@ function dateiname_bereinigen($dateiname)
 }
 ?>
 
-<form name="uploadformular" enctype="multipart/form-data" action="dateiupload.php" method="post" >
-    Datei: <input type="file" name="uploaddatei" size="60" maxlength="255" >
-    <input type="Submit" name="submit" value="Datei hochladen">
+<form name="uploadformular" enctype="multipart/form-data" action="dateiupload.php" method="post">
+    Datei: <input type="file" name="uploaddatei" size="60" maxlength="255"><br>
+           <input type="Submit" name="submit" value="Hochladen">
 </form>
