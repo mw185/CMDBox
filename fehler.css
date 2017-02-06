@@ -1,0 +1,49 @@
+/* Fehlermeldung-Seiten */
+
+.fehlerdateityp {
+    max-width:100%;
+    background-color: #205379;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+.fehlerheader {
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+
+}
+
+.fehlerheader img {
+    width: 200px;
+    height: auto;
+}
+
+.fehlerheader h2 {
+    font-size: 30px;
+    color: #fd6e6e;
+    text-align: center;
+    top: 8vh;
+    padding-top: 50px;
+}
+
+.fehlerheader a {
+    color: #fd6e6e;
+}
+
+.fehlertext {
+    font-size: 24px;
+    color: #E6E6E6;
+    text-align: center;
+    line-height: 1.8;
+    padding-top: 10px;
+
+}
+
+.fehlerback {
+    font-size: 30px;
+    color: #E6E6E6;
+    text-align: center;
+}
+

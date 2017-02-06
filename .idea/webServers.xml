@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="84af82f4-bd32-49a4-8a47-6aa168d43c18" name="mars.iuk.hdm-stuttgart.de" url="http://mars.iuk.hdm-stuttgart.de">
+        <fileTransfer host="mars.iuk.hdm-stuttgart.de" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

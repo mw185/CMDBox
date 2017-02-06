@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="mars.iuk.hdm-stuttgart.de">
+    <serverData>
+      <paths name="mars.iuk.hdm-stuttgart.de">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/mw185/public_html" local="$PROJECT_DIR$" web="/~mw185/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
