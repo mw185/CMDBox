@@ -85,11 +85,24 @@ if(isset($_GET['register'])) {
         $result = $statement->execute(array('username' => $username,'email' => $email, 'password' => $passwort_hash));
 
         if($result) {
-            echo 'Du wurdest erfolgreich registriert.';
-            $showFormular = false;
+            $showFormular = false;  #Formular wird nicht mehr angezeigt
+            # Bestätigungsmail senden
+            $empfaenger = "".$_POST['email']."";
+            $absendername = "CMD Box";
+            $absendermail = "automatic@CMD-Box.de";
+            $betreff = "Herzlich Willkommen bei CMD Box!";
+            $text = "Hallo ".$_POST['username']."
+
+Du kannst jetzt deine Box verwalten und Dateien teilen.
+Wir wünschen dir viel Spaß.
+
+Dies ist eine automatisch generierte e-mail, bitte nicht darauf antworten.";
+            mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
+            echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine e-mail Adresse gesendet.';
         }
         else {
             echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+
         }
     }
 }
@@ -107,11 +120,11 @@ if($showFormular) {
         Passwort wiederholen:<br>
         <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
-        <input type="submit" value="Senden">
+        <input type="submit" value="Registrieren">
     </form>
 
     <?php
-}
+}       #ShowFormular endet hier
 ?>
 
 </body>
