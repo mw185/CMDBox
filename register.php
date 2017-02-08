@@ -11,7 +11,7 @@ if(isset($errorMessage)) {
 <html>
 <head>
     <title>Registrierung</title>
-    <h1>P.Nis</h1>
+    <h1>Registrierung</h1>
 </head>
 <body>
 
