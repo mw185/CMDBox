@@ -2,7 +2,7 @@
 // Session starten
 session_start ();
 // Datenbankverbindung aufbauen
-include ("connection.php");
+include "connection.php";
 
 $username = $_POST["username"];
 $passwort = $_POST["password"];
