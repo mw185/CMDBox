@@ -1,16 +1,12 @@
 <?php
 session_start();
-$dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
-$dbuser="db104";    #db username
-$dbpass="anohk4Aepu";   #db passwort
-try {
-    $db=new PDO($dsn,$dbuser,$dbpass); #kreiren der variable $db mit Daten für Datenbankverbindung
-}
-catch(PDOException $e){
-    echo $e->getMessage();
-    die();
+
+include(connection.php)
+if(isset($errorMessage)) {
+    echo $errorMessage;
 }
 ?>
+
 <?php
 if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
@@ -41,18 +37,13 @@ if(isset($_GET['login'])) {     #loginformular senden
 </head>
 <body>
 <h1>Login</h1>
+
+
 <?php
+include(loginsite.html)
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-
-<form action="?login=1" method="post">
-    Username:<br>
-    <input type="text" size="40" maxlength="250" name="username"><br><br>
-    Dein Passwort:<br>
-    <input type="password" size="40"  maxlength="250" name="password"><br><br>
-    <input type="submit" value="Einloggen">
-</form>
 </body>
 </html>
