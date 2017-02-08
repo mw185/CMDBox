@@ -48,11 +48,12 @@ if(isset($_GET['login'])) {     #loginformular senden
 <h1>Login</h1>
 
 <form action="login.php" method="post">
+
     <label class="h2" form="person">Namenseingabe</label>
     <label for="username">username</label>
     <input type="text" name="username" maxlength="30">
 
-    <label for="password">Zuname</label>
+    <label for="password">Passwort</label>
     <input type="password" name="password" maxlength="40">
 
     <button type="reset">Eingaben zurücksetzen</button>
