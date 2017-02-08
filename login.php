@@ -2,7 +2,7 @@
 session_start();
 
 include "connection.php";
-include_once "loginpage.html";
+include "loginpage.html";
 
 
 if(isset($_GET['login'])) {     #loginformular senden
