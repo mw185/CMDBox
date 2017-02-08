@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include(connection.php);
+include "connection.php";
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
@@ -47,13 +47,6 @@ if(isset($_GET['login'])) {     #loginformular senden
 <body>
 <h1>Login</h1>
 
-
-<?php
-include(loginsite.html)
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
-?>
 
 </body>
 </html>
