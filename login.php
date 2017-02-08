@@ -41,6 +41,6 @@ if(isset($_GET['login'])) {     #loginformular senden
 
 include "loginpage.html";
 if(isset($errorMessage)) {
-    echo $errorMessage
+    echo $errorMessage;
 }
 ?>
