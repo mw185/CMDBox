@@ -10,7 +10,7 @@ if(isset($errorMessage)) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registrierung</title>
+    <title>P.Nis</title>
     <h1>Registrierung</h1>
 </head>
 <body>
