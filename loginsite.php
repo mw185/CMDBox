@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +13,12 @@
 
 <body>
 
-
+<?php
 include(login.php);
 if(isset($errorMessage)) {
-	echo $errorMessage;
+    echo $errorMessage;
 }
+?>
 
 
 <div class="loginsite">

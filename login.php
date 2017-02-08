@@ -26,7 +26,7 @@ if(isset($_GET['login'])) {     #loginformular senden
         die('Login erfolgreich. Falls sie nicht automatisch weitergeleitet werden klicken sie bitte hier: <a href="showuploads.php">internen Bereich</a>'); #erfolgreich, weiterleiten auf internen Bereich
 
         ?>
-        <meta http-equiv="refresh" content="5; URL=showuploads.php">
+        <meta http-equiv="refresh" content="5; URL = showuploads.php">
         <?php
 
     } else {
@@ -50,10 +50,8 @@ if(isset($errorMessage)) {
 <form action="?login=1" method="post">
     Username:<br>
     <input type="text" size="40" maxlength="250" name="username"><br><br>
-
     Dein Passwort:<br>
     <input type="password" size="40"  maxlength="250" name="password"><br><br>
-
     <input type="submit" value="Einloggen">
 </form>
 </body>
