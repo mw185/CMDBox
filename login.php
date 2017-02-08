@@ -22,10 +22,13 @@ if(isset($_GET['login'])) {     #loginformular senden
     //Überprüfung des Passworts
     if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann
         $_SESSION['userid'] = $user['id']; #session id erzeugen mit der bezeichung 'userid'
+
         die('Login erfolgreich. Falls sie nicht automatisch weitergeleitet werden klicken sie bitte hier: <a href="showuploads.php">internen Bereich</a>'); #erfolgreich, weiterleiten auf internen Bereich
+
         ?>
         <meta http-equiv="refresh" content="5; URL=showuploads.php">
         <?php
+
     } else {
         $errorMessage = "Username oder Passwort wurde falsch eingegeben";  #login klappt nicht
     }

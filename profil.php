@@ -25,9 +25,9 @@
 <script>
     /*--------------------------------Passwort falsch ----------------------------*/
     $(document).ready(function () {
-        $(".passwort_alt").click(function () {
-            var passwort_alt =  $("passwort_alt").attr("passwort_alt");
-            alert (passwort_alt);
+        $(".password_alt").click(function () {
+            var password_alt =  $("password_alt").attr("password_alt");
+            alert (password_alt);
             $.ajax({
                 type: "POST",
                 url: "edit.php",
@@ -47,10 +47,10 @@
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="index.html">VINTLOUD</a></li>
+                <li><a href="index.html">CMDBox</a></li>
             </ul>
             <ul class="pull-right">
-                <li><a href="uploadseitee.html">Upload</a></li>
+                <li><a href="uploadseite.html">Upload</a></li>
                 <li><a href="showuploads.php">&Uuml;bersicht</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="logout.php">Logout</a></li>
@@ -69,7 +69,7 @@
         <div class="profilpic">
             <?php
             include('connection.php');
-            $einfuegen = $db->prepare('SELECT * FROM User WHERE email = :email');
+            $einfuegen = $db->prepare('SELECT * FROM person WHERE email = :email');
             $array = array(
                 ':email' => $_SESSION['email']
             );

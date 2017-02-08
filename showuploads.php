@@ -4,7 +4,7 @@
 session_start();
 include("connection.php");
 $directorywert = md5($_SESSION['email']);
-$dir = "uploads/$directorywert/";
+$dir = "file/$directorywert/";
 
 // Check die Verbindung
 if ($_SESSION['loggedin'] != 1) {
