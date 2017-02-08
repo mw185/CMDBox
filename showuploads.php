@@ -9,7 +9,7 @@ $dir = "file/$directorywert/";
 // Check die Verbindung
 if ($_SESSION['loggedin'] != 1) {
     // Wenn der User die Session nicht auf 1 hat, wird er auf die Loginseite zur�ckgeleitet
-    header("Location: loginsite.html");
+    header("Location: loginpage.html");
     exit;
 }
 
