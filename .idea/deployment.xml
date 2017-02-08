@@ -5,7 +5,7 @@
       <paths name="mars.iuk.hdm-stuttgart.de">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/mw185/public_html" local="$PROJECT_DIR$" web="/~mw185/" />
+            <mapping deploy="/home/mw185/public_html/CMDBox" local="$PROJECT_DIR$" web="/~mw185/" />
           </mappings>
         </serverdata>
       </paths>
