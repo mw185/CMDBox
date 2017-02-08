@@ -44,14 +44,5 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<form action="?login=1" method="post">
-    Username:<br>
-    <input type="text" size="40" maxlength="250" name="username"><br><br>
-
-    Dein Passwort:<br>
-    <input type="password" size="40"  maxlength="250" name="password"><br><br>
-
-    <input type="submit" value="Einloggen">
-</form>
 </body>
 </html>
