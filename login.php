@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include(connection.php)
+include(connection.php);
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
@@ -19,10 +19,19 @@ if(isset($_GET['login'])) {     #loginformular senden
     if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann
         $_SESSION['userid'] = $user['id']; #session id erzeugen mit der bezeichung 'userid'
 
-        die('Login erfolgreich. Falls sie nicht automatisch weitergeleitet werden klicken sie bitte hier: <a href="http://www.bild.de">internen Bereich</a>'); #erfolgreich, weiterleiten auf internen Bereich
+        die
+?>
 
-        ?>
+
+        Login erfolgreich. Falls sie nicht automatisch weitergeleitet werden klicken sie bitte hier:
+
+<a href="http://www.bild.de">internen Bereich</a>'); #erfolgreich, weiterleiten auf internen Bereich
+
         <meta http-equiv="refresh" content="5; URL = showuploads.php">
+
+
+
+
         <?php
 
     } else {
