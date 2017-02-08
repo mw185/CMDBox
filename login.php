@@ -2,7 +2,7 @@
 session_start();
 
 include "connection.php";
-include "loginpage.html";
+include_once "loginpage.html";
 
 
 if(isset($_GET['login'])) {     #loginformular senden
@@ -22,4 +22,4 @@ if(isset($_GET['login'])) {     #loginformular senden
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
         }
 }
-    ?>L
+    ?>
