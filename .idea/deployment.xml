@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="mars.iuk.hdm-stuttgart.de">
+  <component name="PublishConfigData" serverName="mars.iuk.hdm-stuttgart.de (project level)">
     <serverData>
-      <paths name="mars.iuk.hdm-stuttgart.de">
+      <paths name="mars.iuk.hdm-stuttgart.de (project level)">
         <serverdata>
           <mappings>
             <mapping deploy="/home/mw185/public_html/CMDBox" local="$PROJECT_DIR$" web="/~mw185/" />
