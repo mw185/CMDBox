@@ -47,31 +47,17 @@ if(isset($_GET['login'])) {     #loginformular senden
 <body>
 <h1>Login</h1>
 
-<form>
-    <div class="loginsite">
-        <div class="loginbox">
-            <div class="firstcard"></div>
-            <div class="card">
-                <h1 class="title">Login</h1>
-                <form action="login.php" method="post">
-                    <div class="input-container">
-                        <input id="email" name="email" type="email" placeholder="Email" maxlength="40" required>
-                        <label for="email"></label>
-                        <div class="bar"></div>
-                    </div>
-                    <div class="input-container">
-                        <input type="password" id="Password" name="passwort" placeholder="Passwort" maxlength="40" required>
-                        <label for="Password"></label>
-                        <div class="bar"></div>
-                    </div>
-                    <div class="button-container">
-                        <button type="submit" name="logmein"><span>Go</span></button>
-                    </div>
-                    <div class="cardfooter"><!--<a href="#">Passwort vergessen?</a></div>--->
-                </form>
-            </div>
-        </div>
-    </div>
+<form action="login.php" method="post">
+
+    <label class="h2" form="person">Namenseingabe</label>
+    <label for="username">username</label>
+    <input type="text" name="username" maxlength="30">
+
+    <label for="password">Passwort</label>
+    <input type="password" name="password" maxlength="40">
+
+    <button type="reset">Eingaben zurücksetzen</button>
+    <button type="submit">Eingaben absenden</button>
 </form>
 
 </body>
