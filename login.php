@@ -37,11 +37,7 @@ if(isset($_GET['login'])) {     #loginformular senden
 </head>
 <body>
 <h1>Login</h1>
-<?php
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
-?>
+
 
 <?php
 include(loginsite.html)
