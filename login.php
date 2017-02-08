@@ -12,7 +12,7 @@ if(isset($errorMessage)) {
 echo $errorMessage;
 }
 
-if(isset($_GET['loginpage.html'])) {     #loginformular senden
+if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
     $password = $_POST['password']; #eingegebenes Passwort $password zuordnen
     $statement = $db->prepare ("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
@@ -32,10 +32,7 @@ if(isset($_GET['loginpage.html'])) {     #loginformular senden
 <a href="http://www.bild.de">internen Bereich</a>'); #erfolgreich, weiterleiten auf internen Bereich
 
         <meta http-equiv="refresh" content="5; URL = showuploads.php">
-
-
-
-
+        
         <?php
 
     } else {
