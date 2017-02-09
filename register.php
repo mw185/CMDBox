@@ -13,7 +13,7 @@ if(isset($errorMessage)) {
     <title>Registrierung</title>
     <h1>Registrierung</h1>
 </head>
-<body>
+<body>.
 
 <?php
 $showFormular = true; #Registrierungsformular wird angezeigt
