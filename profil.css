@@ -1,0 +1,167 @@
+/* NAV BEGINN -------------------------------------------------------------------------------*/
+html body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #205379;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #e6e6e6;
+    width: 100vw;
+    padding: 20px 0px;
+    position: fixed;
+    z-index: 2;
+}
+.nav ul li {
+    display:inline;
+    padding: 20px 20px;
+}
+
+
+.nav li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #5a5a5a;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 32px 20px;
+
+}
+
+
+
+/* Hover Effekt beim dr�bergehen*/
+.nav a:hover {
+    background-color: #c6c6c6;
+    opacity: 0.75;
+}
+
+
+/* Padding an den Seiten */
+
+
+.pull-left {
+    padding: 0px 0px 0px 200px;
+    /*  float:left;
+      width:200px;
+      margin: 1em;     float wert zum schieben*/
+}
+
+.pull-right {
+    padding: 0px 200px 0px 0px;
+    /*  clear:left;   float wert zum schieben*/
+}
+
+
+/* Profil */
+
+.profil {
+    position: relative;
+    top: 20px;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+.profilkopf {
+    background-color:#205379;
+    background-size: cover;
+    height: 135px;
+}
+
+.profilbody {
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    margin: 8px 14px 0 14px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight:normal;
+    color: #98D2E6;
+    display: block;
+    overflow: hidden;
+}
+
+
+img {
+    float: none;
+    width: 50%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color:#98D2E6;
+}
+
+input[type=file] {
+    display: inline;
+}
+
+.modal-header {
+    background-color: #c6c6c6;
+}
+
+.modal-title {
+    color: white;
+}
+
+
+.profil .info {
+    padding: 4px 8px 10px;
+}
+
+.profil .info .title h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 1;
+    color: #fd6e6e;
+    position: relative;
+}
+
+.profil .info .desc {
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 30px;
+    color: #737373;
+}
+
+
+.btn {
+    color: #98D2E6;
+}
+
+@media screen and (min-width:320px) {
+
+    .nav {
+        float:left;
+        width:25%;
+    }
+
+    .pull-left {
+        padding: 0px 0px 0px 200px;
+    }
+
+    .pull-right {
+        padding: 0px 200px 0px 200px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .pull-left {
+        padding: 0px 0px 0px 200px;
+    }
+
+    .pull-right {
+        padding: 0px 200px 0px 200px;
+    }}
+
+@media screen and (min-width:768px) {
+    .nav li {
+        display: inline;
+    }
+}
