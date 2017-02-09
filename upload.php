@@ -38,15 +38,15 @@ if (isset($filename)) {
 // Kontrolle, ob Bild Fake ist
 
 // Kontrolle, ob Datei bereits existiert
-if (file_exists($target_file)) {
-    echo "Die Datei ist bereits vorhanden.<br/>";
-    $uploadOk = 0;
-}
+//if (file_exists($target_file)) {
+  //  echo "Die Datei ist bereits vorhanden.<br/>";
+    //$uploadOk = 0;
+//}
 // Kontrolliert die Dateigröße
-if ($_FILES["file"]["size"] > 13107200) {
-    echo "Die Datei ist zu groß.";
-    $uploadOk = 0;
-}
+//if ($_FILES["file"]["size"] > 13107200) {
+  //  echo "Die Datei ist zu groß.";
+    //$uploadOk = 0;
+//}
 
 
 //------------------------------- Verschiedene Dateiformate-------------------------------------------
@@ -58,18 +58,17 @@ $uploadOk = 0;
 }
 //------------------------------- END allow file formats-------------------------------------------*/
 //------------------------------- Lädt hoch, wenn $uploadOk gleich 0------------------------
-if ($uploadOk == 0) {
-    echo "Deine Daten wurde nicht hochgeladen.<br/>";
-    echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
+//if ($uploadOk == 0) {
+   //  echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
 // Wenn alles passt, Datei hochladen
-} else {
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-        chmod($target_file, 0600);
-        echo "Die Datei ". basename($filename). " wurde erfolgreich hochgeladen.<br/>";
-        echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
-    } else {
-        echo "Es gab ein Problem beim Hochladen deiner Datei.<br/>";
-        echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
-    }
-}
+//} else {
+   // if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+    //    chmod($target_file, 0600);
+    //    echo "Die Datei ". basename($filename). " wurde erfolgreich hochgeladen.<br/>";
+    //    echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
+   // } else {
+    //    echo "Es gab ein Problem beim Hochladen deiner Datei.<br/>";
+     //   echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
+   // }
+//}
 ?>
