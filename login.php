@@ -24,7 +24,10 @@ if(isset($_GET['login'])) {     #loginformular senden
         $_SESSION['userid'] = $user['id']; #session id erzeugen mit der bezeichung 'userid'
         $_SESSION['loggedin'] = 1;
         header("Location: uploadseite.html");
-        
+
+        if ($result) {
+            $showFormular = false;  #Formular wird nicht mehr angezeigt
+
 
             die('Login erfolgreich. Weiter zu <a href="uploadseite.html">internen Bereich</a>');
         }
