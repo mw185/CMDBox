@@ -14,7 +14,7 @@ $target_dir = "/Uploads/$directorywert/";
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
-
+$size = $_FILES["file"]["size"];
 
 $tmp_name = $_FILES["file"]["tmp_name"];
 
@@ -26,6 +26,10 @@ if (isset($filename)) {
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         $fileID = uniqid(``, true) . `.` . $filename;
 
+        $fileID = $_POST["fileID"];
+        $filename = $_POST["filename"];
+        $size = $_POST ["size"];
+        
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
