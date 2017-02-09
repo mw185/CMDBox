@@ -27,7 +27,7 @@ if (isset($filename)) {
     $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
-        $fileID = uniqid(``, true) . `.` . $filename;
+        $fileID = uniqid('.', true) . '.' . $filename;
         
         if (isset($_GET["uploadformular"])) {
             $fileID = $_POST["fileID"];
