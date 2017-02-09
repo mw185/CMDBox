@@ -4,7 +4,7 @@ session_start();
 
 
 // Datenbankverbindung aufbauen
-include("connection.php");
+include 'connection.php';
 
 
 //Profilbild abspeichern
@@ -65,9 +65,9 @@ if ($_POST['upload']) {
         );
         $uploadprofilbild->execute($query);
 
-        echo "Ihr Profilbild wurde erfolgreich ge&auml;ndert. <br />";
+        echo "Ihr Profilbild wurde erfolgreich geändert. <br />";
         echo "$profilbildpfad. <br />";
-        echo "Zur&uuml;ck zum <a href='profil.php'>Profil</a><br/>";
+        echo "Zurück zum <a href='profil.php'>Profil</a><br/>";
         $uploadOK=true;
     }
 }
