@@ -23,9 +23,7 @@ if (isset($filename)) {
     $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
-        echo "Uploaded!" ?>
-    Weiter zu <a href= http://www.uploadseite.html"> Uploadverzeichnis</a>
-<?php
+        echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
         echo "please upload file";
