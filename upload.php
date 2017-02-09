@@ -24,7 +24,7 @@ if (isset($filename)) {
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         echo "Uploaded!" ?>
-    Weiter zu <a href= uploadseite.html"> Uploadverzeichnis</a>;
+    Weiter zu <a href= uploadseite.html"> Uploadverzeichnis</a>
 <?php
     }
     } else {
