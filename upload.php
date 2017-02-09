@@ -15,6 +15,7 @@ $target_dir = "/Uploads/$directorywert/";
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
 
+
 $tmp_name = $_FILES["file"]["tmp_name"];
 
 if (isset($filename)) {
@@ -23,6 +24,7 @@ if (isset($filename)) {
     $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
+        $statement = $db->prepare("INSERT INTO file (fileID, username, filename, date) VALUES (:fileID)")
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
