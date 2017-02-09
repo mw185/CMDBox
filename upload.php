@@ -28,11 +28,12 @@ if (isset($filename)) {
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         $fileID = uniqid(``, true) . `.` . $filename;
-
-        $fileID = $_POST["fileID"];
-        $filename = $_POST["filename"];
-        $size = $_POST ["size"];
-
+        
+        if (isset($_GET["uploadformular"])) {
+            $fileID = $_POST["fileID"];
+            $filename = $_POST["filename"];
+            $size = $_POST ["size"];
+        }
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
