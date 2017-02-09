@@ -24,7 +24,7 @@ if (isset($filename)) {
     $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
-        $statement = $db->prepare("INSERT INTO file (fileID, username, filename, date) VALUES (:fileID)")
+        echo $file_name_new = uniqid(``, true) . `.` . $filename;
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
