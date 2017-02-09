@@ -1,6 +1,7 @@
 <?php
 session_start();
 include ("connection.php");
+include ("formularupload.html");
 
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
@@ -12,7 +13,8 @@ $target_dir = "file/$directorywert/";
 
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
-$filename = $_FILES["file"]["name"];
+$filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
+
 $middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
 $newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
 $target_file = $target_dir . basename($newuserfile);
@@ -48,7 +50,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
         chmod($target_file, 0600);
-        echo "Die Datei ". basename($olduserfile). " wurde erfolgreich hochgeladen.<br/>";
+        echo "Die Datei ". basename($filename). " wurde erfolgreich hochgeladen.<br/>";
         echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
     } else {
         echo "Es gab ein Problem beim Hochladen deiner Datei.<br/>";
