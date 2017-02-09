@@ -29,7 +29,7 @@ if(isset($_GET['login'])) {     #loginformular senden
             $showFormular = false;  #Formular wird nicht mehr angezeigt
 
 
-            die('Login erfolgreich. Weiter zu <a href="uploadseite.html">internen Bereich</a>');
+            die('Login erfolgreich. Weiter zu <a href="showuploads.php">internen Bereich</a>');
         }
 
     else {
