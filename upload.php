@@ -1,12 +1,15 @@
 <?php
 session_start();
 include ("connection.php");
-// Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 
+
+// Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
 
+
 // Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
-$target_dir = "uploads/$directorywert/";
+$target_dir = "file/$directorywert/";
+
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $olduserfile = $_FILES["file"]["name"];

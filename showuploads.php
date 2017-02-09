@@ -154,7 +154,7 @@ function readablesize($bytes, $precision = 1)
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="index.html">VINTLOUD</a></li>
+                <li><a href="index.html">CMDBox</a></li>
             </ul>
             <ul class="pull-right">
                 <li><a href="uploadseite.html">Upload</a></li>
@@ -173,7 +173,7 @@ function readablesize($bytes, $precision = 1)
     <thead>
     <tr>
         <th>Filename</th>
-        <th >Type</th>
+        <th>Type</th>
         <th>Size</th>
     </tr>
     </thead>
@@ -188,8 +188,7 @@ function readablesize($bytes, $precision = 1)
                     $prettysize = readablesize($size);
                     $placeoffile = ($dir . $file);
                     $fullpath = 'https://mars.iuk.hdm-stuttgart.de/~dm082/phptest/'.$placeoffile;
-                    echo("
-                            <tr class='active'>
+                    echo("  <tr class='active'>
                             <td class='dateiname'><a id='name' class='publicname-change' data-name='$file' data-pk='$placeoffile' data-type='text' href='$placeoffile'><span>$file</span></a></td>
                             <td>$extension</td>
                             <td>$prettysize</td>
