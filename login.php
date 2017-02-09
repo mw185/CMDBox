@@ -30,7 +30,9 @@ if(isset($_GET['login'])) {     #loginformular senden
 
 
             die('Login erfolgreich. Weiter zu <a href="uploadseite.html">internen Bereich</a>');
-        } else {
+        }
+
+    else {
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
         }
     }
