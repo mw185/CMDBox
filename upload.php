@@ -20,7 +20,7 @@ $tmp_name = $_FILES["file"]["tmp_name"];
 if (isset($filename)) {
     if (!empty($filename))
     {
-    $location ="/Uploads/";
+    $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         echo "uploaded";
