@@ -15,11 +15,26 @@ $target_dir = "file/$directorywert/";
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
 
-$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
-$newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
-$target_file = $target_dir . basename($newuserfile);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$tmp_name = $_FILES["file"]["tmp_name"];
+
+if (isset($filename)) {
+    if (!empty($filename))
+    {
+    $location ="Uploads/";
+
+    if (move_uploaded_file($tmp_name, $location.$filename)); {
+        echo "uploaded";
+    }
+    } else {
+        echo "please upload file";
+    }
+}
+
+//$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
+//$newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
+//$target_file = $target_dir . basename($newuserfile);
+//$uploadOk = 1;
+//$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Kontrolle, ob Bild Fake ist
 
 // Kontrolle, ob Datei bereits existiert
