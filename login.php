@@ -36,5 +36,4 @@ if(isset($_GET['login'])) {     #loginformular senden
     }
 }
 
-
 ?>
