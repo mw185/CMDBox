@@ -3,6 +3,7 @@
 
 session_start();
 include("connection.php");
+include ("uploadseite.html");
 $directorywert = md5($_SESSION['email']);
 $dir = "file/$directorywert/";
 
