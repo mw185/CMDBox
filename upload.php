@@ -2,7 +2,7 @@
 session_start();
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
-$directorywert = md5($_SESSION['email']);
+$directorywert = md5($_SESSION['username']);
 
 // Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
 $target_dir = "uploads/$directorywert/";
