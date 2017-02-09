@@ -12,8 +12,8 @@ $target_dir = "file/$directorywert/";
 
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
-$olduserfile = $_FILES["file"]["name"];
-$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $olduserfile);
+$filename = $_FILES["file"]["name"];
+$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
 $newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
 $target_file = $target_dir . basename($newuserfile);
 $uploadOk = 1;
