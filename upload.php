@@ -1,6 +1,9 @@
 <?php
 session_start();
 include ("connection.php");
+if (isset ($errorMessage)) {
+    echo $errorMessage;
+}
 include ("FormularUpload.html");
 
 
@@ -29,7 +32,7 @@ if (isset($filename)) {
         $fileID = $_POST["fileID"];
         $filename = $_POST["filename"];
         $size = $_POST ["size"];
-        
+
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
