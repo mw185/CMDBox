@@ -28,11 +28,17 @@ if (isset($filename)) {
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         $fileID = uniqid(``, true) . `.` . $filename;
-        
+
         if (isset($_GET["uploadformular"])) {
             $fileID = $_POST["fileID"];
             $filename = $_POST["filename"];
-            $size = $_POST ["size"];
+            $datasize = $_POST ["datasize"];
+            $username = $_POST ["username"];
+        }
+
+        if(!$error) {
+            $statement = $db -> prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
+            $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
         }
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
