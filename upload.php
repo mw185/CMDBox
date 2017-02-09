@@ -9,7 +9,7 @@ $directorywert = md5($_SESSION['username']);
 
 
 // Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
-$target_dir = "Uploads/$directorywert/";
+$target_dir = "Uplods/$directorywert/";
 
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
