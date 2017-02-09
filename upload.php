@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("connection.php");
-include ("formularupload.html");
+include ("FormularUpload.html");
 
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
