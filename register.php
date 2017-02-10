@@ -82,7 +82,7 @@ if(isset($_GET['register'])) {
         if($result) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
             # Bestätigungsmail senden
-            $empfaenger = "".$_POST['email']."";
+            $empfaenger = "".$_POST.['email']."";
             $absendername = "CMD Box";
             $absendermail = "automatic@CMD-Box.de";
             $betreff = "Herzlich Willkommen bei CMD Box!";
@@ -93,7 +93,10 @@ Wir wünschen dir viel Spaß.
 
 Dies ist eine automatisch generierte e-mail, bitte nicht darauf antworten.";
             mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
-            echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine e-mail Adresse gesendet.';
+            echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine e-mail Adresse gesendet.'
+            ?>
+            <a href = login.php>Zum Login</a>;
+            <?php
         }
         else {
             echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
