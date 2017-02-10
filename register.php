@@ -2,6 +2,7 @@
 session_start();
 
 include 'connection.php';
+
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
@@ -12,6 +13,10 @@ if(isset($errorMessage)) {
 <head>
     <title>Registrierung</title>
     <h1>Registrierung</h1>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="registrierung.css">
 </head>
 <body>
 
