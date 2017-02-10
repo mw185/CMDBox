@@ -5,7 +5,7 @@ html body {
 }
 
 .container {
-    background-color: #e6e6e6;
+    background-color: lightgrey;
     width: 100vw;
     padding: 20px 0px;
     position: fixed;
@@ -31,11 +31,11 @@ html body {
 }
 /* Padding an den Seiten */
 .pull-right {
-    padding: 0px 200px 0px 0px;
+    padding: 20px 200px 0px 0px;
 }
 
 .pull-left {
-    padding: 0px 0px 0px 200px;
+    padding: 20px 0px 0px 200px;
 }
 
 
@@ -44,16 +44,16 @@ html body {
     height: 100vh; /* Viewport Height regelt die Gr��e des Blocks entsprechend dem Bildschirm*/
     /*background-color: #002846;*/
     margin-bottom: 0px;
-    background-image: url(https://images.unsplash.com/photo-1437419764061-2473afe69fc2?dpr=1.5&fit=crop&fm=jpg&h=875&ixlib=rb-0.3.5&q=66&w=1450);
+    background-color: darkolivegreen;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
 
 }
 
 .jumbotron .claim {
     color: #fff;
-    text-align: left;
+    text-align: center;
     padding-top: 15vh;
     font-size: 80px;
     line-height: 90px;
@@ -97,13 +97,13 @@ a:link {
 }
 
 #highlight {
-    color: yellow;
+    color: white;
 }
 
 /* Testimonials */
 .testimonials{
     height: 30vh;
-    background-color: #205379;
+    background-color: darkseagreen;
 }
 
 
