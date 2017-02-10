@@ -56,6 +56,12 @@ if (isset($filename)) {
             //$datasize = $_POST ["datasize"];
             //$username = $_POST ["username"];
 
+
+         /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+            $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+            $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
+*/
+
             $abra = "Abra";
             $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
             $statement = $db->prepare($sql);

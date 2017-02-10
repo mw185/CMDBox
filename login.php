@@ -26,10 +26,13 @@ if(isset($_GET['login'])) {     #loginformular senden
     $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
     $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
 
+
+    $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
+    
     //Überprüfung des Passworts
     if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann
 
-        $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
+
         $_SESSION['loggedin'] = 1;
         header("Location: upload.php");
 
