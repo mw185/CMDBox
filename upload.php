@@ -40,7 +40,8 @@ if (isset($filename)) {
             //$datasize = $_POST ["datasize"];
             //$username = $_POST ["username"];
 
-            $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" Abra "')";
+            $abra = "Abra";
+            $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $abra . "')";
             $statement = $db->prepare($sql);
             $result = $statement->execute();
 
