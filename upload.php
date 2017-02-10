@@ -26,10 +26,6 @@ if(isset($_SESSION['userid'])){
     $username = $_SESSION['userid']; //auslagern
 }
 
-echo $_SESSION;
-print_r($_SESSION);
-var_dump($_SESSION);
-
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
 
