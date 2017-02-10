@@ -4,16 +4,28 @@
     <meta charset="UFT-8">
     <title>Login</title>
     <?php
+
     session_start();
-    include("connection.php")
+
+    $dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
+    $dbuser="db104";
+    $dbpass="anohk4Aepu";
+
+    try {
+        $db=new PDO($dsn,$dbuser,$dbpass);
+    }
+    catch(PDOException $e){
+        echo $e->getMessage();
+        die();
+    }
+
+
     ?>
 </head>
 
 <body>
 
 <?php
-
-include "loginpage.html";
 
 //$showFormular = true; #Registrierungsformular wird angezeigt
 
@@ -43,7 +55,7 @@ if(isset($_GET['login'])) {     #loginformular senden
         }*/
     }
     else {
-            $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
     }
 } else{
     $errorMessage = "keine daten vom Formular erhalten" ;
@@ -56,5 +68,23 @@ if(isset($errorMessage)) {
 
 
 ?>
+
+
+<form name="login" action="?login=1" method="post">
+
+    <label class="h2">LOGIN</label>
+    <br/>
+    <label>Username</label>
+    <input type="text" name="username" maxlength="30">
+    <br/>
+
+    <label>Passwort</label>
+    <input type="password" name="password" maxlength="40">
+    <br/>
+    <button type="reset">Eingaben zurücksetzen</button>
+    <button type="submit">Einloggen</button>
+</form>
+
+
 </body>
 </html>
