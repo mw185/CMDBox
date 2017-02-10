@@ -14,7 +14,7 @@
 <?php
 
 
-
+include "loginpage.html";
 
 //$showFormular = true; #Registrierungsformular wird angezeigt
 
@@ -55,7 +55,6 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 
-include "loginpage.html";
 
 ?>
 </body>
