@@ -10,7 +10,7 @@ include ("FormularUpload.html");
 if(isset($_SESSION['username'])) {
     $username = $_SESSION['username']; //auslagern
 }
-echo $username;
+echo $_SESSION['username'];
 print_r($username);
 var_dump($username);
 
