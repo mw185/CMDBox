@@ -7,6 +7,9 @@ if (isset ($errorMessage)) {
 }
 include ("FormularUpload.html");
 
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
@@ -27,19 +30,23 @@ if (isset($filename)) {
     {
     $location ="Uploads/";
 
-    if (move_uploaded_file($tmp_name, $location.$filename)); {
-        $fileID = uniqid(``, true) . `.` . $filename;
+    if (move_uploaded_file($tmp_name, $location.$filename));
+        {
 
-        if (isset($_POST["uploadformular"])) {
-            $fileID = $_POST["fileID"];
-            $filename = $_POST["filename"];
-            $datasize = $_POST ["datasize"];
-            $username = $_POST ["username"];
+            //$fileID = uniqid(``, true) . `.` . $filename;
+            //if (isset($_POST["uploadformular"])) {
+            //  $fileID = $_POST["fileID"];
+            //$filename = $_POST["filename"];
+            //$datasize = $_POST ["datasize"];
+            //$username = $_POST ["username"];
+
+            $sql = "INSERT INTO file (filename, datasize, username) VALUES ('".$filename."','".$datasize."','".$username."')";
+            $statement = $pdo -> prepare($sql);
+            $result = $statement->execute();
+            
+
+            echo('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
         }
-            $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
-            $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
-
-        echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
         echo "please upload file";
