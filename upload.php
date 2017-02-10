@@ -4,6 +4,7 @@
     <meta charset="UFT-8">
     <title>Login</title>
     <?php
+
     session_start();
     include("connection.php");
 
@@ -21,7 +22,9 @@ if (isset ($errorMessage)) {
 }
 include ("FormularUpload.html");
 
-$username = $_SESSION['username']; //auslagern
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username']; //auslagern
+}
 
 echo $_SESSION['username'];
 print_r($username);
