@@ -22,7 +22,7 @@ if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
     $password = $_POST['password']; #eingegebenes Passwort $password zuordnen
 
-    $statement = $db->prepare("SELECT username FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+    $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
     $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
     $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
 
