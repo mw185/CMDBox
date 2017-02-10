@@ -8,7 +8,7 @@ if (isset ($errorMessage)) {
 include ("FormularUpload.html");
 
 if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+    $username = $_SESSION['username']; //auslagern
 }
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
@@ -41,9 +41,8 @@ if (isset($filename)) {
             //$username = $_POST ["username"];
 
             $sql = "INSERT INTO file (filename, datasize, username) VALUES ('".$filename."','".$datasize."','".$username."')";
-            $statement = $pdo -> prepare($sql);
+            $statement = $db->prepare($sql);
             $result = $statement->execute();
-
 
             echo('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
         }
