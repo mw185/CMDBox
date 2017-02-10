@@ -8,9 +8,9 @@
     session_start();
     include("connection.php");
 
-    if(!isset($_SESSION['userid'])) {
-        header("login.php");
-    }
+   // if(!isset($_SESSION['userid'])) {
+     //   header("login.php");
+  //  }
     ?>
 </head>
 
