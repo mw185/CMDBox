@@ -27,8 +27,8 @@ if(isset($_SESSION['username'])){
 }
 
 echo $_SESSION['username'];
-print_r($username);
-var_dump($username);
+print_r($_SESSION['username']);
+var_dump($_SESSION['username']);
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
