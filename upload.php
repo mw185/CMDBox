@@ -8,7 +8,7 @@
     session_start();
     include("connection.php");
 
-    if(!isset($_SESSION['username'])) {
+    if(!isset($_SESSION['userid'])) {
         header("login.php");
     }
     ?>
@@ -22,8 +22,8 @@ if (isset ($errorMessage)) {
 }
 include ("FormularUpload.html");
 
-if(isset($_SESSION['username'])){
-    $username = $_SESSION['username']; //auslagern
+if(isset($_SESSION['userid'])){
+    $username = $_SESSION['userid']; //auslagern
 }
 
 echo $_SESSION;
@@ -31,7 +31,7 @@ print_r($_SESSION);
 var_dump($_SESSION);
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
-$directorywert = md5($_SESSION['username']);
+$directorywert = md5($_SESSION['userid']);
 
 
 // Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
