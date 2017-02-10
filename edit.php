@@ -2,12 +2,12 @@
 // Session starten
 session_start ();
 // Datenbankverbindung aufbauen
-include ("connection.php");
+include 'connection.php';
 //Passwortvergleich (eingegebenes PW mit dem der DB)
 $email = $_SESSION["email"];
 $passwort_alt = $_POST["passwort_alt"];
 try{
-    $sql = "SELECT email, passwort FROM User WHERE email LIKE '$email'";
+    $sql = "SELECT email, password FROM Person WHERE email LIKE '$email'";
     $query = $db->prepare($sql);
     $query->execute();
     while ($result = $query->fetch(PDO::FETCH_ASSOC)){
@@ -51,7 +51,7 @@ if ($error == false) {
             ':email' => $_SESSION['email']
         );
         $edit->execute($array);
-        echo "Ihr Passwort wurde erfolgreich ge&auml;ndert. <br /> ";
+        echo "Ihr Passwort wurde erfolgreich geändert. <br /> ";
         echo "<a href='loginsite.html'>Einloggen</a><br/>";
         echo $password_hash;
     } else {
