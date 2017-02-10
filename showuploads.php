@@ -188,13 +188,13 @@ function readablesize($bytes, $precision = 1)
                     $size = filesize($dir . $file);
                     $prettysize = readablesize($size);
                     $placeoffile = ($dir . $file);
-                    $fullpath = 'https://mars.iuk.hdm-stuttgart.de/~dm082/phptest/'.$placeoffile;
+                    $fullpath = 'https://mars.iuk.hdm-stuttgart.de/~mw185/phptest/'.$placeoffile;
                     echo("  <tr class='active'>
                             <td class='dateiname'><a id='name' class='publicname-change' data-name='$file' data-pk='$placeoffile' data-type='text' href='$placeoffile'><span>$file</span></a></td>
                             <td>$extension</td>
                             <td>$prettysize</td>
                             <td class=''><a class='edit'><i class=' fa fa-pencil-square-o'></i></a></td>
-                            <td><a href='#' title='Ihr Link' data-toggle='popover' data-trigger='click' data-placement='left' data-content='https://mars.iuk.hdm-stuttgart.de/~dm082/phptest/$placeoffile'><i id=$placeoffile class='linkinfo fa fa-link'></i></a></td>
+                            <td><a href='#' title='Ihr Link' data-toggle='popover' data-trigger='click' data-placement='left' data-content='https://mars.iuk.hdm-stuttgart.de/~mw185/phptest/$placeoffile'><i id=$placeoffile class='linkinfo fa fa-link'></i></a></td>
                             <td><a href='#myModal'  data-toggle=\"modal\"><i id='$fullpath' class='share fa fa-share'></i></a></td>
                             <td><a><i id=$placeoffile class='delete fa fa-trash'></i></a></td>
                             </tr>");
@@ -207,40 +207,5 @@ function readablesize($bytes, $precision = 1)
     </tbody>
 </table>
 </div>
-
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Datei als Anhang versenden</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="empfaenger" class="control-label">Empfänger:</label>
-                        <input type="email" placeholder="E-Mail" required maxlength="40" class="form-control"
-                               id="empfaenger">
-                    </div>
-                    <div class="form-group">
-                        <label for="betreff" class="control-label">Betreff:</label>
-                        <input type="text" required maxlength="40" class="form-control" id="betreff">
-                    </div>
-                    <div class="form-group">
-                        <label for="modalshare" class="control-label">Nachricht (max. 250 Zeichen):</label>
-                        <input type="text" class="form-control" id="modalshare" name="modalshare" value="lolo"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Senden</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 </body>
 </html>
