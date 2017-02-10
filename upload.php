@@ -1,15 +1,28 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UFT-8">
+    <title>Login</title>
+    <?php
+    session_start();
+    include("connection.php");
 
-include ("connection.php");
+    if(isset($_SESSION['username'])) {
+        header("login.php");
+    }
+    ?>
+</head>
+
+<body
+<?php
+
 if (isset ($errorMessage)) {
     echo $errorMessage;
 }
 include ("FormularUpload.html");
 
-if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username']; //auslagern
-}
+$username = $_SESSION['username']; //auslagern
+
 echo $_SESSION['username'];
 print_r($username);
 var_dump($username);
@@ -115,3 +128,5 @@ if ( $_FILES['uploaddatei']['name'] <>"")
 }
 
 ?>
+</body>
+</html>
