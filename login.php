@@ -13,8 +13,10 @@
 
 <?php
 
-
 include "loginpage.html";
+if(isset($errorMessage)) {
+    echo $errorMessage;
+}
 
 //$showFormular = true; #Registrierungsformular wird angezeigt
 
@@ -34,7 +36,7 @@ if(isset($_GET['login'])) {     #loginformular senden
 
         $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
         $_SESSION['loggedin'] = 1;
-        header("Location: upload.php");
+        header("Location: uploadseite.html");
 
         /*if ($user) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
@@ -50,10 +52,6 @@ if(isset($_GET['login'])) {     #loginformular senden
     $errorMessage = "keine daten vom Formular erhalten" ;
 }
 
-
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
 
 
 ?>
