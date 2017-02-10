@@ -188,13 +188,13 @@ function readablesize($bytes, $precision = 1)
                     $size = filesize($dir . $file);
                     $prettysize = readablesize($size);
                     $placeoffile = ($dir . $file);
-                    $fullpath = 'https://mars.iuk.hdm-stuttgart.de/~dm082/phptest/'.$placeoffile;
+                    $fullpath = 'https://mars.iuk.hdm-stuttgart.de/~mw185/phptest/'.$placeoffile;
                     echo("  <tr class='active'>
                             <td class='dateiname'><a id='name' class='publicname-change' data-name='$file' data-pk='$placeoffile' data-type='text' href='$placeoffile'><span>$file</span></a></td>
                             <td>$extension</td>
                             <td>$prettysize</td>
                             <td class=''><a class='edit'><i class=' fa fa-pencil-square-o'></i></a></td>
-                            <td><a href='#' title='Ihr Link' data-toggle='popover' data-trigger='click' data-placement='left' data-content='https://mars.iuk.hdm-stuttgart.de/~dm082/phptest/$placeoffile'><i id=$placeoffile class='linkinfo fa fa-link'></i></a></td>
+                            <td><a href='#' title='Ihr Link' data-toggle='popover' data-trigger='click' data-placement='left' data-content='https://mars.iuk.hdm-stuttgart.de/~mw185/phptest/$placeoffile'><i id=$placeoffile class='linkinfo fa fa-link'></i></a></td>
                             <td><a href='#myModal'  data-toggle=\"modal\"><i id='$fullpath' class='share fa fa-share'></i></a></td>
                             <td><a><i id=$placeoffile class='delete fa fa-trash'></i></a></td>
                             </tr>");
