@@ -87,3 +87,21 @@ $uploadOk = 0;
    // }
 //}
 ?>
+
+
+
+if ( $_FILES['uploaddatei']['name'] <>"")
+    (
+        move_uploaded_file(
+            $_FILES['uploaddatei']['tmp_name'],'Uploads/'. ($filename));
+
+    $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
+    $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
+
+    echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
+    );
+    else {
+    echo ("please upload file");
+}
+
+?>
