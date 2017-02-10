@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include ("connection.php");
 if (isset ($errorMessage)) {
     echo $errorMessage;
