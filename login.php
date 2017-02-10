@@ -4,22 +4,12 @@
     <meta charset="UFT-8">
     <title>Login</title>
     <?php
-
     session_start();
 
-    $dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
-    $dbuser="db104";
-    $dbpass="anohk4Aepu";
-
-    try {
-        $db=new PDO($dsn,$dbuser,$dbpass);
+    include 'connection.php';
+    if(isset($errorMessage)) {
+        echo $errorMessage;
     }
-    catch(PDOException $e){
-        echo $e->getMessage();
-        die();
-    }
-
-
     ?>
 </head>
 
@@ -27,7 +17,6 @@
 
 <?php
 
-//$showFormular = true; #Registrierungsformular wird angezeigt
 
 if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
