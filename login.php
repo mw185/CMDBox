@@ -13,7 +13,7 @@
 
 <?php
 
-include "loginpage.html";
+
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
@@ -48,11 +48,11 @@ if(isset($_GET['login'])) {     #loginformular senden
     else {
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
     }
-} else{
+    } else{
     $errorMessage = "keine daten vom Formular erhalten" ;
 }
 
-
+include "loginpage.html";
 
 ?>
 </body>
