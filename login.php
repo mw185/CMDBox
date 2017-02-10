@@ -9,7 +9,7 @@ if(isset($errorMessage)) {
 
 include "loginpage.html";
 
-$showFormular = true; #Registrierungsformular wird angezeigt
+//$showFormular = true; #Registrierungsformular wird angezeigt
 
 if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
@@ -26,16 +26,15 @@ if(isset($_GET['login'])) {     #loginformular senden
         $_SESSION['loggedin'] = 1;
         header("Location: uploadseite.html");
 
-        if ($result) {
+        /*if ($result) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
 
 
             die('Login erfolgreich. Weiter zu <a href="">internen Bereich</a>');
-        }
-
+        }*/
+    }
     else {
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
-        }
     }
 }
 
