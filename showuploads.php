@@ -14,11 +14,23 @@ if ($_SESSION['loggedin'] != 1) {
     exit;
 }
 
-if (isset($_SESSION['loggedin'])) {
-    //echo "Session-Email:". ($_SESSION['email']. "<br/>");
+if(isset($_SESSION['userid'])){
+    $username = $_SESSION['userid']; //auslagern
 }
+
+//if (isset($_SESSION['loggedin'])) {
+    //echo "Session-Email:". ($_SESSION['email']. "<br/>");
+//}
 // Lesbare Zahlen f�r "Gr��e"
-function readablesize($bytes, $precision = 1)
+
+$sql = "SELECT * FROM file WHERE username = username";
+$statement = $db->prepare($sql);
+$result = $statement->fetch();
+
+echo $result
+
+
+/*function readablesize($bytes, $precision = 1)
 {
     $kilobyte = 1024;
     $megabyte = $kilobyte * 1024;
@@ -60,7 +72,7 @@ function readablesize($bytes, $precision = 1)
     <!-- Sobald der Link gedrückt wird, wird das "nächste" tr Element in Bezug auf a ausgeblendet-->
     <script>
 
-
+*/
 
 
 
