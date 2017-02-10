@@ -43,14 +43,13 @@ if (isset($filename)) {
             $sql = "INSERT INTO file (filename, datasize, username) VALUES ('".$filename."','".$datasize."','".$username."')";
             $statement = $pdo -> prepare($sql);
             $result = $statement->execute();
-            
+
 
             echo('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
         }
     }
     } else {
         echo "please upload file";
-    }
 }
 
 //$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
