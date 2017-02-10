@@ -95,7 +95,7 @@ Dies ist eine automatisch generierte e-mail, bitte nicht darauf antworten.";
             mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
             echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine e-mail Adresse gesendet.'
             ?>
-            <a href = login.php>Zum Login</a>;
+            <a href = login.php>Zum Login</a>
             <?php
         }
         else {
