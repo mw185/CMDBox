@@ -10,6 +10,9 @@ include ("FormularUpload.html");
 if(isset($_SESSION['username'])) {
     $username = $_SESSION['username']; //auslagern
 }
+echo $username;
+print_r($username);
+var_dump($username);
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
