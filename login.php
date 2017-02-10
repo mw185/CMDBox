@@ -13,7 +13,6 @@
 
 <?php
 
-
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
@@ -35,7 +34,7 @@ if(isset($_GET['login'])) {     #loginformular senden
 
         $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
         $_SESSION['loggedin'] = 1;
-        header("Location: uploadseite.html");
+        header("Location: upload.php");
 
         /*if ($result) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
