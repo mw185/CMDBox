@@ -29,7 +29,7 @@ if (isset($filename)) {
     if (move_uploaded_file($tmp_name, $location.$filename)); {
         $fileID = uniqid(``, true) . `.` . $filename;
 
-        if (isset($_GET["upload.php"])) {
+        if (isset($_POST["upload.php"])) {
             $fileID = $_POST["fileID"];
             $filename = $_POST["filename"];
             $datasize = $_POST ["datasize"];
