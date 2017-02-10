@@ -31,7 +31,7 @@ print_r($_SESSION);
 var_dump($_SESSION);
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
-$directorywert = md5($_SESSION['userid']);
+$directorywert = md5($_SESSION['username']);
 
 
 // Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
