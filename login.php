@@ -1,15 +1,22 @@
-<?php
-session_start();
+<!DOCTYPE html>
 
-include 'connection.php';
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
+<head>
+    <meta charset="UFT-8">
+    <title>Login</title>
+    <?php
+    session_start();
+    include("connection.php")
+    ?>
+</head>
+
+<body>
+
+<?php
 
 
 include "loginpage.html";
 
-$showFormular = true; #Registrierungsformular wird angezeigt
+//$showFormular = true; #Registrierungsformular wird angezeigt
 
 if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
@@ -19,23 +26,36 @@ if(isset($_GET['login'])) {     #loginformular senden
     $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
     $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
 
+
+
+
     //Überprüfung des Passworts
     if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann
-        $_SESSION['userid'] = $user['id']; #session id erzeugen mit der bezeichung 'userid'
-        $_SESSION['loggedin'] = 1;
-        header("Location: uploadseite.html");
 
-        if ($result) {
+        $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
+        $_SESSION['loggedin'] = 1;
+        header("Location: upload.php");
+
+        /*if ($user) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
 
 
-            die('Login erfolgreich. Weiter zu <a href="showuploads.php">internen Bereich</a>');
-        }
-
+            die('Login erfolgreich. Weiter zu <a href="">internen Bereich</a>');
+        }*/
+    }
     else {
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
-        }
     }
+} else{
+    $errorMessage = "keine daten vom Formular erhalten" ;
 }
 
+
+if(isset($errorMessage)) {
+    echo $errorMessage;
+}
+
+
 ?>
+</body>
+</html>

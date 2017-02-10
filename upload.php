@@ -1,11 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UFT-8">
+    <title>Login</title>
+    <?php
+
+    session_start();
+    include("connection.php");
+
+   // if(!isset($_SESSION['userid'])) {
+     //   header("login.php");
+  //  }
+    ?>
+</head>
+
+<body
 <?php
-session_start();
-include ("connection.php");
+
 if (isset ($errorMessage)) {
     echo $errorMessage;
 }
 include ("FormularUpload.html");
 
+if(isset($_SESSION['userid'])){
+    $username = $_SESSION['userid']; //auslagern
+}
+
+echo $_SESSION;
+print_r($_SESSION);
+var_dump($_SESSION);
 
 // Email Wert wird verhasht um "anonyme" Ordner zu erhalten
 $directorywert = md5($_SESSION['username']);
@@ -21,28 +44,41 @@ $datasize = $_FILES["file"]["size"];
 
 $tmp_name = $_FILES["file"]["tmp_name"];
 
-if (isset($filename)) {
-    if (!empty($filename))
-    {
-    $location ="Uploads/";
+if ($_FILES ["file"]["name"] <> '') {
 
-    if (move_uploaded_file($tmp_name, $location.$filename)); {
-        $fileID = uniqid(``, true) . `.` . $filename;
+//if (isset($filename)) {
+  //  if (!empty($filename)) {
+        $location = "Uploads/";
 
-        if (isset($_GET["upload.php"])) {
-            $fileID = $_POST["fileID"];
-            $filename = $_POST["filename"];
-            $datasize = $_POST ["datasize"];
-            $username = $_POST ["username"];
-        }
-            $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
-            $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
 
-        echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
-    }
-    } else {
-        echo "please upload file";
-    }
+
+
+            if (move_uploaded_file($tmp_name, $location . $filename)) {
+
+                //$fileID = uniqid(``, true) . `.` . $filename;
+                //if (isset($_POST["uploadformular"])) {
+                //  $fileID = $_POST["fileID"];
+                //$filename = $_POST["filename"];
+                //$datasize = $_POST ["datasize"];
+                //$username = $_POST ["username"];
+
+
+                /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+                   $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+                   $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
+       */
+
+                $abra = "Abra";
+                $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
+                $statement = $db->prepare($sql);
+                $result = $statement->execute();
+
+                echo('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
+            } else {
+                echo "please upload file";
+            }
+     //   }
+   // }
 }
 
 //$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
@@ -88,20 +124,5 @@ $uploadOk = 0;
 //}
 ?>
 
-
-
-if ( $_FILES['uploaddatei']['name'] <>"")
-    (
-        move_uploaded_file(
-            $_FILES['uploaddatei']['tmp_name'],'Uploads/'. ($filename));
-
-    $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
-    $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
-
-    echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
-    );
-    else {
-    echo ("please upload file");
-}
-
-?>
+</body>
+</html>
