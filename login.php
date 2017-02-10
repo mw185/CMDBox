@@ -13,7 +13,6 @@
 
 <?php
 
-
 include "loginpage.html";
 
 //$showFormular = true; #Registrierungsformular wird angezeigt
