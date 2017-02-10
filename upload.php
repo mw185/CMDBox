@@ -35,11 +35,8 @@ if (isset($filename)) {
             $datasize = $_POST ["datasize"];
             $username = $_POST ["username"];
         }
-
-        if(!$error) {
             $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
             $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
-        }
 
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
