@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+
 <head>
     <meta charset="UFT-8">
     <title>Login</title>
@@ -47,7 +47,10 @@ if(isset($_GET['login'])) {     #loginformular senden
     else {
             $errorMessage = "E-Mail oder Passwort war ungültig<br>";
     }
+} else{
+    $errorMessage = "keine daten vom Formular erhalten" ;
 }
+
 
 
 ?>
