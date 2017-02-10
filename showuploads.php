@@ -207,40 +207,5 @@ function readablesize($bytes, $precision = 1)
     </tbody>
 </table>
 </div>
-
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Datei als Anhang versenden</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="empfaenger" class="control-label">Empfänger:</label>
-                        <input type="email" placeholder="E-Mail" required maxlength="40" class="form-control"
-                               id="empfaenger">
-                    </div>
-                    <div class="form-group">
-                        <label for="betreff" class="control-label">Betreff:</label>
-                        <input type="text" required maxlength="40" class="form-control" id="betreff">
-                    </div>
-                    <div class="form-group">
-                        <label for="modalshare" class="control-label">Nachricht (max. 250 Zeichen):</label>
-                        <input type="text" class="form-control" id="modalshare" name="modalshare" value="lolo"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Senden</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 </body>
 </html>
