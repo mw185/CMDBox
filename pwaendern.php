@@ -1,60 +1,72 @@
 <?php
-include("inc/header.inc.php");
-require 'inc/password.lib.php';
-require 'inc/connect.php';
-if(isset($_POST['password'])) { #passwort wird aus datenbank genommen
+session_start();
 
-    $username=$_SESSION['username'];
-    $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;  #verkürztes if statement mit ? : ; trim entfernt leerzeichen
+include 'connection.php';
+if(isset($errorMessage)) {
+    echo $errorMessage;
+}
+?>
 
-    $passwordHash = password_hash($pass, PASSWORD_BCRYPT, array("cost" => 12)); #variable passwordhash wird definiert
+<?php
 
-    $sql = "UPDATE users SET password = :password WHERE username=:username";
-    $stmt = $pdo->prepare($sql);
+session_start();
 
-    #Values werden an PDO-Statement gebunden
-    $stmt->bindValue(':username', $username);
-    $stmt->bindValue(':password', $passwordHash);
+$dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
+$dbuser="db104";
+$dbpass="anohk4Aepu";
 
-    $result = $stmt->execute(); #ausführen von stmt
+try {
+    $db=new PDO($dsn,$dbuser,$dbpass);
+}
+catch(PDOException $e){
+    echo $e->getMessage();
+    die();
+}
+?>
 
-    header('Location: changedpwd.php'); #weiterleitung zu changedpw
+<?php
+$username =$_SESSION['username'];
 
+if (isset($_GET['pwaendern'])) {
+    $error = false;
+    $passwort_alt = $_POST['passwort_alt'];
+    $passwort_neu = $_POST['passwort_neu'];
+    $passwort_neu2 = $_POST['passwort_neu2'];
+}
+if($passwort_neu != $passwort_neu2) {
+    echo 'Die neuen Passwörter stimmen nicht überein<br>';
+    $error = true;
+}
+
+if($passwort_alt == $passwort_neu) {
+    echo 'Das neue Passwort ist unverändert<br>';
+}
+
+# Passwort kann jetzt geändert werden
+
+if (!$error) {
+    $statement = $db->prepare("UPDATE person SET password = '$passwort_neu' WHERE username = username");
+    $result = $statement->execute(array(':password' => $passwort_neu));
 }
 
 ?>
-<section id="inhalt">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2><br>Passwort ändern</h2>
-                <br> <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
 
-                <form action="changepwd.php" method="post"> <!--formular zum umbenennen  -->
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <input type="hidden" name="username" value="<?php echo $password; ?>"/>
-                            <label>Neues Passwort</label><input type="password" class="form-control" name="password" value="NEWPASSWORD"/>
-                        </div>
-                    </div><br>
-                    <div class="form-group col-xs-12">
-                        <input type="submit" name="submit" value="Neues Passwort speichern" class="btn btn-success">
-                    </div>
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passwort ändern</title>
+    <h1>Passwort ändern</h1>
+</head>
+<body>
+
+<form action="?password=1" method="post">
+    Altes Passwort:<br>
+    <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
+    Neues Passwort:<br>
+    <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
+    Neues Passwort wiederholen:<br>
+    <input type="password" size="40"  maxlength="250" name="passwort_neu2"><br><br>
 
 
-            </form>
-        </div>
-    </div>
-    </div>
-</section>
-
-<?php
-include("inc/footer.inc.php");
-?>
-
-
+    <input type="submit" value="Passwort ändern">
+</form>
