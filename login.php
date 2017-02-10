@@ -11,7 +11,7 @@ include "loginpage.html";
 
 $showFormular = true; #Registrierungsformular wird angezeigt
 
-if(isset($_POST['login'])) {     #loginformular senden
+if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
     $password = $_POST['password']; #eingegebenes Passwort $password zuordnen
 
