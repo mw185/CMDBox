@@ -82,7 +82,7 @@ if(isset($_GET['register'])) {
         if($result) {
             $showFormular = false;  #Formular wird nicht mehr angezeigt
             # Bestätigungsmail senden
-            $empfaenger = "".$_POST['email']."";
+            $empfaenger = "".$_POST.['email']."";
             $absendername = "CMD Box";
             $absendermail = "automatic@CMD-Box.de";
             $betreff = "Herzlich Willkommen bei CMD Box!";
