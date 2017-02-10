@@ -16,7 +16,9 @@ catch(PDOException $e){
 ?>
 
 <?php
-$username =$_SESSION['username'];
+if (isset($_SESSION['userid'])){
+$username = $_SESSION['userid'];
+}
 
 if (isset($_GET['pwaendern'])) {
     $error = false;
@@ -39,7 +41,7 @@ if (!$error) {
     $statement = $db->prepare("UPDATE person SET password = '$passwort_neu' WHERE username = username");
     $result = $statement->execute(array(':password' => $passwort_neu));
 }
-
+echo $username;
 ?>
 
 <!DOCTYPE html>
