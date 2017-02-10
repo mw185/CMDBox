@@ -46,8 +46,8 @@ $tmp_name = $_FILES["file"]["tmp_name"];
 
 if ($_FILES ["file"]["name"] <> '') {
 
-if (isset($filename)) {
-    if (!empty($filename)) {
+//if (isset($filename)) {
+  //  if (!empty($filename)) {
         $location = "Uploads/";
 
 
@@ -77,8 +77,8 @@ if (isset($filename)) {
             } else {
                 echo "please upload file";
             }
-        }
-    }
+     //   }
+   // }
 }
 
 //$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
