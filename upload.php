@@ -17,7 +17,7 @@ $target_dir = "/Uploads/$directorywert/";
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
-$size = $_FILES["file"]["size"];
+$datasize = $_FILES["file"]["size"];
 
 $tmp_name = $_FILES["file"]["tmp_name"];
 
