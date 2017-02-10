@@ -1,6 +1,9 @@
 <?php
 session_start();
 include ("connection.php");
+if (isset ($errorMessage)) {
+    echo $errorMessage;
+}
 include ("FormularUpload.html");
 
 
@@ -14,6 +17,7 @@ $target_dir = "/Uploads/$directorywert/";
 
 // Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen künnen, ersetzt.
 $filename = $_FILES["file"]["name"]; //übernahme des Filenames aus Furmularupload.php
+$size = $_FILES["file"]["size"];
 
 $tmp_name = $_FILES["file"]["tmp_name"];
 
@@ -23,6 +27,17 @@ if (isset($filename)) {
     $location ="Uploads/";
 
     if (move_uploaded_file($tmp_name, $location.$filename)); {
+        $fileID = uniqid(``, true) . `.` . $filename;
+
+        if (isset($_GET["upload.php"])) {
+            $fileID = $_POST["fileID"];
+            $filename = $_POST["filename"];
+            $datasize = $_POST ["datasize"];
+            $username = $_POST ["username"];
+        }
+            $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
+            $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
+
         echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
     }
     } else {
@@ -71,4 +86,22 @@ $uploadOk = 0;
      //   echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
    // }
 //}
+?>
+
+
+
+if ( $_FILES['uploaddatei']['name'] <>"")
+    (
+        move_uploaded_file(
+            $_FILES['uploaddatei']['tmp_name'],'Uploads/'. ($filename));
+
+    $statement = $db->prepare("INSERT INTO file (fileID, filename, datasize, username) VALUES (:fileID, :filename, :datasize, :username)");
+    $result = $statement->execute(array("fileID" => $fileID, "filename" => $filename, "datasize" => $datasize, "username" => $username));
+
+    echo ('Upload erfolgreich. Weiter zu <a href="showuploads.php">Uploadverzeichnis</a>');
+    );
+    else {
+    echo ("please upload file");
+}
+
 ?>
