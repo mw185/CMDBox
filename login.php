@@ -18,6 +18,7 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 
+include "loginpage.html";
 
 //$showFormular = true; #Registrierungsformular wird angezeigt
 
@@ -48,7 +49,7 @@ if(isset($_GET['login'])) {     #loginformular senden
     }
 }
 
-include "loginpage.html";
+
 ?>
 </body>
 </html>
