@@ -42,23 +42,24 @@ if ($_POST['upload']) {
             header("Location: fehlerdateityp.html");
             $error = true;
         }
-
-// Check file size
-        if ($filesize > 10485760) {
-            header("Location: fehlerdateigroesse.html");
-            $error = true;
-        }
     }
 
 
-    if ($error == false) {
 
         $profilbildpfad = "profilbild/$dir_zusatz.$newuserfile";
-        move_uploaded_file($bildtmp, $profilbildpfad);
+
+
+    if ( move_uploaded_file($bildtmp, $profilbildpfad)) {
 
 
         //Einfügen in DB
-        $uploadprofilbild = $db->prepare('UPDATE User SET profilbildpfad = :profilbildpfad WHERE email = :email');
+        $sql = "INSERT INTO folder( ppID, username) VALUES ('" . $ppID . "','" . $username . "')";
+        $statement = $db->prepare($sql);
+        $result = $statement->execute();
+
+
+        /*
+        $uploadprofilbild = $db->prepare('UPDATE person SET profilbildpfad = :profilbildpfad WHERE email = :email');
         $query = array(
             ':profilbildpfad' => $profilbildpfad,
             ':email' => $_SESSION['email'],
@@ -69,32 +70,31 @@ if ($_POST['upload']) {
         echo "$profilbildpfad. <br />";
         echo "Zurück zum <a href='profil.php'>Profil</a><br/>";
         $uploadOK=true;
-    }
+
 }
+        */
 
 
-//einfuegen in Profilbildkästle
-if($uploadOK==true) {
-    $einfuegen = $db->prepare('SELECT * FROM User WHERE email = :email');
-    $array = array(
-        ':email' => $_SESSION['email']
-    );
-    $einfuegen->execute($array);
+//einfuegen in Profilbildkästchen
+        if ($uploadOK == true) {
+            $einfuegen = $db->prepare('SELECT * FROM person WHERE username = :username');
+            $array = array(
+                ':username' => $_SESSION['username']
+            );
+            $einfuegen->execute($array);
 
 
-    while ($row = $einfuegen->fetch()) {
-        echo "<img src='" . $row['profilbildpfad'] . "'>";
-    }
-    header("Location: profil.php");
-}
-
-else {
-    echo "Upload fehlgeschlagen.";
-    echo "Zur&uuml;ck zum <a href='profil.php'>Profil</a><br/>";
-    $error = true;
-}
-
-$db = null;
+            while ($row = $einfuegen->fetch()) {
+                echo "<img src='" . $row['profilbildpfad'] . "'>";
+            }
+            header("Location: profil.php");
+        }
+        else {
+            echo "Upload fehlgeschlagen.";
+            echo "Zur&uuml;ck zum <a href='profil.php'>Profil</a><br/>";
+            $error = true;
+        }
+        $db = null;
 
 // die();
 
