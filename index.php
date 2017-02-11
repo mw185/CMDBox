@@ -158,10 +158,10 @@ if($showFormular) {
 ?>
 
 
-        <hr id="line"/>
+
         <div class="extrainfo">
-            <small class="credits">Team CMD &copy; 2017  |  </small>
-            <small class="impressum"><a href="#">Impressum</a></small>
+            <small class="credits">Team CMD &copy; 2017  |</small>
+            <small class="impressum">Impressum</small>
         </div>
     </div>
 
