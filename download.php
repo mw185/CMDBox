@@ -3,20 +3,19 @@
 if (isset($_GET['file']) && basename($_GET['file']) == $_GET['file']) {
     $filename = $_GET['file'];
 }
-else {
-    $filename = NULL;
-}
+
+    else {
+     $filename = NULL;
+    }
 
 if(!$filename) {
-
+    //jdhfk
 }
 
 $path = "Uploads/" . $filename;
 $mime = mime_content_type($path);
 $fsize = filesize ($path);
 
-echo $path;
-var_dump($path);
 
 else {
 
