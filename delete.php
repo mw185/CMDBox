@@ -4,6 +4,18 @@ include ("connection.php");
 $directorywert = md5($_SESSION['username']);
 $dir = "file/$directorywert/";
 
+
+unlink($_GET['fileID']);
+
+
+
+
+
+
+
+
+
+/*
 // Check die Verbindung
 if ($_SESSION['loggedin'] != 1) {
     // Wenn der User die Session nicht auf 1 hat, wird er auf die Loginseite zurückgeleitet
@@ -35,4 +47,6 @@ if (@unlink($testpath)) {
 }   else {
     echo 'File cannot be deleted.';
 }
+
+*/
 ?>
