@@ -153,6 +153,10 @@ if($showFormular) {
         </div>
     </div>
 
+    <?php
+}       #ShowFormular endet hier
+?>
+
     <div class="footer">
         <div class="footer-float">
             <ul class="ulfloat">
