@@ -158,14 +158,6 @@ if($showFormular) {
 ?>
 
     <div class="footer">
-        <div class="footer-float">
-            <ul class="ulfloat">
-                <li><a href="#"><i class="social facebook fa fa-facebook fa-3x"></i></a></li>
-                <li><a href="#"><i class="social twitter fa fa-twitter fa-3x"></i></a></li>
-                <li><a href="#"><i class="social youtube fa fa-youtube-play fa-3x"></i></a></li>
-            </ul>
-        </div>
-
         <hr id="line"/>
         <div class="extrainfo">
             <small class="credits">Team CMD &copy; 2017  |  </small>
