@@ -33,6 +33,22 @@
 <body>
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
 
+<div>
+    <div class="nav">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="index.html">CMDBox</a></li>
+            </ul>
+            <ul class="pull-right">
+                <li><a href="FormularUpload.html">Upload</a></li>
+                <li><a href="showuploads.php">&Uuml;bersicht</a></li>
+                <li><a href="profil.php">Profil</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <?php
 
 if (isset ($errorMessage)) {
