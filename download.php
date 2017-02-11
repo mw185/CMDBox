@@ -1,6 +1,6 @@
 <?php
 
-if (isset($GET['file']) && basename($_GET['file']) == $_GET['file']) {
+if (isset($_GET['file']) && basename($_GET['file']) == $_GET['file']) {
     $filename = $_GET['file'];
 }
 
