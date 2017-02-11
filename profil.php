@@ -21,6 +21,8 @@
 
 <body>
 
+<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+
 
 <script>
     /*--------------------------------Passwort falsch ----------------------------*/
@@ -88,7 +90,7 @@
                         <h4 class="modal-title">Lade hier bitte dein neues Profilbild hoch.</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="profilfoto.php" method="post" enctype="multipart/form-data">
+                        <form action="profilbild.php" method="post" enctype="multipart/form-data">
                             <input class="btn btn-primary active" type="file" name="bild" value="Datei auswählen">
                             <input class="btn btn-primary active" type="submit" name="upload" value="Hochladen">
                         </form>
