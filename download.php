@@ -2,8 +2,8 @@
 
 session_start();
 include ("connection.php");
-$directorywert = md5($_SESSION['username']);
-$dir = "file/$directorywert/";
+
+$fileID = $_GET['file'];
 
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
@@ -11,8 +11,8 @@ $statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
 
-if (isset($file) && basename($file) == $file) {
-    $filename = $file;
+if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
+    $filename = $file['filename'];
 }
 
     else {

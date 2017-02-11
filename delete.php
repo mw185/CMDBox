@@ -1,8 +1,6 @@
 <?php
 session_start();
 include ("connection.php");
-$directorywert = md5($_SESSION['username']);
-$dir = "file/$directorywert/";
 
 $fileID = $_GET['fileID'];
 
