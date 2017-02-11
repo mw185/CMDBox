@@ -1,3 +1,13 @@
+<?php
+// Session starten
+session_start();
+
+if (!isset($_SESSION ['userid'])) {
+    //header("location: login.php");
+    //exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +27,13 @@
     <link href="profil.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/main.js"></script>
+    <title>Profil</title>
 </head>
 
 <body>
 
-<?php echo ($_SESSION['userid']) ?>
 <img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-
+<?php echo ($_SESSION['userid']) ?>
 
 
 <script>
@@ -42,7 +52,7 @@
         }
         return false;
     });
-    });
+    })
 </script>
 
 
@@ -64,9 +74,11 @@
 
 
 
+
+
 <!-- Profil -->
 
-<div class="profil">
+<!-- <div class="profil">
     <div class="profilkopf"></div>
     <div class="profilbody">
         <div class="profilpic">
