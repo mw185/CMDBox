@@ -35,7 +35,7 @@ if($passwort_alt == $passwort_neu) {
 if (!$error) {
     $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
 
-    $statement = $db->prepare("UPDATE person SET password = $passwort_neu WHERE username = :username");
+    $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
     $result = $statement->execute(array('password' => $passwort_neu));
 }
 
@@ -46,7 +46,7 @@ if (!$error) {
 
 echo $username;
 ?>
-        <a href = showuploads.php>Zum Login</a>
+        <a href = showuploads.php>Zurück</a>
 <?php
 if($showFormular) {
     ?>
