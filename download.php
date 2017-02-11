@@ -22,7 +22,7 @@ else {
 
 
     if (file_exists($path) && is_readable($path)) {
-        header('Content-Type: ' . $mime);
+        header('Content-Type: ' . "image.jpeg");
         header('Content-Length: ' . $fsize);
         header('Content-Disposition: attachment; filename=' . $filename);
         header('Content-Transfer-Encoding: binary');
