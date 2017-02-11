@@ -9,7 +9,7 @@ if (isset($_GET['file']) && basename($_GET['file']) == $_GET['file']) {
     }
 
 if(!$filename) {
-    //jdhfk
+    //file nicht verändern
 }
 
 $path = "Uploads/" . $filename;
