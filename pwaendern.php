@@ -1,4 +1,4 @@
-!DOCTYPE html>
+
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
@@ -27,17 +27,12 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-
-    <html>
-    <head>
-        <h1>Passwort ändern</h1>
-
         <?php
         $showFormular = true;
         ?>
-    </head>
-    <body>
-<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+
+<body>
+<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
 <?php echo ($_SESSION['userid']) ?>
 
 
@@ -45,10 +40,9 @@ if(isset($errorMessage)) {
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="upload.php">CMDBox</a></li>
+                <li><a href="upload.php">CMD Upload</a></li>
             </ul>
             <ul class="pull-right">
-                <li><a href="FormularUpload.html">Upload</a></li>
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>

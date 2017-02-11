@@ -32,17 +32,16 @@
 
 <body>
 
-<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
 <?php echo ($_SESSION['userid']) ?>
 
 <div>
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="upload.php">CMDBox</a></li>
+                <li><a href="upload.php">CMD Upload</a></li>
             </ul>
             <ul class="pull-right">
-                <li><a href="upload.php">Upload</a></li>
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
@@ -124,9 +123,7 @@ if ($_FILES ["file"]["name"] <> '') {
           // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
                     extract($row);
-                    echo "<tr>";
-                    echo "<td>"; echo $row['filename']; echo "</td>";
-                    echo "<td>";?><a href="<?php echo $row["Uploads/"];?>">Download</a> <?php echo "</td>";
+                    echo "<tr>"; echo $row['filename']; echo "</tr>";
                 }
 
           //  }
