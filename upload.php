@@ -80,7 +80,9 @@ if ($_FILES ["file"]["name"] <> '') {
     if($handle){
         while(($entry = readdir($handle)) !==false) {
             if ($entry != '.' && $entry != '..') {
-                echo "<a href=\"Uploads/$entry\">$entry</a>";
+                while $entry >0 {
+                    echo "<a href=\"Uploads/$entry\">$entry</a>";
+                }
             }
         }
 

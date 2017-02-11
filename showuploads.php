@@ -195,6 +195,7 @@ echo $result;
         if ($dh = opendir($dir)) {
             while (($file = readdir($dh)) !== false) {
                 if ($file != "." && $file != "..") {
+    
                     $extension = pathinfo($file, PATHINFO_EXTENSION);
                     $size = filesize($dir . $file);
                     $prettysize = readablesize($size);
