@@ -1,7 +1,13 @@
 <?php
 
-if (isset($_GET['file']) && basename($_GET['file']) == $_GET['file']) {
-    $filename = $_GET['file'];
+$sql = "SELECT filename FROM file WHERE fileID = :fileID";
+$statement = $db->prepare($sql);
+$statement->execute(array('fileID'=> $fileID));
+
+$file = $statement->fetch();
+
+if (isset($file) && basename($file) == $file) {
+    $filename = $file;
 }
 
     else {
