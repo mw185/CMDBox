@@ -21,9 +21,10 @@
 
 <body>
 
+<?php echo ($_SESSION['userid']) ?>
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
 
-<?php echo ($_SESSION['userid']) ?>
+
 
 <script>
     /*--------------------------------Passwort falsch ----------------------------*/
