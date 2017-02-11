@@ -121,14 +121,16 @@ if ($_FILES ["file"]["name"] <> '') {
 
         //while (($entry = readdir($handle)) !== false) {
           // if ($entry != '.' && $entry != '..') {
+echo "<table>";
                 while ($row = $statement->fetch()) {
                     extract($row);
+                    <
                     echo "<tr>";
                     echo"<td>" . $row['filename']; echo "</td>";
                     echo"<td>" . "<a href= 'download.php?file=" . $row['filename'] . "'>Download</a> </td>";
                     echo "</tr>";
                 }
-
+echo "</table>";
           //  }
       //  }
   // }
