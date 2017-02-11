@@ -80,10 +80,10 @@ if ($_FILES ["file"]["name"] <> '') {
     if($handle){
         while(($entry = readdir($handle)) !==false) {
             if ($entry != '.' && $entry != '..') {
-                while $entry >0 {
+                while ($entry >0) {
                     echo("  <tr class='active'>
                             <td class='dateiname'> "<a href=\"Uploads /$entry\">$entry><span>$file</span></a></td>
-                            </tr>"
+                            </tr>";
                 }
             }
         }
