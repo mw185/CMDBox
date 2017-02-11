@@ -10,8 +10,8 @@ $statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
 
-if (isset($file) && basename($file) == $file) {
-    $filename = $file;
+if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
+    $filename = $file['filename'];
 }
 
     else {
