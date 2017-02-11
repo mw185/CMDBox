@@ -51,7 +51,7 @@
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="index.html">CMDBox</a></li>
+                <li><a href="upload.php">CMDBox</a></li>
             </ul>
             <ul class="pull-right">
                 <li><a href="FormularUpload.html">Upload</a></li>
