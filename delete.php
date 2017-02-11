@@ -11,7 +11,7 @@ $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
-unlink("Uploads/". $_GET['fileID']);
+unlink("Uploads/". $file);
 
 $sql = "DELETE * FROM file WHERE fieleID = :fileID";
 $statement = $db->prepare($sql);
