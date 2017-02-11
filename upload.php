@@ -99,8 +99,7 @@ if ($_FILES ["file"]["name"] <> '') {
            $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
            $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
 */
-
-        $abra = "Abra";
+        
         $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
         $statement = $db->prepare($sql);
         $result = $statement->execute();
