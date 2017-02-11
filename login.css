@@ -112,3 +112,82 @@
 .cardfooter a:hover {
     color: #bababa;
 }
+
+
+.footer {
+    background-color: #aaa;
+    height: 22vh;
+}
+
+#line {
+    color: #fff;
+    /*position: relative;*/
+    width: 50vw;
+    top: 7vh;
+    opacity: 0.5;
+
+}
+.ulfloat {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.ulfloat li {
+    display:inline-block;
+}
+
+.credits, .impressum {
+    /*position:relative;*/
+    top: 6vh;
+    color: #ffffff;
+    display: inline-block;
+
+    float:right;
+    padding-right: 10px;
+
+}
+
+.extrainfo {
+    /*text-align: center;
+    margin: 0 auto;*/
+}
+
+.rot {
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+.social {
+    font-size: 69px;
+    padding-right: 5vw;
+    text-align: center;
+    position: relative;
+    top: 5vh;
+    color: #fbfbfb;
+    transition: all 0.3s ease 0s;
+}
+
+.facebook {
+    color: #e6e6e6;
+}
+
+.twitter {
+    color: #e6e6e6;
+}
+
+.youtube {
+    color: #e6e6e6;
+}
+
+.twitter:hover {
+    color: #55acee;
+}
+
+.youtube:hover {
+    color: #c4302b;
+}
+
+.facebook:hover {
+    color: #3b5998;
+}
