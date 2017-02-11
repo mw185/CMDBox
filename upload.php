@@ -108,7 +108,7 @@ if ($_FILES ["file"]["name"] <> '') {
     } else {
         echo "please upload file!";
     }
-
+}
 
    // $handle = opendir('Uploads/');
 
@@ -135,14 +135,13 @@ if ($_FILES ["file"]["name"] <> '') {
     print_r($row);
     var_dump($statement);
     var_dump($row);
-    
+
    // closedir($handle);
 
 
      //   }
    // }
 
-}
 
 //$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
 //$newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
