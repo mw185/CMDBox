@@ -31,7 +31,9 @@
 </head>
 
 <body>
+
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<?php echo ($_SESSION['userid']) ?>
 
 <div>
     <div class="nav">
@@ -48,6 +50,8 @@
         </div>
     </div>
 </div>
+<br/><br/><br/><br/><br/>
+
 
 <?php
 
@@ -96,7 +100,6 @@ if ($_FILES ["file"]["name"] <> '') {
            $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
 */
 
-        $abra = "Abra";
         $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
         $statement = $db->prepare($sql);
         $result = $statement->execute();
@@ -105,29 +108,41 @@ if ($_FILES ["file"]["name"] <> '') {
     } else {
         echo "please upload file!";
     }
+}
+
+    //$handle = opendir('Uploads/');
+
+     //if ($handle) {
+        $sql = "SELECT * FROM file WHERE username = $username";
+        $statement = $db->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $statement->fetch();
 
 
-    $handle = opendir('Uploads/');
-
-    if ($handle) {
-        while (($entry = readdir($handle)) !== false) {
-            if ($entry != '.' && $entry != '..') {
-                while ($row = mysqli_fetch_object($entry)) {
-                    echo $row->urlname;
+        //while (($entry = readdir($handle)) !== false) {
+          // if ($entry != '.' && $entry != '..') {
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                    extract($row);
+                    echo "das: ".$row['filename']." !";
                     echo "<br /><br />";
                 }
 
             }
         }
-    }
+   }
 
-    closedir($handle);
+  //  print_r($statement);
+   // print_r($row);
+   // var_dump($statement);
+   // var_dump($row);
+
+   // closedir($handle);
 
 
      //   }
    // }
 
-}
 
 //$middleuserfile = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $filename);
 //$newuserfile = preg_replace('/\s+/', '_', $middleuserfile);
