@@ -89,12 +89,12 @@ if (isset($_GET['password'])) {
     $passwort_neu2 = $_POST['passwort_neu2'];
 }
 if($passwort_neu != $passwort_neu2) {
-    echo 'Die neuen Passwörter stimmen nicht überein<br>';
+    echo 'Die neuen Passwörter stimmen nicht überein';
     $error = true;
 }
 
 if($passwort_neu == $passwort_alt) {
-    echo 'Das neue Passwort ist unverändert<br>';
+    echo 'Das neue Passwort ist unverändert';
     $error = true;
 }
 
