@@ -119,6 +119,7 @@ if($showFormular) {
         <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
         <input type="submit" value="Registrieren">
+        <button type="reset">Eingaben zurücksetzen</button>
     </form>
 
     <?php
