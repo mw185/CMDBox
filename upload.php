@@ -73,6 +73,21 @@ if ($_FILES ["file"]["name"] <> '') {
             } else {
                 echo "please upload file!";
             }
+
+
+    $handle = opendir('Uploads/');
+
+    if($handle){
+        while(($entry = readdir($handle)) !==false) {
+            if ($entry != '.' && $entry != '..') {
+                echo "<a href=\"Uploads/$entry\">$entry</a>";
+            }
+        }
+
+        closedir($handle);
+
+    }
+    
      //   }
    // }
 
