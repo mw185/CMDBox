@@ -126,6 +126,7 @@ if ($_FILES ["file"]["name"] <> '') {
                     echo "<tr>";
                     echo "<td>"; echo $row['filename']; echo "</td>";
                     echo "<td>";?><a href="<?php echo $row["Uploads/"];?>">Download</a> <?php echo "</td>";
+                    echo "<tr>";
                 }
 
           //  }
