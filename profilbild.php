@@ -2,14 +2,14 @@
 // Session starten
 session_start();
 
-if (!isset($_SESSION ['username'])) {
+if (!isset($_SESSION ['userid'])) {
 header("location: login.php");
 exit;
 }
 
 ?>
 
-<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
 
 <?php echo ($_SESSION['userid']);
 
