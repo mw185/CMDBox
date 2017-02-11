@@ -52,27 +52,9 @@ if(isset($errorMessage)) {
 <?php
 $showFormular = true;
 
-if($showFormular = true) {
-    ?>
-
-    <form action="pwaendern.php?password=1" method="post">
-        Altes Passwort:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
-        Neues Passwort:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
-        Neues Passwort wiederholen:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
-
-
-        <input type="submit" value="Passwort ändern">
-    </form>
-
-    <?php
-}
-
 if (isset($_SESSION['userid'])){
-$username = $_SESSION['userid'];
-}
+    $username = $_SESSION['userid'];
+    }
 
 if (isset($_GET['password'])) {
     $error = false;
@@ -100,10 +82,30 @@ if (isset($_GET['password'])) {
         if ($result) {
             $showFormular = false;
             echo 'Dein Passwort wurde erfolgreich geändert.';
+            ?>
+            <a href=upload.php>Zurück</a>
+
+            <?php
         }
     }
 }
+if($showFormular) {
 ?>
-        <a href = upload.php>Zurück</a>
+
+<form action="pwaendern.php?password=1" method="post">
+    Altes Passwort:<br>
+    <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
+    Neues Passwort:<br>
+    <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
+    Neues Passwort wiederholen:<br>
+    <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
+
+
+    <input type="submit" value="Passwort ändern">
+</form>
+
+<?php
+}
+?>
 
 
