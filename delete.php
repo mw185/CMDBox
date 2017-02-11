@@ -4,14 +4,14 @@ include ("connection.php");
 
 $fileID = $_GET['fileID'];
 
-$sql = "SELECT filename FROM file WHERE fileID = :fileID";
+$sql = "SELECT * FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
 unlink("Uploads/". $file["filename"]);
 
-$sql = "DELETE * FROM file WHERE fieleID = :fileID";
+$sql = "DELETE FROM file WHERE fieleID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
