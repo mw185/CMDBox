@@ -22,7 +22,6 @@
 
     session_start();
     include("connection.php");
-    include("download.php");
 
     if(!isset($_SESSION['userid'])) {
         header("login.php");
@@ -124,7 +123,10 @@ if ($_FILES ["file"]["name"] <> '') {
           // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
                     extract($row);
-                    echo "<tr>"; echo $row['filename']; echo "</tr>";
+                    echo "<tr>";
+                    echo"<td>" . $row['filename']; echo "</td>";
+                    echo"<td>" . "<a href= 'download.php?file=" . $row['filename'] . "'>Download</a> </td>";
+                    echo "</tr>";
                 }
 
           //  }
