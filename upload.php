@@ -128,6 +128,7 @@ echo "<table>";
                     echo"<td>" . $row['filename']; echo "</td>";
                     echo"<td>" . "<a href= 'download.php?file=" . $row['filename'] . "'>Download</a> </td>";
                     echo "</tr>";
+                    echo "<br/>";
                 }
 echo "</table>";
           //  }
