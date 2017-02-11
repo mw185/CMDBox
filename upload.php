@@ -125,7 +125,7 @@ if ($_FILES ["file"]["name"] <> '') {
           // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
                     extract($row);
-                    echo "<br/>"
+                    echo "<br/>";
                     echo $row['filename'];
                     echo "<br /><br />";
                 }
