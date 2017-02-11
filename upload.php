@@ -31,6 +31,7 @@
 </head>
 
 <body>
+<?php echo 'userid'; ?>
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
 
 <div>
@@ -48,6 +49,8 @@
         </div>
     </div>
 </div>
+<br/><br/><br/><br/><br/>
+
 
 <?php
 
