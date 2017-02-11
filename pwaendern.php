@@ -7,7 +7,13 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Passwort ändern</title>
+        <h1>Passwort ändern</h1>
+    </head>
+    <body>
 <?php
 $showFormular = true;
 
@@ -48,14 +54,6 @@ if (!$error) {
 <?php
 if($showFormular) {
     ?>
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Passwort ändern</title>
-        <h1>Passwort ändern</h1>
-    </head>
-    <body>
 
     <form action="pwaendern.php?password=1" method="post">
         Altes Passwort:<br>
