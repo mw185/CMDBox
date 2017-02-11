@@ -129,9 +129,9 @@ if ($_FILES ["file"]["name"] <> '') {
                     echo "<br /><br />";
                 }
 
-            }
-        }
-   }
+          //  }
+      //  }
+  // }
 
   //  print_r($statement);
    // print_r($row);
