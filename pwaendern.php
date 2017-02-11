@@ -50,7 +50,7 @@ if (!$error) {
 }
 }
     ?>
-        <a href = uploads.php>Zurück</a>
+        <a href = upload.php>Zurück</a>
 
     <?php
 if($showFormular) {
