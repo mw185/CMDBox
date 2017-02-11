@@ -28,6 +28,7 @@ if($passwort_neu != $passwort_neu2) {
 
 if($passwort_alt == $passwort_neu) {
     echo 'Das neue Passwort ist unverändert<br>';
+    $error = true;
 }
 
 # Passwort kann jetzt geändert werden
@@ -36,13 +37,11 @@ if (!$error) {
     $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
 
     $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
-    $result = $statement->execute(array('password' => $passwort_neu, 'username' => $username));
-}
-
+    $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
     if ($result){
         $ShowFormular = false;
         echo 'Dein Passwort wurde erfolgreich geändert.';
-    }
+}
 
 echo $username;
 ?>
