@@ -104,7 +104,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement = $db->prepare($sql);
         $result = $statement->execute();
 
-        echo('Upload erfolgreich. Weiter zu <a href="upload.php">Uploadverzeichnis</a>');
+        echo('Upload erfolgreich!</a>');
     } else {
         echo "please upload file!";
     }
