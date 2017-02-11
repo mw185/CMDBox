@@ -70,7 +70,7 @@ if($showFormular) {
     </form>
 
     <?php
-}               #showFormular endet hier
+}
 
 if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
@@ -81,29 +81,31 @@ if (isset($_GET['password'])) {
     $passwort_alt = $_POST['passwort_alt'];
     $passwort_neu = $_POST['passwort_neu'];
     $passwort_neu2 = $_POST['passwort_neu2'];
-}
-if($passwort_neu != $passwort_neu2) {
-    echo 'Die neuen Passwörter stimmen nicht überein';
-    $error = true;
-}
 
-//if($passwort_neu == $passwort_alt) {
-    //echo 'Das neue Passwort ist unverändert';
-    //$error = true;
-//}
+    if ($passwort_neu != $passwort_neu2) {
+        echo 'Die neuen Passwörter stimmen nicht überein';
+        $error = true;
+    }
+
+    if ($passwort_neu == $passwort_alt) {
+        echo 'Das neue Passwort ist unverändert';
+        $error = true;
+    }
 
 # Passwort kann jetzt geändert werden
 
-if (!$error) {
-    $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
+    if (!$error) {
+        $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
 
-    $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
-    $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
-    if ($result){
-        $ShowFormular = false;
-        echo 'Dein Passwort wurde erfolgreich geändert.';
+        $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
+        $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
+        if ($result) {
+            $ShowFormular = false;
+            echo 'Dein Passwort wurde erfolgreich geändert.';
+        }
+    }
 }
-}
-    ?>
+?>
         <a href = upload.php>Zurück</a>
+
 
