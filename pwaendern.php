@@ -12,10 +12,31 @@ if(isset($errorMessage)) {
     <head>
         <title>Passwort ändern</title>
         <h1>Passwort ändern</h1>
+
+        <?php
+        $showFormular = true;
+        ?>
     </head>
     <body>
 <?php
-$showFormular = true;
+//$showFormular = true;
+if($showFormular) {
+    ?>
+
+    <form action="pwaendern.php?password=1" method="post">
+        Altes Passwort:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
+        Neues Passwort:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
+        Neues Passwort wiederholen:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
+
+
+        <input type="submit" value="Passwort ändern">
+    </form>
+
+    <?php
+}               #showFormular endet hier
 
 if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
@@ -52,22 +73,3 @@ if (!$error) {
     ?>
         <a href = upload.php>Zurück</a>
 
-    <?php
-if($showFormular) {
-    ?>
-
-    <form action="pwaendern.php?password=1" method="post">
-        Altes Passwort:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
-        Neues Passwort:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
-        Neues Passwort wiederholen:<br>
-        <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
-
-
-        <input type="submit" value="Passwort ändern">
-    </form>
-
-    <?php
-}               #showFormular endet hier
-?>
