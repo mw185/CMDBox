@@ -22,6 +22,7 @@
 
     session_start();
     include("connection.php");
+    include("download.php");
 
     if(!isset($_SESSION['userid'])) {
         header("login.php");
