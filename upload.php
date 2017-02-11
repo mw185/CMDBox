@@ -118,6 +118,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement->execute();
         $statement->setFetchMode(PDO::FETCH_ASSOC);
 
+
        // while (($entry = readdir($handle)) !== false) {
            // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -130,6 +131,11 @@ if ($_FILES ["file"]["name"] <> '') {
       //  }
    // }
 
+    print_r($statement);
+    print_r($row);
+    var_dump($statement);
+    var_dump($row);
+    
    // closedir($handle);
 
 
