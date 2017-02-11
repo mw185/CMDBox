@@ -27,9 +27,6 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-        <?php
-        $showFormular = true;
-        ?>
 
 <body>
 <img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
@@ -55,7 +52,7 @@ if(isset($errorMessage)) {
 <?php
 $showFormular = true;
 
-if($showFormular=true) {
+if($showFormular = true) {
     ?>
 
     <form action="pwaendern.php?password=1" method="post">
