@@ -26,7 +26,8 @@ else {
         header('Content-Length: ' . $fsize);
         header('Content-Disposition: attachment; filename=' . $filename);
         header('Content-Transfer-Encoding: binary');
-
+        readfile($path);
+        
         $file = @ fopen($path, 'rb');
 
         if ($file) {
