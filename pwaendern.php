@@ -55,8 +55,8 @@ if(isset($errorMessage)) {
 <?php
 $showFormular = true;
 
-    if($showFormular) {
-        ?>
+if($showFormular) {
+    ?>
 
     <form action="pwaendern.php?password=1" method="post">
         Altes Passwort:<br>
