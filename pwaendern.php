@@ -7,7 +7,13 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Passwort ändern</title>
+        <h1>Passwort ändern</h1>
+    </head>
+    <body>
 <?php
 $showFormular = true;
 
@@ -15,7 +21,7 @@ if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
 }
 
-if (isset($_GET['pwaendern'])) {
+if (isset($_GET['password'])) {
     $error = false;
     $passwort_alt = $_POST['passwort_alt'];
     $passwort_neu = $_POST['passwort_neu'];
@@ -28,6 +34,7 @@ if($passwort_neu != $passwort_neu2) {
 
 if($passwort_alt == $passwort_neu) {
     echo 'Das neue Passwort ist unverändert<br>';
+    $error = true;
 }
 
 # Passwort kann jetzt geändert werden
@@ -36,30 +43,19 @@ if (!$error) {
     $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
 
     $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
-    $result = $statement->execute(array('password' => $passwort_neu, 'username' => $username));
-}
-
+    $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
     if ($result){
         $ShowFormular = false;
         echo 'Dein Passwort wurde erfolgreich geändert.';
-    }
-
-echo $username;
+}
+}
 ?>
         <a href = showuploads.php>Zurück</a>
 <?php
 if($showFormular) {
     ?>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Passwort ändern</title>
-        <h1>Passwort ändern</h1>
-    </head>
-    <body>
-
-    <form action="?password=1" method="post">
+    <form action="pwaendern.php?password=1" method="post">
         Altes Passwort:<br>
         <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
         Neues Passwort:<br>
