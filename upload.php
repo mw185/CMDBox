@@ -48,7 +48,10 @@
         </div>
     </div>
 </div>
+<br/><br/><br/><br/><br/>
 
+<form class="dropzone" action="upload.php" method="post" enctype="multipart/form-data">
+</form>
 <?php
 
 if (isset ($errorMessage)) {
