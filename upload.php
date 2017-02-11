@@ -110,9 +110,13 @@ if ($_FILES ["file"]["name"] <> '') {
     $handle = opendir('Uploads/');
 
     if ($handle) {
+        $sql = "SELECT FROM person WHERE username = username";
+        $statement = $db->prepare($sql);
+        //$result = $statement->execute();
+
         while (($entry = readdir($handle)) !== false) {
             if ($entry != '.' && $entry != '..') {
-                while ($row = mysqli_fetch_object($entry)) {
+                while ($row = $statement->fetch()) {
                     echo $row->urlname;
                     echo "<br /><br />";
                 }
