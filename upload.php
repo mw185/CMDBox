@@ -75,7 +75,7 @@ if ($_FILES ["file"]["name"] <> '') {
             }
 
 
-    $handle = opendir('Uploads/');
+    /*$handle = opendir('Uploads/');
 
     if($handle){
         while(($entry = readdir($handle)) !==false) {
@@ -91,7 +91,7 @@ if ($_FILES ["file"]["name"] <> '') {
         closedir($handle);
 
     }
-    
+    */
      //   }
    // }
 
