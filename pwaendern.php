@@ -54,7 +54,8 @@ if(isset($errorMessage)) {
 
 <?php
 $showFormular = true;
-if($showFormular) {
+
+if($showFormular=true) {
     ?>
 
     <form action="pwaendern.php?password=1" method="post">
@@ -100,7 +101,7 @@ if (isset($_GET['password'])) {
         $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
         $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
         if ($result) {
-            $ShowFormular = false;
+            $showFormular = false;
             echo 'Dein Passwort wurde erfolgreich geändert.';
         }
     }
