@@ -115,7 +115,7 @@ if ($_FILES ["file"]["name"] <> '') {
     // if ($handle) {
         $sql = "SELECT * FROM file WHERE username = $username";
         $statement = $db->prepare($sql);
-        //$result = $statement->execute();
+        $statement->execute();
 
        // while (($entry = readdir($handle)) !== false) {
            // if ($entry != '.' && $entry != '..') {
