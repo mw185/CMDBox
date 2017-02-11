@@ -117,7 +117,6 @@ if ($_FILES ["file"]["name"] <> '') {
         $sql = "SELECT * FROM file WHERE username = :username";
         $statement = $db->prepare($sql);
         $statement->execute(array('username'=> $username));
-       // $statement->setFetchMode(PDO::FETCH_ASSOC);
         $row = $statement->fetch();
 
 
@@ -133,11 +132,6 @@ if ($_FILES ["file"]["name"] <> '') {
           //  }
       //  }
   // }
-
-  //  print_r($statement);
-   // print_r($row);
-   // var_dump($statement);
-   // var_dump($row);
 
    // closedir($handle);
 
