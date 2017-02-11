@@ -5,7 +5,7 @@ $directorywert = md5($_SESSION['username']);
 $dir = "file/$directorywert/";
 
 
-unlink($_GET['fileID']);
+unlink("Uploads/". $_GET['fileID']);
 
 
 
