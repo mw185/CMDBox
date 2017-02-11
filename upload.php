@@ -17,7 +17,7 @@
     <link href="profil.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/main.js"></script>
-    <title>Login</title>
+    <title>Upload</title>
     <?php
 
     session_start();

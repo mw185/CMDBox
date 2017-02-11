@@ -17,7 +17,7 @@
     <link href="profil.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/main.js"></script>
-    <title>Login</title>
+    <title>Passwort ändern</title>
 <?php
 session_start();
 
@@ -27,10 +27,9 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 ?>
-<!DOCTYPE html>
+
     <html>
     <head>
-        <title>Passwort ändern</title>
         <h1>Passwort ändern</h1>
 
         <?php
@@ -38,6 +37,27 @@ if(isset($errorMessage)) {
         ?>
     </head>
     <body>
+<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<?php echo ($_SESSION['userid']) ?>
+
+
+<div>
+    <div class="nav">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="upload.php">CMDBox</a></li>
+            </ul>
+            <ul class="pull-right">
+                <li><a href="FormularUpload.html">Upload</a></li>
+                <li><a href="pwaendern.php">Passwort ändern</a></li>
+                <li><a href="profilbild.php">Profilbild ändern</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br/><br/><br/><br/><br/>
+
 <?php
 //$showFormular = true;
 if($showFormular) {
