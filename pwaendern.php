@@ -35,6 +35,7 @@ if($passwort_alt == $passwort_neu) {
 
 if (!$error) {
     $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
+}
 
     $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
     $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
