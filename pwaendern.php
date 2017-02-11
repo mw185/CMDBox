@@ -12,10 +12,14 @@ if(isset($errorMessage)) {
     <head>
         <title>Passwort ändern</title>
         <h1>Passwort ändern</h1>
+
+        <?php
+        $showFormular = true;
+        ?>
     </head>
     <body>
 <?php
-$showFormular = true;
+//$showFormular = true;
 
 if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
