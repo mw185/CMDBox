@@ -117,6 +117,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement = $db->prepare($sql);
         $statement->execute();
         $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $statement->fetch();
 
 
        // while (($entry = readdir($handle)) !== false) {
