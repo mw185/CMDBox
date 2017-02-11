@@ -75,15 +75,16 @@ if ($_FILES ["file"]["name"] <> '') {
             }
 
 
-    /*$handle = opendir('Uploads/');
+    $handle = opendir('Uploads/');
 
     if($handle){
         while(($entry = readdir($handle)) !==false) {
             if ($entry != '.' && $entry != '..') {
-                while ($entry >0) {
-                    echo("  <tr class='active'>
-                            <td class='dateiname'> "<a href=\"Uploads /$entry\">$entry><span>$file</span></a></td>
-                            </tr>";
+            while($row = mysqli_fetch_object($entry)) {
+                echo $row->urlname;
+                echo "<br /><br />";
+                    }
+
                 }
             }
         }
