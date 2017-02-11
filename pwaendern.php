@@ -55,7 +55,7 @@ if(isset($errorMessage)) {
 <?php
 $showFormular = true;
 
-if($showFormular) {
+if($showFormular=true) {
     ?>
 
     <form action="pwaendern.php?password=1" method="post">
