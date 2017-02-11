@@ -26,7 +26,7 @@ $sql = "SELECT * FROM file WHERE username = username";
 $statement = $db->prepare($sql);
 $result = $statement->fetch();
 
-echo $result
+echo $result;
 
 
 /*function readablesize($bytes, $precision = 1)
@@ -71,7 +71,7 @@ echo $result
     <!-- Sobald der Link gedrückt wird, wird das "nächste" tr Element in Bezug auf a ausgeblendet-->
     <script>
 
-*/
+
 
 
 
@@ -81,7 +81,7 @@ echo $result
 
         
         /*--------------------------------LÖSCHEN ----------------------------*/
-        $(document).ready(function () {
+    /*    $(document).ready(function () {
             $(".delete").click(function () {
                 //oben event
                 //alert(event.target.id);
@@ -124,7 +124,7 @@ echo $result
 
 
     <!-- Umbennen und Neuladen des Dateinamens - Inline! ------------------>
-    <script>
+   /* <script>
         $(function() {
             $.fn.editable.defaults.mode = 'inline';
             $(document).on('click', '.edit', function (e) {
