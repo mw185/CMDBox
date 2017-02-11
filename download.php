@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+include ("connection.php");
+$directorywert = md5($_SESSION['username']);
+$dir = "file/$directorywert/";
+
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
