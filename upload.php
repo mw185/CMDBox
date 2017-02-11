@@ -126,8 +126,8 @@ echo "<table>";
                     extract($row);
                     echo "<tr>";
                     echo"<td>" . $row['filename']; echo "</td>";
-                    echo"<td>" . "<a href= 'download.php?file=" . $row['filename'] . "'>Download</a> </td>";
-                    echo"<td>" . "<a href= 'delete.php?fileID=" . $row['filename'] . "'>Löschen</a> </td>";
+                    echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td>";
+                    echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a> </td>";
                     echo "</tr>";
                     echo "<br/>";
                 }

@@ -7,6 +7,10 @@ $dir = "file/$directorywert/";
 
 unlink("Uploads/". $_GET['fileID']);
 
+$sql = "DELETE FROM file WHERE fieleID = :fileID";
+$statement = $db->prepare($sql);
+$statement->execute(array('fileID'=> $fileID));
+
 
 
 
