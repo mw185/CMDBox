@@ -54,7 +54,7 @@ if(isset($errorMessage)) {
 <head>
 
     <meta charset="UFT-8">
-    <link href="login.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <title>Login</title>
 </head>
@@ -88,7 +88,7 @@ if(isset($errorMessage)) {
                     <br/>
 
                     <div class = "button-container">
-                        <a href="register.php" class="btn btn-default">Zur Registrierung</a>
+                        <a href="index.php" class="btn btn-default">Zur Registrierung</a>
                     </div>
                  <div class="cardfooter">
 
