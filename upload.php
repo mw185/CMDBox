@@ -116,7 +116,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $sql = "SELECT FROM person WHERE username = username";
         $statement = $db->prepare($sql);
         //$result = $statement->execute();
-
+        
         while (($entry = readdir($handle)) !== false) {
             if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
