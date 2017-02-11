@@ -1,4 +1,7 @@
-<?php
+
+<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<?php echo ($_SESSION['userid']);
+
 
 if (!isset($_SESSION ['username'])) {
     header("location: login.php");
