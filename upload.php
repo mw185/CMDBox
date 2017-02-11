@@ -110,10 +110,10 @@ if ($_FILES ["file"]["name"] <> '') {
     $handle = opendir('Uploads/');
 
     if ($handle) {
-        $sql = "SELECT FROM person WHERE username = username";
+        $sql = "SELECT FROM file WHERE fileID = fileID";
         $statement = $db->prepare($sql);
         //$result = $statement->execute();
-        
+
         while (($entry = readdir($handle)) !== false) {
             if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
