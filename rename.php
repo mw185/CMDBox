@@ -46,8 +46,4 @@ $sicherername = $zweiteÄnderung.".".$namenextension;
 echo $sicherername;
 rename($altername, $target_dir.$sicherername);
 
-
-/*chmod("uploads/6c4b425b0b3b3436039e50a1434cc890", 0777);
-chmod($altername, 0777);
-*/
 ?>

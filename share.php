@@ -2,9 +2,9 @@
 session_start();
 include("connection.php");
 ///Daten aus DB herauslesen
-$sql = $db->prepare('SELECT email FROM User WHERE email = :email');
+$sql = $db->prepare('SELECT email FROM person WHERE email = :email');
 $array = array(
-    ':email' => $_SESSION['email']
+    ':username' => $_SESSION['userid']
 );
 $sql->execute($array);
 $emailto = $_POST["empfaenger"];
