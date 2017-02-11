@@ -43,13 +43,14 @@
             </ul>
             <ul class="pull-right">
                 <li><a href="FormularUpload.html">Upload</a></li>
-                <li><a href="showuploads.php">&Uuml;bersicht</a></li>
-                <li><a href="profil.php">Profil</a></li>
+                <li><a href="pwaendern.php">Passwort ändern</a></li>
+                <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
     </div>
 </div>
+
 <br/><br/><br/><br/><br/>
 
 
