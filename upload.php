@@ -43,56 +43,53 @@ $tmp_name = $_FILES["file"]["tmp_name"];
 if ($_FILES ["file"]["name"] <> '') {
 
 //if (isset($filename)) {
-  //  if (!empty($filename)) {
-        $location = "Uploads/";
+    //  if (!empty($filename)) {
+    $location = "Uploads/";
 
 
+    if (move_uploaded_file($tmp_name, $location . $filename)) {
+
+        //$fileID = uniqid(``, true) . `.` . $filename;
+        //if (isset($_POST["uploadformular"])) {
+        //  $fileID = $_POST["fileID"];
+        //$filename = $_POST["filename"];
+        //$datasize = $_POST ["datasize"];
+        //$username = $_POST ["username"];
 
 
-            if (move_uploaded_file($tmp_name, $location . $filename)) {
+        /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+           $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+           $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
+*/
 
-                //$fileID = uniqid(``, true) . `.` . $filename;
-                //if (isset($_POST["uploadformular"])) {
-                //  $fileID = $_POST["fileID"];
-                //$filename = $_POST["filename"];
-                //$datasize = $_POST ["datasize"];
-                //$username = $_POST ["username"];
+        $abra = "Abra";
+        $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
+        $statement = $db->prepare($sql);
+        $result = $statement->execute();
 
-
-                /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
-                   $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
-                   $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
-       */
-
-                $abra = "Abra";
-                $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
-                $statement = $db->prepare($sql);
-                $result = $statement->execute();
-
-                echo('Upload erfolgreich. Weiter zu <a href="upload.php">Uploadverzeichnis</a>');
-            } else {
-                echo "please upload file!";
-            }
+        echo('Upload erfolgreich. Weiter zu <a href="upload.php">Uploadverzeichnis</a>');
+    } else {
+        echo "please upload file!";
+    }
 
 
     $handle = opendir('Uploads/');
 
-    if($handle){
-        while(($entry = readdir($handle)) !==false) {
+    if ($handle) {
+        while (($entry = readdir($handle)) !== false) {
             if ($entry != '.' && $entry != '..') {
-            while($row = mysqli_fetch_object($entry)) {
-                echo $row->urlname;
-                echo "<br /><br />";
-                    }
-
+                while ($row = mysqli_fetch_object($entry)) {
+                    echo $row->urlname;
+                    echo "<br /><br />";
                 }
+
             }
         }
-
-        closedir($handle);
-
     }
-    */
+
+    closedir($handle);
+
+
      //   }
    // }
 
