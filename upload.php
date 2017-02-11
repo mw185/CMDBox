@@ -111,9 +111,9 @@ if ($_FILES ["file"]["name"] <> '') {
     }
 }
 
-   // $handle = opendir('Uploads/');
+    $handle = opendir('Uploads/');
 
-    // if ($handle) {
+     if ($handle) {
         $sql = "SELECT * FROM file WHERE username = $username";
         $statement = $db->prepare($sql);
         $statement->execute();
@@ -121,22 +121,22 @@ if ($_FILES ["file"]["name"] <> '') {
         $row = $statement->fetch();
 
 
-       // while (($entry = readdir($handle)) !== false) {
-           // if ($entry != '.' && $entry != '..') {
+        while (($entry = readdir($handle)) !== false) {
+           if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                     extract($row);
                     echo $row['filename'];
                     echo "<br /><br />";
                 }
 
-       //     }
-      //  }
-   // }
+            }
+        }
+   }
 
-    print_r($statement);
-    print_r($row);
-    var_dump($statement);
-    var_dump($row);
+  //  print_r($statement);
+   // print_r($row);
+   // var_dump($statement);
+   // var_dump($row);
 
    // closedir($handle);
 
