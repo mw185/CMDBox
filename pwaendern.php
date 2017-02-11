@@ -49,9 +49,10 @@ if (!$error) {
         echo 'Dein Passwort wurde erfolgreich geändert.';
 }
 }
-?>
-        <a href = showuploads.php>Zurück</a>
-<?php
+    ?>
+        <a href = upload.php>Zurück</a>
+
+    <?php
 if($showFormular) {
     ?>
 
