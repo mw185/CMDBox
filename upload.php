@@ -109,25 +109,25 @@ if ($_FILES ["file"]["name"] <> '') {
     }
 
 
-    $handle = opendir('Uploads/');
+   // $handle = opendir('Uploads/');
 
-    if ($handle) {
+    // if ($handle) {
         $sql = "SELECT FROM file WHERE username = username";
         $statement = $db->prepare($sql);
         //$result = $statement->execute();
 
-        while (($entry = readdir($handle)) !== false) {
-            if ($entry != '.' && $entry != '..') {
+       // while (($entry = readdir($handle)) !== false) {
+           // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
                     echo $row['filename'];
                     echo "<br /><br />";
                 }
 
-            }
-        }
-    }
+       //     }
+      //  }
+   // }
 
-    closedir($handle);
+   // closedir($handle);
 
 
      //   }
