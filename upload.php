@@ -114,16 +114,16 @@ if ($_FILES ["file"]["name"] <> '') {
     //$handle = opendir('Uploads/');
 
      //if ($handle) {
-        $sql = "SELECT * FROM file WHERE username = $username";
+        $sql = "SELECT * FROM file WHERE username = :username";
         $statement = $db->prepare($sql);
-        $statement->execute();
-        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->execute(array('username'=> $username));
+       // $statement->setFetchMode(PDO::FETCH_ASSOC);
         $row = $statement->fetch();
 
 
         //while (($entry = readdir($handle)) !== false) {
           // if ($entry != '.' && $entry != '..') {
-                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                while ($row = $statement->fetch()) {
                     extract($row);
                     echo "das: ".$row['filename']." !";
                     echo "<br /><br />";
