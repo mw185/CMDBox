@@ -87,7 +87,7 @@ if($passwort_neu != $passwort_neu2) {
     $error = true;
 }
 
-if($passwort_alt == $passwort_neu) {
+if($passwort_neu == 'password') {
     echo 'Das neue Passwort ist unverändert<br>';
     $error = true;
 }
