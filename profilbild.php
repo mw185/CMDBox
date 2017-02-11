@@ -7,7 +7,7 @@ if (!isset($_SESSION ['username'])) {
     session_start();
     if (isset($_GET ['profilbild'])) {
         $dir = "Profilbild/";
-        $newname = $_SESSION ['username'];
+        $newname = $_SESSION ['userid'];
         if (isset($_FILES['file'])) {
             $zielname = basename($_FILES["file"]["name"]);
             if (move_uploaded_file($_FILES ['file']['tmp_name'], $dir . $zielname)) {

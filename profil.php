@@ -21,6 +21,8 @@
 
 <body>
 
+<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+
 
 <script>
     /*--------------------------------Passwort falsch ----------------------------*/
