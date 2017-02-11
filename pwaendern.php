@@ -15,7 +15,7 @@ if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
 }
 
-if (isset($_GET['pwaendern'])) {
+if (isset($_GET['password'])) {
     $error = false;
     $passwort_alt = $_POST['passwort_alt'];
     $passwort_neu = $_POST['passwort_neu'];
@@ -35,7 +35,7 @@ if($passwort_alt == $passwort_neu) {
 
 if (!$error) {
     $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
-}
+
 
     $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
     $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
@@ -43,7 +43,7 @@ if (!$error) {
         $ShowFormular = false;
         echo 'Dein Passwort wurde erfolgreich geändert.';
 }
-
+}
 echo $username;
 ?>
         <a href = showuploads.php>Zurück</a>
@@ -59,7 +59,7 @@ if($showFormular) {
     </head>
     <body>
 
-    <form action="?password=1" method="post">
+    <form action="pwaendern.php?password=1" method="post">
         Altes Passwort:<br>
         <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
         Neues Passwort:<br>
