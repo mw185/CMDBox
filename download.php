@@ -23,11 +23,12 @@ if(!$filename) {
     //file nicht verändern
 }
 
+else {
+
+
 $path = "Uploads/" . $filename;
 $mime = mime_content_type($path);
 $fsize = filesize ($path);
-
-
 
 
 
@@ -47,5 +48,5 @@ $fsize = filesize ($path);
             echo 'error';
         }
     }
-
+}
 ?>
