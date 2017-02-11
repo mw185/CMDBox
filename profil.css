@@ -9,6 +9,10 @@ html body {
     box-sizing: border-box;
 }
 
+.h1{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
 .container {
     background-color: aliceblue;
     width: 100vw;

@@ -36,18 +36,19 @@
 }
 
 .card .input-container input {
-    background: none;
+    background: lightgrey;
     width: 100%;
-    height: 6vh;
+    height: 4vh;
     border: 0;
     color: #212121;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
     box-shadow: none;
 }
 
 .card .input-container label {
-    display:none;
+    display: ruby;
+
 }
 
 .card .input-container .bar {
@@ -56,15 +57,15 @@
     bottom: 0;
     background: #757575;
     width: 100%;
-    height: 1px;
 }
 
 .card .button-container {
-    margin: 0 8vw;
+    margin: 0 6vw;
     text-align: center;
 }
 
-.card .button-container button {
+
+.card .button-container button, a{
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -87,10 +88,10 @@
     transition: .3s ease;
 }
 
-.card .button-container button:hover, .card .button-container button:active, .card .button-container button:focus {
+.card .button-container button, a:hover, .card .button-container button, a:active, .card .button-container button, a:focus {
     border-color: #fd6e6e;
 }
-.card .button-container button:hover span, .card .button-container button:active span, .card .button-container button:focus span {
+.card .button-container button,a :hover span, .card .button-container button, a:active span, .card .button-container button, a:focus span {
     color: #fd6e6e;
 }
 

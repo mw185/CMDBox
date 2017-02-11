@@ -85,6 +85,10 @@ if(isset($errorMessage)) {
                  <div class = "button-container">
                     <button type = "submit" name = "Einloggen">Einloggen</button>
                  </div>
+
+                    <div class = "button-container">
+                        <a href="register.php" class="btn btn-default">Zur Registrierung</a>
+                    </div>
                  <div class="cardfooter">
 
                 </form>
