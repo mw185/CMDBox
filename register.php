@@ -116,33 +116,36 @@ if($showFormular) {
                 <h1 class ="title">Registrieren</h1>
                 <form action="?register=1" method="post">
                     <div class="input-container">
-                        <input type="text" size="40" maxlength="250" name="username">
-                        <label for = "username"></label>
+                        <input id ="username" type="text" size="40" maxlength="250" name="username">
+                        <label for = "username">Username</label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "email" type="email" name="email" maxlength="250"><br/>
-                        <label for = "E-Mail"></label>
+                        <label for = "E-Mail">E-Mail</label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "password" type="password" name="passwort" maxlength="250"><br/>
-                        <label for = "Passwort"></label>
+                        <label for = "Passwort">Passwort</label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "password" type="password" name="passwort2" maxlength="250"><br/>
-                        <label for = "Passwort wiederholen"></label>
+                        <label for = "Passwort wiederholen">Passwort wiederholen</label>
                         <div class = "bar"></div>
                     </div>
 
-                    <div class = "button-container">
-                        <button type = "reset" name = "Eingabe zurücksetzen">Eingabe zurücksetzen</button>
-                    </div>
 
                     <div class = "button-container">
                         <button type = "submit" name = "Registrieren">Registrieren</button>
                     </div>
+                    <br/>
+
+                    <div class = "button-container">
+                        <a href="login.php" class="btn btn-default">Zum Login</a>
+                    </div>
+
                     <div class="cardfooter">
 
                 </form>

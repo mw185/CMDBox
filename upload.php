@@ -33,7 +33,7 @@
 <body>
 
 <img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-<?php echo ($_SESSION['userid']) ?>
+<h1><?php echo ($_SESSION['userid']) ?></h1>
 
 <div>
     <div class="nav">

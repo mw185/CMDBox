@@ -16,7 +16,7 @@ if (!isset($_SESSION ['userid'])) {
         if (isset($_FILES['file'])) {
             $zielname = basename($_FILES["file"]["name"]);
             if (move_uploaded_file($_FILES ['file']['tmp_name'], $dir . $zielname)) {
-                rename($dir . $zielname, $dir . $newname . '.jpg');
+                rename($dir . $zielname, $dir . $newname);
                 header('location: profil.php');
             } else {
                 echo "Fehler";
@@ -51,7 +51,7 @@ if (!isset($_SESSION ['userid'])) {
 <body>
 
 <img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-<?php echo ($_SESSION['userid']) ?>
+<h1><?php echo ($_SESSION['userid']) ?></h1>
 
 
 <div>
