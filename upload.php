@@ -116,10 +116,12 @@ if ($_FILES ["file"]["name"] <> '') {
         $sql = "SELECT * FROM file WHERE username = $username";
         $statement = $db->prepare($sql);
         $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
 
        // while (($entry = readdir($handle)) !== false) {
            // if ($entry != '.' && $entry != '..') {
-                while ($row = $statement->fetch()) {
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                    extract($row);
                     echo $row['filename'];
                     echo "<br /><br />";
                 }
