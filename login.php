@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-
-<head>
-    <meta charset="UFT-8">
-    <title>Login</title>
-    <?php
-    session_start();
-
-    include 'connection.php';
-    if(isset($errorMessage)) {
-        echo $errorMessage;
-    }
-    ?>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="loginpage.css">
-</head>
-
-<body>
-
 <?php
+session_start();
+
+include 'connection.php';
+if(isset($errorMessage)) {
+    echo $errorMessage;
+}
+
+
+
 
 
 if(isset($_GET['login'])) {     #loginformular senden
@@ -47,7 +36,7 @@ if(isset($_GET['login'])) {     #loginformular senden
         }*/
     }
     else {
-        $errorMessage = "E-Mail oder Passwort war ungültig<br>";
+        $errorMessage = "Username oder Passwort ist ungültig<br>";
     }
 }
 
@@ -60,21 +49,48 @@ if(isset($errorMessage)) {
 ?>
 
 
-<form name="login" action="?login=1" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-    <label class="h2">LOGIN</label>
-    <br/>
-    <label>Username</label>
-    <input type="text" name="username" maxlength="30">
-    <br/>
+    <meta charset="UFT-8">
+    <link href="login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class = 'loginsite'>
+        <div class="loginbox">
+            <div class="firstcard"></div>
+            <div class="card">
+                <h1 class ="title">Login</h1>
+                <form name="login" action="?login=1" method="post">
 
-    <label>Passwort</label>
-    <input type="password" name="password" maxlength="40">
-    <br/>
-    <button type="reset">Eingaben zurücksetzen</button>
-    <button type="submit">Einloggen</button>
-</form>
+                <div class="input-container">
+                    <input id = "username" type="text" name="username" maxlength="30">
+                    <label for = "username"></label>
+                    <div class = "bar"></div>
+                </div>
 
+                <div class = "input-container">
+                    <input id = "password" type="password" name="password" maxlength="40"><br/>
+                    <label for = "password"></label>
+                    <div class = "bar"></div>
+                </div>
 
-</body>
-</html>
+                <div class = "button-container">
+                    <button type = "reset" name = "Eingabe zurücksetzen">Eingabe zurücksetzen</button>
+                </div>
+
+                 <div class = "button-container">
+                    <button type = "submit" name = "Einloggen">Einloggen</button>
+                 </div>
+                 <div class="cardfooter">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body
+</html
+

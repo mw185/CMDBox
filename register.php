@@ -8,18 +8,6 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Registrierung</title>
-    <h1>Registrierung</h1>
-
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="registrierung.css">
-</head>
-<body>
-
 <?php
 $showFormular = true; #Registrierungsformular wird angezeigt
 
@@ -108,23 +96,64 @@ Dies ist eine automatisch generierte e-mail, bitte nicht darauf antworten.";
 if($showFormular) {
     ?>
 
-    <form action="?register=1" method="post">
-        Username:<br>
-        <input type="username" size="40" maxlength="250" name="username"><br>
-        E-Mail:<br>
-        <input type="email" size="40" maxlength="250" name="email"><br>
-        Dein Passwort:<br>
-        <input type="password" size="40"  maxlength="250" name="passwort"><br>
-        Passwort wiederholen:<br>
-        <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
-        <input type="submit" value="Registrieren">
-        <button type="reset">Eingaben zurücksetzen</button>
-    </form>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Registrierung</title>
+</head>
+<body>
+
+    <div class = 'loginsite'>
+        <div class="loginbox">
+            <div class="firstcard"></div>
+            <div class="card">
+                <h1 class ="title">Registrieren</h1>
+                <form action="?register=1" method="post">
+                    <div class="input-container">
+                        <input type="text" size="40" maxlength="250" name="username">
+                        <label for = "username"></label>
+                        <div class = "bar"></div>
+                    </div>
+                    <div class = "input-container">
+                        <input id = "email" type="email" name="email" maxlength="250"><br/>
+                        <label for = "E-Mail"></label>
+                        <div class = "bar"></div>
+                    </div>
+                    <div class = "input-container">
+                        <input id = "password" type="password" name="passwort" maxlength="250"><br/>
+                        <label for = "Passwort"></label>
+                        <div class = "bar"></div>
+                    </div>
+                    <div class = "input-container">
+                        <input id = "password" type="password" name="passwort2" maxlength="250"><br/>
+                        <label for = "Passwort wiederholen"></label>
+                        <div class = "bar"></div>
+                    </div>
+
+                    <div class = "button-container">
+                        <button type = "reset" name = "Eingabe zurücksetzen">Eingabe zurücksetzen</button>
+                    </div>
+
+                    <div class = "button-container">
+                        <button type = "submit" name = "Registrieren">Registrieren</button>
+                    </div>
+                    <div class="cardfooter">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
 
     <?php
 }       #ShowFormular endet hier
 ?>
 
-</body>
-</html>
