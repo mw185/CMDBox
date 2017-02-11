@@ -113,7 +113,7 @@ if ($_FILES ["file"]["name"] <> '') {
    // $handle = opendir('Uploads/');
 
     // if ($handle) {
-        $sql = "SELECT FROM file WHERE username = username";
+        $sql = "SELECT FROM file WHERE username = $username";
         $statement = $db->prepare($sql);
         //$result = $statement->execute();
 
