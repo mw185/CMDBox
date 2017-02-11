@@ -31,6 +31,7 @@
 </head>
 
 <body>
+<?php echo 'userid'; ?>
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
 
 <div>
@@ -50,8 +51,7 @@
 </div>
 <br/><br/><br/><br/><br/>
 
-<form class="dropzone" action="upload.php" method="post" enctype="multipart/form-data">
-</form>
+
 <?php
 
 if (isset ($errorMessage)) {
