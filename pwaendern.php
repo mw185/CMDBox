@@ -1,21 +1,16 @@
 <?php
-
 session_start();
 
-$dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
-$dbuser="db104";
-$dbpass="anohk4Aepu";
+include 'connection.php';
 
-try {
-    $db=new PDO($dsn,$dbuser,$dbpass);
-}
-catch(PDOException $e){
-    echo $e->getMessage();
-    die();
+if(isset($errorMessage)) {
+    echo $errorMessage;
 }
 ?>
 
 <?php
+$showFormular = true;
+
 if (isset($_SESSION['userid'])){
 $username = $_SESSION['userid'];
 }
@@ -38,29 +33,44 @@ if($passwort_alt == $passwort_neu) {
 # Passwort kann jetzt geändert werden
 
 if (!$error) {
-    $statement = $db->prepare("UPDATE person SET password = '$passwort_neu' WHERE username = username");
-    $result = $statement->execute(array(':password' => $passwort_neu));
+    $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
+
+    $statement = $db->prepare("UPDATE person SET password = $passwort_neu WHERE username = :username");
+    $result = $statement->execute(array('password' => $passwort_neu));
 }
+
+    if ($result){
+        $ShowFormular = false;
+        echo 'Dein Passwort wurde erfolgreich geändert.';
+    }
+
 echo $username;
 ?>
+        <a href = showuploads.php>Zum Login</a>
+<?php
+if($showFormular) {
+    ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Passwort ändern</title>
-    <h1>Passwort ändern</h1>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Passwort ändern</title>
+        <h1>Passwort ändern</h1>
+    </head>
+    <body>
 
-<form action="?password=1" method="post">
-    Altes Passwort:<br>
-    <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
-    Neues Passwort:<br>
-    <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
-    Neues Passwort wiederholen:<br>
-    <input type="password" size="40"  maxlength="250" name="passwort_neu2"><br><br>
+    <form action="?password=1" method="post">
+        Altes Passwort:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
+        Neues Passwort:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
+        Neues Passwort wiederholen:<br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
 
 
-    <input type="submit" value="Passwort ändern">
-</form>
+        <input type="submit" value="Passwort ändern">
+    </form>
 
+    <?php
+}               #showFormular endet hier
+?>
