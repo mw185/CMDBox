@@ -1,13 +1,19 @@
+<?php
+// Session starten
+session_start();
+
+if (!isset($_SESSION ['username'])) {
+header("location: login.php");
+exit;
+}
+
+?>
 
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+
 <?php echo ($_SESSION['userid']);
 
 
-if (!isset($_SESSION ['username'])) {
-    header("location: login.php");
-}
-// Session starten
-    session_start();
     if (isset($_GET ['profilbild'])) {
         $dir = "Profilbild/";
         $newname = $_SESSION ['userid'];

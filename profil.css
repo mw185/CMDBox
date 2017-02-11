@@ -2,7 +2,7 @@
 html body {
     max-width: 100%;
     overflow-x: hidden;
-    background-color: #205379;
+    background-color: slategray;
     margin: 0 auto;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -10,7 +10,7 @@ html body {
 }
 
 .container {
-    background-color: #e6e6e6;
+    background-color: aliceblue;
     width: 100vw;
     padding: 20px 0px;
     position: fixed;
@@ -25,7 +25,7 @@ html body {
 .nav li a {
     text-decoration: none;
     text-transform: uppercase;
-    color: #5a5a5a;
+    color: dimgray;
     font-size: 12px;
     font-weight: 300;
     padding: 32px 20px;
@@ -36,7 +36,7 @@ html body {
 
 /* Hover Effekt beim dr�bergehen*/
 .nav a:hover {
-    background-color: #c6c6c6;
+    background-color: lightyellow;
     opacity: 0.75;
 }
 
@@ -68,7 +68,7 @@ html body {
 }
 
 .profilkopf {
-    background-color:#205379;
+    background-color:slategray;
     background-size: cover;
     height: 135px;
 }
