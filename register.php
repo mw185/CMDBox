@@ -176,7 +176,4 @@ if($showFormular) {
 </body>
 </html>
 
-    <?php
-}       #ShowFormular endet hier
-?>
 
