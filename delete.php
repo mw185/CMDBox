@@ -15,6 +15,8 @@ $sql = "DELETE FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
+header("location: upload.php");
+
 
 
 
