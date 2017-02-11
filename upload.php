@@ -124,9 +124,9 @@ if ($_FILES ["file"]["name"] <> '') {
           // if ($entry != '.' && $entry != '..') {
                 while ($row = $statement->fetch()) {
                     extract($row);
-                    echo "<br/>";
-                    echo $row['filename'];
-                    echo "<br /><br />";
+                    echo "<tr>";
+                    echo "<td>"; echo $row['filename']; echo "</td>";
+                    echo "<td>";?><a href="<?php echo $row["Uploads/"];?>">Download</a> <?php echo "</td>";
                 }
 
           //  }
