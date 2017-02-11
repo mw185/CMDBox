@@ -17,7 +17,7 @@ $mime = mime_content_type($path);
 $fsize = filesize ($path);
 
 
-else {
+
 
 
     if (file_exists($path) && is_readable($path)) {
@@ -36,5 +36,5 @@ else {
             echo 'error';
         }
     }
-}
+
 ?>
