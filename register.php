@@ -157,7 +157,7 @@ if($showFormular) {
 }       #ShowFormular endet hier
 ?>
 
-    <div class="footer">
+
         <hr id="line"/>
         <div class="extrainfo">
             <small class="credits">Team CMD &copy; 2017  |  </small>
