@@ -4,10 +4,16 @@ include ("connection.php");
 $directorywert = md5($_SESSION['username']);
 $dir = "file/$directorywert/";
 
+$fileID = $_GET['fileID'];
 
+$sql = "SELECT filename FROM file WHERE fileID = :fileID";
+$statement = $db->prepare($sql);
+$statement->execute(array('fileID'=> $fileID));
+
+$file = $statement->fetch();
 unlink("Uploads/". $_GET['fileID']);
 
-$sql = "DELETE FROM file WHERE fieleID = :fileID";
+$sql = "DELETE * FROM file WHERE fieleID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
