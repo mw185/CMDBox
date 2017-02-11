@@ -12,7 +12,7 @@ echo $path;
 var_dump($path);
 
 
-/*if (file_exists($path) && is_readable ($path)) {
+if (file_exists($path) && is_readable ($path)) {
     header ('Content-Type: '.$mime);
     header ('Content-Length: '.$fsize);
     header ('Content-Disposition: attachment; filename='.$filename);
@@ -26,5 +26,5 @@ var_dump($path);
     } else {
         echo 'error';
     }
-}*/
+}
 ?>
