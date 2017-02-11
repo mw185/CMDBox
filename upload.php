@@ -31,8 +31,9 @@
 </head>
 
 <body>
-<?php echo 'userid'; ?>
+
 <img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<?php echo ($_SESSION['userid']) ?>
 
 <div>
     <div class="nav">

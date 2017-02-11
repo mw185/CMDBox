@@ -53,7 +53,6 @@
             </ul>
             <ul class="pull-right">
                 <li><a href="FormularUpload.html">Upload</a></li>
-                <li><a href="showuploads.php">&Uuml;bersicht</a></li>
                 <li><a href="profil.php">Profil</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
