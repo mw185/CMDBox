@@ -1,20 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UFT-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1.0 />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="./js/dropzone.js"></script>
+    <link href="./css/basic.css" rel="stylesheet">
+    <link href="./css/dropzone.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/script.js/0.1/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="js/bootstrap.min.js">
+    <link href="profil.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/main.js"></script>
     <title>Login</title>
     <?php
 
     session_start();
     include("connection.php");
 
-   if(!isset($_SESSION['userid'])) {
-     header("login.php");
-  }
+    if(!isset($_SESSION['userid'])) {
+        header("login.php");
+    }
     ?>
+
 </head>
 
 <body>
+<img src="<?php echo 'Profilbild/'.'.jpg'; ?>" width="285px" alt="Profilbild"/>
+
+<div>
+    <div class="nav">
+        <div class="container">
+            <ul class="pull-left">
+                <li><a href="index.html">CMDBox</a></li>
+            </ul>
+            <ul class="pull-right">
+                <li><a href="FormularUpload.html">Upload</a></li>
+                <li><a href="showuploads.php">&Uuml;bersicht</a></li>
+                <li><a href="profil.php">Profil</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <?php
 
 if (isset ($errorMessage)) {
@@ -43,55 +77,53 @@ $tmp_name = $_FILES["file"]["tmp_name"];
 if ($_FILES ["file"]["name"] <> '') {
 
 //if (isset($filename)) {
-  //  if (!empty($filename)) {
-        $location = "Uploads/";
+    //  if (!empty($filename)) {
+    $location = "Uploads/";
 
 
+    if (move_uploaded_file($tmp_name, $location . $filename)) {
+
+        //$fileID = uniqid(``, true) . `.` . $filename;
+        //if (isset($_POST["uploadformular"])) {
+        //  $fileID = $_POST["fileID"];
+        //$filename = $_POST["filename"];
+        //$datasize = $_POST ["datasize"];
+        //$username = $_POST ["username"];
 
 
-            if (move_uploaded_file($tmp_name, $location . $filename)) {
+        /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+           $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+           $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
+*/
 
-                //$fileID = uniqid(``, true) . `.` . $filename;
-                //if (isset($_POST["uploadformular"])) {
-                //  $fileID = $_POST["fileID"];
-                //$filename = $_POST["filename"];
-                //$datasize = $_POST ["datasize"];
-                //$username = $_POST ["username"];
+        $abra = "Abra";
+        $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
+        $statement = $db->prepare($sql);
+        $result = $statement->execute();
 
-
-                /*   $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
-                   $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
-                   $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
-       */
-
-                $abra = "Abra";
-                $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
-                $statement = $db->prepare($sql);
-                $result = $statement->execute();
-
-                echo('Upload erfolgreich. Weiter zu <a href="upload.php">Uploadverzeichnis</a>');
-            } else {
-                echo "please upload file!";
-            }
+        echo('Upload erfolgreich. Weiter zu <a href="upload.php">Uploadverzeichnis</a>');
+    } else {
+        echo "please upload file!";
+    }
 
 
-    /*$handle = opendir('Uploads/');
+    $handle = opendir('Uploads/');
 
-    if($handle){
-        while(($entry = readdir($handle)) !==false) {
+    if ($handle) {
+        while (($entry = readdir($handle)) !== false) {
             if ($entry != '.' && $entry != '..') {
-                while ($entry >0) {
-                    echo("  <tr class='active'>
-                            <td class='dateiname'> "<a href=\"Uploads /$entry\">$entry><span>$file</span></a></td>
-                            </tr>";
+                while ($row = mysqli_fetch_object($entry)) {
+                    echo $row->urlname;
+                    echo "<br /><br />";
                 }
+
             }
         }
-
-        closedir($handle);
-
     }
-    */
+
+    closedir($handle);
+
+
      //   }
    // }
 
