@@ -59,7 +59,7 @@ if(isset($errorMessage)) {
 <br/><br/><br/><br/><br/>
 
 <?php
-//$showFormular = true;
+$showFormular = true;
 if($showFormular) {
     ?>
 
