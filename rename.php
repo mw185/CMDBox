@@ -1,53 +1,64 @@
 <?php
+
 session_start();
+include'connection.php';
+
+session_start();
+include ("connection.php");
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])) {
+    header('Login.php');
+    exit;
+}
+
+$fileID = $_GET['fileID'];
+
+$statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
+$statement->execute(array('fileID'=> $fileID));
+
+$file = $statement->fetch();
+rename("Uploads/". $file["filename"]);
+
+header("location: upload.php");
 
 
+$old = $uploaddir.'/'.$_POST[alt]; #old in rename definiert
+$new = $uploaddir.'/'.$_POST[neu];
+rename($old,$new); #alten namen durch neuen ersetzen
+header('Location: '.$fullurl.'/home.php'); #weiterleitung zur home seite
 
 
-// Email Wert wird verhasht um "anonyme" Ordner zu erhalten
-$directorywert = md5($_SESSION['email']);
-
-
-
-// Dateien werden in den jeweiligen Ordner basierend auf dem Email Hash abgelegt
-$target_dir = "uploads/$directorywert/";
-// Mithilfe von preg_replace werden ungültige Zeichen, die zu Problemen führen können, ersetzt.
-
-
-/* Erhalten der Variablen durch Ajax von showuploads.php*/
-$altername = $_POST['pk'];
-$namenswunsch = $_POST['value'];
-
-
-/* Zerlegen der Variable in Name und Endung*/
-$path_parts = pathinfo($altername);
-$nameohneendung = $path_parts['filename'];
-echo 'Das ist der Altename :'.$nameohneendung."<br/>";
-$namenextension = $path_parts['extension'];
-echo 'Das ist die Extension :'.$namenextension."<br/>";
-
-
-/*Zerlegen des Namenswunsches in Variable und Endung um Endung nicht zu berücksichtigen */
-$path_parts = pathinfo($namenswunsch);
-$wunschname = $path_parts['filename'];
-echo 'Das ist der Wunschname :'.$wunschname."<br/>";
-$wunschendung = $path_parts['extension'];
-echo 'Das ist die Wunschendung :'.$wunschendung."<br/>";
-
-
-/* Hier werden Zeichen zum Schutz vor Komplikationen geändert*/
-$namensänderung = $wunschname;
-$ersteÄnderung = preg_replace ("([^\w\s\d\-_~,;:\[\]\(\).])", '', $namensänderung);
-$zweiteÄnderung = preg_replace('/\s+/', '_', $ersteÄnderung);
-
-
-/* FILENAME und Extension werden zusammengeführt */
-$sicherername = $zweiteÄnderung.".".$namenextension;
-echo $sicherername;
-rename($altername, $target_dir.$sicherername);
-
-
-/*chmod("uploads/6c4b425b0b3b3436039e50a1434cc890", 0777);
-chmod($altername, 0777);
-*/
+$old=$_GET['ren']; #variable old wird definiert
 ?>
+<section id="inhalt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2><br><?php echo $old ?></h2> <!-- alter name wird ausgegeben-->
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+
+
+                <form action="<?php echo $fullurl ?>renamedo.php" method="post"> <!--formular wird an /inc/renamedo.inc.php weitergegeben -->
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <input type="hidden" name="alt" value="<?php echo $old; ?>"/>
+                            <label>Neuer Name</label>
+                            <input type="text" name="neu" class="form-control" value="<?php echo $old; ?>"/> <!--in input wird alter name angezeigt zum überarbeiten -->
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12">
+                            <input type="submit" name="submit" value="Umbenennen" class="btn btn-success btn-lg"> <!--button-->
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>
