@@ -98,9 +98,7 @@ if($showFormular) {
 
         <input type="password" size="40" maxlength="250" name="password_alt" placeholder="Altes Passwort"><br>
 
-
         <input type="password" size="40" maxlength="250" name="password_neu" placeholder = "Neues Passwort"><br>
-
 
         <input type="password" size="40" maxlength="250" name="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
 
