@@ -4,6 +4,16 @@ session_start();
 include'connection.php';
 
 $fileID = (isset($_GET['fileID'])) ? $_GET ['fileID'] : "ERROR: ID konnte nicht gefunden werden";
+
+$statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
+$statement->execute(array('fileID' => $fileID));
+
+$file = $statement->fetch();
+
+$oldname = $file['filename'];
+
+echo $oldname;
+
     if (isset($_GET['rename'])) {
         $newname = $_POST['newname'];
 
@@ -21,7 +31,7 @@ $fileID = (isset($_GET['fileID'])) ? $_GET ['fileID'] : "ERROR: ID konnte nicht 
 ?>
 
 <form action="rename.php?rename=1" method="post">Neuer Name:<br>
-    <input type="text" size="40" maxlength="250" name="newname"><br>
+    <input type="text" size="40" maxlength="250" name="newname" value="<?php echo $oldname ?>"><br>
 
     <input type="submit" value="Umbenennen">
 </form>
