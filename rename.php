@@ -3,7 +3,22 @@
 session_start();
 include'connection.php';
 
-$fileID = isset($_GET['fileID']) ? $_GET ['fileID'] : die("ERROR: ID konnte nicht gefunden werden");
+
+
+$fileID = $_GET['file'];
+
+$sql = "SELECT * FROM file WHERE fileID = :fileID";
+$statement = $db->prepare($sql);
+$statement->execute(array('fileID'=> $fileID));
+
+$file = $statement->fetch();
+
+if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
+$filename = $file['filename'];
+
+
+
+//$fileID = isset($_GET['fileID']) ? $_GET ['fileID'] : die("ERROR: ID konnte nicht gefunden werden");
 
 $oldname = $file['filename'];
 
