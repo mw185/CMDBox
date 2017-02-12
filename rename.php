@@ -35,7 +35,7 @@ if (isset($file['filename']) && basename($file['filename']) == $file['filename']
 ?>
 
 <form name="rename" action="<?php echo("?id={$fileID}")?>" method="post"> Neuer Name:<br>
-<input type="text" size="40" maxlength="250" name="newname" value= "newname"><br>
+<input type="text" size="40" maxlength="250" name="newname" value= "newname" placeholder=filename><br>
 
 <input type="submit" value="Umbenennen">
 </form>
