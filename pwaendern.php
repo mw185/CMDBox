@@ -96,13 +96,13 @@ if($showFormular) {
 
     <form action="pwaendern.php?password=1" method="post">
 
-        <input type="password" size="40" maxlength="250" name="password_alt" placeholder="Altes Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="passwort_alt" placeholder="Altes Passwort"><br>
 
 
-        <input type="password" size="40" maxlength="250" name="password_neu" placeholder = "Neues Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu" placeholder = "Neues Passwort"><br>
 
 
-        <input type="password" size="40" maxlength="250" name="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
 
         <button type="submit">Passwort ändern</button>
         <button type="reset">Eingaben zurücksetzen</button>
