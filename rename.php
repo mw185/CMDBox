@@ -30,7 +30,7 @@ $oldname = $file['filename'];
     }
 ?>
 
-<form name="rename" action="rename.php?ID=<?php echo $fileID?>" method="post">Neuer Name:<br>
+<form name="rename" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?id={$fileID}")?> method="post">Neuer Name:<br>
     <input type="text" size="40" maxlength="250" name="newname" value="<?php echo $oldname ?>"><br>
 
     <input type="submit" value="Umbenennen">
