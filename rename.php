@@ -9,6 +9,8 @@ $fileID = isset($_GET['fileID']);
 $newname = $_POST['newname'];
 $oldname = $_GET['fileID'];
 
+echo $fileID;
+
     if (isset($_POST['newname'])) {
 
         $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
@@ -25,7 +27,7 @@ $oldname = $_GET['fileID'];
 
 ?>
 
-<form name="rename" action=<?php echo $oldname ?>method="post">Neuer Dateiname:<br>
+<form name="rename" action=<?php echo $oldname?>method="post">Neuer Dateiname:<br>
     <input type="text" size="40" maxlength="250" name="newname"><br>
 
     <input type="submit" value="Umbenennen">
