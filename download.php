@@ -8,21 +8,17 @@ $fileID = $_GET['file'];
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
-
 $file = $statement->fetch();
 
 if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
     $filename = $file['filename'];
 }
-
     else {
      $filename = NULL;
     }
-
 if(!$filename) {
     //file nicht verändern
 }
-
 else {
 
 
@@ -32,8 +28,8 @@ $fsize = filesize ($path);
 
 
 
-    if (file_exists($path) && is_readable($path)) {
-        header('Content-Type: ' . $mime);
+    file_exists($path) && is_readable($path);
+        header('Content-Type: '.$mime);
         header('Content-Length: ' . $fsize);
         header('Content-Disposition: attachment; filename=' . $filename);
         header('Content-Transfer-Encoding: binary');
@@ -47,6 +43,5 @@ $fsize = filesize ($path);
         } else {
             echo 'error';
         }
-    }
 }
 ?>
