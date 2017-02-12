@@ -32,8 +32,9 @@
 
 <body>
 
-<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-<h1><?php echo ($_SESSION['userid']) ?></h1>
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
+
 
 <div>
     <div class="nav">
@@ -126,7 +127,7 @@ echo "<table>";
                     extract($row);
                     echo "<tr>";
                     echo"<td>" . $row['filename']; echo "</td>";
-                    echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td>";
+                    echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td><br>";
                     echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a> </td>";
                     echo "</tr>";
                     echo "<br/>";
