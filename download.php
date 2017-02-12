@@ -38,6 +38,8 @@ $fsize = filesize ($path);
         header('Content-Disposition: attachment; filename=' . $filename);
         header('Content-Transfer-Encoding: binary');
         readfile($path);
+        echo $mime;
+        echo $fsize;
         
         $file = @ fopen($path, 'rb');
 
