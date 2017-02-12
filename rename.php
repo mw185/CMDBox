@@ -21,7 +21,7 @@ if (isset($_POST['newname'])) {
     $statement->bindParam(':filename', $newname);
     $statement->execute();
 
-    // rename("Uploads/" . $newname);
+    rename("Uploads/" . $newname);
 
     header("location: upload.php");
 }
