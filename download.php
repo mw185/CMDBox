@@ -3,7 +3,7 @@
 session_start();
 include ("connection.php");
 
-$fileID = $_GET['file'];
+$fileID = $_GET['fileID'];
 
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
