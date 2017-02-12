@@ -13,17 +13,7 @@ $file = $statement->fetch();
 
 if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
     $filename = $file['filename'];
-}
 
-    else {
-     $filename = NULL;
-    }
-
-if(!$filename) {
-    //file nicht verändern
-}
-
-else {
 
 
 $path = "Uploads/" . $filename;
