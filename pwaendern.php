@@ -13,8 +13,9 @@
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
     <link href="pwaendern.css" rel="stylesheet">
-
     <title>Passwort ändern</title>
+</head>
+
 <?php
 session_start();
 
@@ -95,16 +96,17 @@ if($showFormular) {
 
     <form action="pwaendern.php?password=1" method="post">
 
-        <input type="password" size="40" maxlength="250" name="password_alt" id="password_alt" placeholder="Altes Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="password_alt" placeholder="Altes Passwort"><br>
 
 
-        <input type="password" size="40" maxlength="250" name="password_neu" id="password_neu" placeholder = "Neues Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="password_neu" placeholder = "Neues Passwort"><br>
 
 
-        <input type="password" size="40" maxlength="250" name="password_neu2" id="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
+        <input type="password" size="40" maxlength="250" name="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
 
-        <button type="reset">Eingaben zurücksetzen</button>
         <button type="submit">Passwort ändern</button>
+        <button type="reset">Eingaben zurücksetzen</button>
+
     </form>
 
 <?php
