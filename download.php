@@ -7,7 +7,7 @@ $fileID = $_GET['file'];
 
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
-$statement->execute(array('fileID'=> $fileID));
+$statement->execute(array('filename'=> $filename));
 
 $file = $statement->fetch();
 
