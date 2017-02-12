@@ -12,9 +12,10 @@ html body {
 .container {
     background-color: aliceblue;
     width: 100vw;
-    padding: 20px 0px;
+    padding: 20px 30px;
     position: fixed;
-    z-index: 2;
+
+
 }
 .nav ul li {
     display:inline;
@@ -40,21 +41,6 @@ html body {
     opacity: 0.75;
 }
 
-
-/* Padding an den Seiten */
-
-
-.pull-left {
-    padding: 0px 200px 0px 200px;
-    /*  float:left;
-      width:200px;
-      margin: 1em;     float wert zum schieben*/
-}
-
-.pull-right {
-    padding: 0px 200px 0px 200px;
-    /*  clear:left;   float wert zum schieben*/
-}
 
 
 /* Profil */
@@ -143,4 +129,25 @@ h1 {
             }
     }
 }
+}
+h2{
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    margin: 20px 25px 0 130px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+    color: aliceblue;
+    display: table;
+    overflow: hidden;
+}
+table {
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    margin: 20px 25px 0 130px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: normal;
+    color: aliceblue;
+    display: block;
+    overflow: hidden;
+
 }

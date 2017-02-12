@@ -10,13 +10,9 @@
     <link href="./css/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/script.js/0.1/script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/main.js"></script>
+
     <title>Upload</title>
     <?php
 
@@ -129,7 +125,7 @@ echo "<table>";
                     echo "<tr>";
                     echo"<td>" . $row['filename']; echo "</td>";
                    // echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td><br>";
-                    echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a> </td>";
+                    echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen<br/></a> </td>";
                     echo"<td>" . "<a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a> </td>";
                     //echo "<td>" . "<a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </td>";
                     echo "</tr>";
