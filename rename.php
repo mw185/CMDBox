@@ -5,21 +5,14 @@ include'connection.php';
 
 $fileID = isset($_GET['fileID']) ? $_GET ['fileID'] : die("ERROR: ID konnte nicht gefunden werden");
 
-$statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
-$statement->execute(array('fileID' => $fileID));
-
-$file = $statement->fetch();
-
-$newname = $file['filename'];
+$oldname = $file['filename'];
 
 if (isset($_POST['newname'])) {
 
     $newname = $_POST['newname'];
 
-    $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = $fileID");
-    $name = htmlspecialchars(strip_tags($_POST['rename']));
-    $statement->bindParam(':filename', $newname);
-    $statement->execute();
+    $statement = $db->prepare("UPDATE file SET filename = :newname WHERE fileID = :fileID");
+    $result = $statement->execute(array('filename' => $newname, 'fileID' => $fildeID));
 
     rename("Uploads/" . $newname);
 
