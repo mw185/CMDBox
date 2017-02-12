@@ -45,7 +45,7 @@ if (!isset($_SESSION ['userid'])) {
 
 <body>
 
-<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?> " width="285px" alt="Profilbild"/>
         <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
 
 
@@ -71,7 +71,7 @@ if (!isset($_SESSION ['userid'])) {
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <input type="file" name="file" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
+    <input type="file" name="profilbild" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
 
     <input type="submit" name="hochladen" placeholder="Bild hochladen" value = "Bild hochladen">
 
