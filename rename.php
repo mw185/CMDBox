@@ -3,25 +3,35 @@
 session_start();
 include'connection.php';
 
-$fileID = isset($_GET['fileID']);
+$fileID = isset($_GET['fileID']) ? $_GET ['fileID'] : die("ERROR: ID konnte nicht gefunden werden");
 
+$statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
+$statement->execute(array('fileID' => $fileID));
 
-$newname = $_POST['newname'];
-$oldname = $_GET['fileID'];
+$file = $statement->fetch();
 
-echo $fileID;
+$newname = $file['filename'];
 
-rename($oldname, $newname);
-header("Location: upload.php");
+if (isset($_POST['newname'])) {
 
- //   else {
-  //          echo "Datei konnte nicht umbenannt werden";
-    //    }
+    $newname = $_POST['newname'];
 
+    $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = $fileID");
+    $name = htmlspecialchars(strip_tags($_POST['rename']));
+    $statement->bindParam(':filename', $newname);
+    $statement->execute();
+
+    // rename("Uploads/" . $newname);
+
+    header("location: upload.php");
+}
+else {
+    echo "Datei konnte nicht umbenannt werden";
+}
 ?>
 
-<form action="rename.php?rename=1" method="post">Neuer Dateiname:<br>
-    <input type="text" size="40" maxlength="250" name="newname"><br>
+<form name="rename" action="<?php echo("?id={$fileID}")?>method="post">Neuer Name:<br>
+<input type="text" size="40" maxlength="250" name="newname" value="<?php echo $newname ?>"><br>
 
-    <input type="submit" value="Umbenennen">
+<input type="submit" value="Umbenennen">
 </form>
