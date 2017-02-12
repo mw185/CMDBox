@@ -144,3 +144,24 @@ h1 {
     }
 }
 }
+h2{
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    margin: 20px 25px 0 130px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: bold;
+    color: aliceblue;
+    display: table;
+    overflow: hidden;
+}
+table {
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    margin: 20px 25px 0 130px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: normal;
+    color: aliceblue;
+    display: block;
+    overflow: hidden;
+
+}
