@@ -3,7 +3,8 @@
 session_start();
 include'connection.php';
 
-if (isset($_GET['fileID'])) {
+$fileID = $_GET['fileID'];
+
     $newname = $_POST['newname'];
 
     $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
