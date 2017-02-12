@@ -69,11 +69,11 @@ if (!isset($_SESSION ['userid'])) {
 <br/><br/><br/><br/><br/><br/><br/>
 
 
-<form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
+<form name ="Profilbild" method="post" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <input type="file" name="file" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
+    <input type="file" name="file" size="60" maxlength="255" placeholder="Bild auswählen" value="Bild auswählen"><br>
 
-    <input type="submit" name="userid" placeholder="Bild hochladen" value = "Bild hochladen">
+    <input type="Submit" name="submit" placeholder="Bild hochladen" value ="Bild hochladen">
 
 </form>
 </body>
