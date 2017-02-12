@@ -13,7 +13,7 @@ html body {
     background-color: aliceblue;
     width: 100vw;
     padding: 20px 30px;
-    position: fixed;
+    position: inherit;
 
 
 }
