@@ -3,7 +3,7 @@
 session_start();
 include'connection.php';
 
-$fileID = (isset($_GET['fileID'])) ? $_GET ['fileID'] : "ERROR: ID konnte nicht gefunden werden";
+$fileID = isset($_GET['fileID']) ? $_GET ['fileID'] : die("ERROR: ID konnte nicht gefunden werden");
 
 $statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
 $statement->execute(array('fileID' => $fileID));
@@ -13,12 +13,15 @@ $file = $statement->fetch();
 $oldname = $file['filename'];
 
     if (isset($_POST['rename'])) {
+
         $newname = $_POST['newname'];
 
-        $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
-        $statement->execute(array('fileID' => $fileID, 'filename' => $newname));
+        $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = $fileID");
+        $name = htmlspecialchars(strip_tags($_POST['rename']));
+        $statement->bindParam(':filename', $newname);
+        $statement->execute();
 
-        rename("Uploads/" . $newname);
+        // rename("Uploads/" . $newname);
 
         header("location: upload.php");
     }
