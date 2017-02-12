@@ -10,13 +10,9 @@
     <link href="./css/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/script.js/0.1/script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/main.js"></script>
+
     <title>Passwort ändern</title>
 <?php
 session_start();
@@ -95,17 +91,20 @@ if($showFormular) {
 ?>
     <br/><br/><br/><br/><br/>
     <br/><br/>
-<form action="pwaendern.php?password=1" method="post">
-    Altes Passwort:<br>
-    <input type="password" size="40" maxlength="250" name="passwort_alt"><br>
-    Neues Passwort:<br>
-    <input type="password" size="40" maxlength="250" name="passwort_neu"><br>
-    Neues Passwort wiederholen:<br>
-    <input type="password" size="40" maxlength="250" name="passwort_neu2"><br><br>
 
+    <form action="pwaendern.php?password=1" method="post">
+        <label for="password_alt">Altes Passwort</label>
+        <input type="password" size="40" maxlength="250" name="password_alt" id="password_alt" placeholder="Altes Passwort"><br>
 
-    <input type="submit" value="Passwort ändern">
-</form>
+        <label for="password_neu">Neues Passwort</label>
+        <input type="password" size="40" maxlength="250" name="password_neu" id="password_neu" placeholder = "Neues Passwort"><br>
+
+        <label for="password_neu2">Neues Passwort2</label>
+        <input type="password_neu2" size="40" maxlength="250" name="password_neu2" id="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
+
+        <button type="reset">Eingaben zurücksetzen</button>
+        <button type="submit">Passwort ändern</button>
+    </form>
 
 <?php
 }
