@@ -29,8 +29,10 @@ if(isset($errorMessage)) {
 ?>
 
 <body>
-<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-<?php echo ($_SESSION['userid']) ?>
+
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
+
 
 
 <div>
@@ -47,7 +49,7 @@ if(isset($errorMessage)) {
         </div>
     </div>
 </div>
-<br/><br/><br/><br/><br/>
+
 
 <?php
 $showFormular = true;
@@ -91,7 +93,8 @@ if (isset($_GET['password'])) {
 }
 if($showFormular) {
 ?>
-
+    <br/><br/><br/><br/><br/>
+    <br/><br/>
 <form action="pwaendern.php?password=1" method="post">
     Altes Passwort:<br>
     <input type="password" size="40" maxlength="250" name="passwort_alt"><br>

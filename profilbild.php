@@ -50,13 +50,15 @@ if (!isset($_SESSION ['userid'])) {
 
 <body>
 
-<img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-<h1><?php echo ($_SESSION['userid']) ?></h1>
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
 
 
 <div>
     <div class="nav">
+
         <div class="container">
+
             <ul class="pull-left">
                 <li><a href="upload.php">CMD Upload</a></li>
             </ul>
@@ -69,11 +71,11 @@ if (!isset($_SESSION ['userid'])) {
     </div>
 </div>
 <br/><br/><br/><br/><br/>
-
+<br/><br/>
 
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
-    <p><input type="file" name="file" size="20">
+    <p><input type="file" name="file" size="20" value = "Bild auswählen" >
         <input type="submit" value="Bild hochladen" name="bild_hochladen"></p>
 </form>
 </body>
