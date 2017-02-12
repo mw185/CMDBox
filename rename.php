@@ -3,18 +3,21 @@
 session_start();
 include'connection.php';
 
-$fileID = $_GET['fileID'];
+$fileID = (isset($_GET['fileID'])) ? $_GET ['fileID'] : "ERROR: ID konnte nicht gefunden werden";
+    if (isset($_GET['rename'])) {
+        $newname = $_POST['newname'];
 
-    $newname = $_POST['newname'];
+        $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
+        $statement->execute(array('fileID' => $fileID, 'filename' => $newname));
 
-    $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
-    $statement->execute(array('fileID' => $fileID, 'filename' => $filename));
+        $file = $statement->fetch();
+        rename("Uploads/" . $newname);
 
-    $file = $statement->fetch();
-    rename("Uploads/" . $file["filename"]);
-
-    header("location: upload.php");
-
+        header("location: upload.php");
+    }
+    else {
+        echo "Datei konnte nicht umbenannt werden";
+    }
 ?>
 
 <form action="rename.php?rename=1" method="post">Neuer Name:<br>
