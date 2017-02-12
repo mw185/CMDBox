@@ -37,13 +37,8 @@ if (!isset($_SESSION ['userid'])) {
     <link href="./css/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/script.js/0.1/script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/main.js"></script>
     <title>Profilbild ändern</title>
 </head>
 
@@ -75,8 +70,11 @@ if (!isset($_SESSION ['userid'])) {
 
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
-    <p><input type="file" name="file" size="20" value = "Bild auswählen" >
-        <input type="submit" value="Bild hochladen" name="bild_hochladen"></p>
+
+    <button><input type="file" name="file" size="20" value = "Bild auswählen" placeholder="Bild auswählen"></button><br>
+
+    <button><input type="submit" value="Bild hochladen" name="bild_hochladen" placeholder = "Bild hochladen"></button><br>
+
 </form>
 </body>
 </html>
