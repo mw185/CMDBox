@@ -71,9 +71,9 @@ if (!isset($_SESSION ['userid'])) {
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <input type="file" name="profilbild" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
+    <input type="file" name="file" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
 
-    <input type="submit" name="hochladen" placeholder="Bild hochladen" value = "Bild hochladen">
+    <input type="submit" name="userid" placeholder="Bild hochladen" value = "Bild hochladen">
 
 </form>
 </body>
