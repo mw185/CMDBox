@@ -11,15 +11,8 @@ $oldname = $_GET['fileID'];
 
 echo $fileID;
 
-    if (isset($_POST['newname'])) {
-
-        $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
-        $result = $statement->execute(array('filename' => $newname, 'fileID' => $fileID));
-
-        rename($oldname, $newname);
-
-        header("Location: upload.php");
-    }
+rename($oldname, $newname);
+header("Location: upload.php");
 
  //   else {
   //          echo "Datei konnte nicht umbenannt werden";
@@ -27,7 +20,7 @@ echo $fileID;
 
 ?>
 
-<form action="rename.php?rename=1" method="post">>Neuer Dateiname:<br>
+<form action="rename.php?rename=1" method="post">Neuer Dateiname:<br>
     <input type="text" size="40" maxlength="250" name="newname"><br>
 
     <input type="submit" value="Umbenennen">
