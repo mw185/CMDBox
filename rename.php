@@ -5,7 +5,6 @@ include'connection.php';
 
 $fileID = isset($_GET['fileID']);
 
-$file = $statement->fetch();
 
 $newname = $_POST['newname'];
 $oldname = $_GET['fileID'];
