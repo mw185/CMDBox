@@ -45,8 +45,8 @@ if (!isset($_SESSION ['userid'])) {
 
 <body>
 
-<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?> " width="285px" alt="Profilbild"/>
-        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid'])?></h1></li></ul>
 
 
 <div>
