@@ -1,8 +1,9 @@
 <?php
 session_start();
 include("connection.php");
+
 ///Daten aus DB herauslesen
-$sql = $db->prepare('SELECT email FROM person WHERE email = :email');
+$sql = $db->prepare('SELECT email FROM person WHERE username = :username');
 $array = array(
     ':username' => $_SESSION['userid']
 );
