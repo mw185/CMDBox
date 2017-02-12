@@ -23,7 +23,6 @@ if(!$filename) {
     //file nicht verändern
 }
 
-else {
 
 
 $path = "Uploads/" . $filename;
@@ -50,5 +49,5 @@ $fsize = filesize ($path);
             echo 'error';
         }
     }
-}
+
 ?>
