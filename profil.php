@@ -34,10 +34,6 @@ if (!isset($_SESSION ['userid'])) {
 
 
 
-
-
-
-
 <div>
     <div class="nav">
         <div class="container">
