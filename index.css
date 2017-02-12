@@ -47,7 +47,7 @@
 }
 
 .card .input-container label {
-    display: ruby;
+    display: block;
 
 }
 

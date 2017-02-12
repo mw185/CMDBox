@@ -117,22 +117,22 @@ if($showFormular) {
                 <form action="?register=1" method="post">
                     <div class="input-container">
                         <input id ="username" type="text" size="40" maxlength="250" name="username">
-                        <label for = "username">Username</label>
+                        <label for = "username"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "email" type="email" name="email" maxlength="250"><br/>
-                        <label for = "E-Mail">E-Mail</label>
+                        <label for = "E-Mail"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "password" type="password" name="passwort" maxlength="250"><br/>
-                        <label for = "Passwort">Passwort</label>
+                        <label for = "Passwort"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
                         <input id = "password" type="password" name="passwort2" maxlength="250"><br/>
-                        <label for = "Passwort wiederholen">Passwort wiederholen</label>
+                        <label for = "Passwort wiederholen"></label>
                         <div class = "bar"></div>
                     </div>
 
