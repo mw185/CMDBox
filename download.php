@@ -3,33 +3,39 @@
 session_start();
 include ("connection.php");
 
-$fileID = $_GET['filename'];
+$fileID = $_GET['file'];
 
 $sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
+
 $file = $statement->fetch();
 
-if (isset($file['filename']) && basename($file['fileID']) == $file['fileID']) {
-    $filename = $file['fileID'];
+if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
+    $filename = $file['filename'];
 }
+
     else {
      $filename = NULL;
     }
+
 if(!$filename) {
     //file nicht verändern
 }
+
 else {
 
-$path = "Uploads/" . $fileID;
+
+$path = "Uploads/" . $filename;
 $mime = mime_content_type($path);
 $fsize = filesize ($path);
 
 
-    file_exists($path) && is_readable($path);
-        header('Content-Type: '.$mime);
+
+    if (file_exists($path) && is_readable($path)) {
+        header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
-        header('Content-Disposition: attachment; fileID=' . $fileID);
+        header('Content-Disposition: attachment; filename=' . $filename);
         header('Content-Transfer-Encoding: binary');
         readfile($path);
         
@@ -41,5 +47,6 @@ $fsize = filesize ($path);
         } else {
             echo 'error';
         }
+    }
 }
 ?>
