@@ -132,7 +132,28 @@ echo "<table>";
                     echo "<br/>";
                 }
 echo "</table>";
-          //  }
+
+
+
+      $uverz="Uploads/";
+       echo "<h2>Bisher hochgeladene Dateien</h2>";
+       $i=1; 
+       $verzeichnis=opendir($uverz);
+    while ($file = readdir($verzeichnis))
+    {
+        if(is_file($uverz."/".$file[$i]))
+            echo "<a href=\"".$uverz."/".$file[$i]."\" target=\"_blank\">Datei.".$i."</a> - - ";
+        $i++;
+    }
+
+    closedir($verzeichnis);
+
+?>
+
+
+
+
+//  }
       //  }
   // }
 
@@ -184,6 +205,5 @@ $uploadOk = 0;
      //   echo "Weiter zu deinen <a href='showuploads.php'>Dateien.</a>";
    // }
 //}
-?>
 </body>
 </html>
