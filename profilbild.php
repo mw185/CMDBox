@@ -39,6 +39,7 @@ if (!isset($_SESSION ['userid'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
+    <link href="profilbild.css" rel="stylesheet">
     <title>Profilbild ändern</title>
 </head>
 
@@ -71,9 +72,9 @@ if (!isset($_SESSION ['userid'])) {
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <button><input type="file" name="file" size="20" value = "Bild auswählen" placeholder="Bild auswählen"></button><br>
+    <input type="file" name="file" size="20" value = "Bild auswählen" placeholder="Bild auswählen"><br>
 
-    <button><input type="submit" value="Bild hochladen" name="bild_hochladen" placeholder = "Bild hochladen"></button><br>
+    <input type="submit" value="Bild hochladen" name="bild_hochladen" placeholder = "Bild hochladen"><br>
 
 </form>
 </body>
