@@ -5,9 +5,9 @@ include ("connection.php");
 
 $fileID = $_GET['file'];
 
-$sql = "SELECT filename FROM file WHERE filename = :filename";
+$sql = "SELECT filename FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
-$statement->execute(array('filename'=> $filename));
+$statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
 
