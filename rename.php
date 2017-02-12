@@ -12,15 +12,12 @@ $file = $statement->fetch();
 
 $oldname = $file['filename'];
 
-echo $oldname;
-
-    if (isset($_GET['rename'])) {
+    if (isset($_POST['rename'])) {
         $newname = $_POST['newname'];
 
         $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
         $statement->execute(array('fileID' => $fileID, 'filename' => $newname));
 
-        $file = $statement->fetch();
         rename("Uploads/" . $newname);
 
         header("location: upload.php");
@@ -30,7 +27,7 @@ echo $oldname;
     }
 ?>
 
-<form action="rename.php?rename=1" method="post">Neuer Name:<br>
+<form name="rename" action="rename.php?ID=<?php echo $fileID?>" method="post">Neuer Name:<br>
     <input type="text" size="40" maxlength="250" name="newname" value="<?php echo $oldname ?>"><br>
 
     <input type="submit" value="Umbenennen">
