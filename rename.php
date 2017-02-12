@@ -21,9 +21,9 @@ echo $fileID;
         header("Location: upload.php");
     }
 
-    else {
-            echo "Datei konnte nicht umbenannt werden";
-        }
+ //   else {
+  //          echo "Datei konnte nicht umbenannt werden";
+    //    }
 
 ?>
 
