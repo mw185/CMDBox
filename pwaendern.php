@@ -101,7 +101,7 @@ if($showFormular) {
         <input type="password" size="40" maxlength="250" name="password_neu" id="password_neu" placeholder = "Neues Passwort"><br>
 
 
-        <input type="password_neu2" size="40" maxlength="250" name="password_neu2" id="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
+        <input type="password" size="40" maxlength="250" name="password_neu2" id="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
 
         <button type="reset">Eingaben zurücksetzen</button>
         <button type="submit">Passwort ändern</button>
