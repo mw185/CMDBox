@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
+    <link href="pwaendern.css" rel="stylesheet">
 
     <title>Passwort ändern</title>
 <?php
@@ -93,13 +94,13 @@ if($showFormular) {
     <br/><br/>
 
     <form action="pwaendern.php?password=1" method="post">
-        <label for="password_alt">Altes Passwort</label>
+
         <input type="password" size="40" maxlength="250" name="password_alt" id="password_alt" placeholder="Altes Passwort"><br>
 
-        <label for="password_neu">Neues Passwort</label>
+
         <input type="password" size="40" maxlength="250" name="password_neu" id="password_neu" placeholder = "Neues Passwort"><br>
 
-        <label for="password_neu2">Neues Passwort2</label>
+
         <input type="password_neu2" size="40" maxlength="250" name="password_neu2" id="password_neu2" placeholder = "Neues Passwort wiederholen"><br><br>
 
         <button type="reset">Eingaben zurücksetzen</button>
