@@ -27,15 +27,15 @@ if(!$filename) {
 
 $path="Uploads/".$filename;
 $mime=mime_content_type($path);
-$fsize=filesize ($path);
+$datasize=filesize ($path);
 
 
 
     if (file_exists($path) && is_readable($path)) {
         echo $mime;
-        echo $fsize;
+        echo $datasize;
         header('Content-Type: '.$mime);
-        header('Content-Length: '.$fsize);
+        header('Content-Length: '.$datasize);
         header('Content-Disposition: attachment; filename='.$filename);
         header('Content-Transfer-Encoding: binary');
         readfile($path);
