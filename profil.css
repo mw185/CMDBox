@@ -91,15 +91,13 @@ html body {
 
 img {
     float: none;
-    width: 50%;
+    width: auto;
     height: auto;
     max-width: 300px;
     max-height: 300px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+    border-radius: 20%;
     border: 2px solid;
-    border-color:#98D2E6;
+    border-color: aliceblue;
 }
 
 input[type=file] {
