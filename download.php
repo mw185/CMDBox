@@ -36,7 +36,7 @@ $path = "Uploads/" . $filename;
         //header('Content-Type: ' . $mime);
         //header('Content-Length: ' . $fsize);
         header('Content-Disposition: attachment; filename=' . $filename);
-        header('Content-Transfer-Encoding: binary');
+        //header('Content-Transfer-Encoding: binary');
         readfile($path);
         
         $file = @ fopen($path, 'rb');
