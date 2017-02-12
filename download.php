@@ -35,9 +35,10 @@ $fsize = filesize ($path);
     if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
-        header("Content-Disposition: Attachment; filename= . '$filename'");
+        header("Content-Disposition: attachment; fileID= . '$fileID'");
         header('Content-Transfer-Encoding: binary');
         readfile($path);
+        echo $fsize;
         
         $file = @ fopen($path, 'rb');
 
