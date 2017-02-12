@@ -136,9 +136,6 @@ echo "<table>";
                 }
 echo "</table>";
 
-
-
-
 ?>
 
 </body>
