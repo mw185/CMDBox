@@ -119,6 +119,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement->execute(array('username'=> $username));
         $row = $statement->fetch();
 
+echo "<h2>Bisher hochgeladene Dateien</h2>";
 
         //while (($entry = readdir($handle)) !== false) {
           // if ($entry != '.' && $entry != '..') {
@@ -136,18 +137,6 @@ echo "</table>";
 
 
 
-      $uverz="Uploads/";
-       echo "<h2>Bisher hochgeladene Dateien</h2>";
-       $i=1; 
-       $verzeichnis=opendir($uverz);
-    while ($file = readdir($verzeichnis))
-    {
-        if(is_file($uverz."/".$file[$i]))
-            echo "<a href=\"".$uverz."/".$file[$i]."\" target=\"_blank\">Datei.".$i."</a> - - ";
-        $i++;
-    }
-
-    closedir($verzeichnis);
 
 ?>
 
