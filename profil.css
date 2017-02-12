@@ -29,15 +29,11 @@ html body {
 
 }
 
-
-
 /* Hover Effekt beim dr�bergehen*/
 .nav a:hover {
     background-color: slategrey;
-    opacity: 0.75;
+    opacity: 0.5;
 }
-
-
 
 img {
     float: left;
@@ -48,7 +44,6 @@ img {
     border-radius: 2%;
     border: 1px solid;
     border-color: slategrey;
-
 }
 
 h1 {
@@ -61,7 +56,6 @@ h1 {
     display: block;
     overflow: hidden;
 }
-
 
 @media screen and (min-width:320px) {
 
@@ -114,5 +108,4 @@ table {
     color: aliceblue;
     display: block;
     overflow: hidden;
-
 }
