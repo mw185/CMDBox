@@ -131,7 +131,7 @@ echo "<table>";
                    // echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td><br>";
                     echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a> </td>";
                     echo"<td>" . "<a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a> </td>";
-                    echo "<td>" . "<a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </td>";
+                    //echo "<td>" . "<a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </td>";
                     echo "</tr>";
                     echo "<br/>";
                 }
