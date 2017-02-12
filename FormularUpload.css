@@ -10,16 +10,7 @@ input {
     background-color: #fffbf0;
     border: 1px solid #e7c157;
 }
-label {
-    text-align: right;
-    line-height: 1.5;
-    width: 30%;
-    position: absolute;
-    left: 0;
-}
-label::after {
-    content: ": ";
-}
+
 button {
     margin-left: 31%;
 }
