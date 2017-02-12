@@ -27,7 +27,7 @@ echo $fileID;
 
 ?>
 
-<form name="rename" action=pwaendern.php<?php echo $oldname?>method="post">Neuer Dateiname:<br>
+<form action="rename.php?rename=1" method="post">>Neuer Dateiname:<br>
     <input type="text" size="40" maxlength="250" name="newname"><br>
 
     <input type="submit" value="Umbenennen">
