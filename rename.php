@@ -3,15 +3,10 @@
 session_start();
 include'connection.php';
 
-session_start();
-include ("connection.php");
-
 if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])) {
     header('Login.php');
     exit;
 }
-
-$fileID = $_GET['fileID'];
 
 $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
 $statement->execute(array('fileID'=> $fileID));

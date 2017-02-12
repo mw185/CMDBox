@@ -129,6 +129,7 @@ echo "<table>";
                     echo"<td>" . $row['filename']; echo "</td>";
                     echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a> </td><br>";
                     echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a> </td>";
+                    echo"<td>" . "<a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></td>";
                     echo "</tr>";
                     echo "<br/>";
                 }
