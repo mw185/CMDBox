@@ -32,20 +32,21 @@ if (!isset($_SESSION ['userid'])) {
 
 <body>
 
-
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
 
 <div>
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-                    <h1><?php echo ($_SESSION['userid']) ?></h1></li>
+
                 <li><a href="upload.php">CMD Upload</a></li>
             </ul>
             <ul class="pull-right">
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
+
             </ul>
         </div>
     </div>
