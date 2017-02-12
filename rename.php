@@ -14,7 +14,6 @@ $fileID = $_GET['fileID'];
     rename("Uploads/" . $file["filename"]);
 
     header("location: upload.php");
-}
 
 ?>
 
