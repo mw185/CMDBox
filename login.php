@@ -67,13 +67,13 @@ if(isset($errorMessage)) {
                 <form name="login" action="?login=1" method="post">
 
                 <div class="input-container">
-                    <input id = "username" type="text" name="username" maxlength="30">
+                    <input id = "username" type="text" name="username" maxlength="30" placeholder = "Username">
                     <label for = "username"></label>
                     <div class = "bar"></div>
                 </div>
 
                 <div class = "input-container">
-                    <input id = "password" type="password" name="password" maxlength="40"><br/>
+                    <input id = "password" type="password" name="password" maxlength="40" placeholder = "Passwort"><br/>
                     <label for = "password"></label>
                     <div class = "bar"></div>
                 </div>
@@ -85,12 +85,12 @@ if(isset($errorMessage)) {
                  <div class = "button-container">
                     <button type = "submit" name = "Einloggen">Einloggen</button>
                  </div>
-                    <br/>
+                    <br/><br/>
 
                     <div class = "button-container">
                         <a href="index.php" class="btn btn-default">Zur Registrierung</a>
                     </div>
-                 <div class="cardfooter">
+                 <div class="cardfooter"><br/><br/>
 
                 </form>
             </div>

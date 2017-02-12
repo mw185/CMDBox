@@ -116,22 +116,22 @@ if($showFormular) {
                 <h1 class ="title">Registrieren</h1>
                 <form action="?register=1" method="post">
                     <div class="input-container">
-                        <input id ="username" type="text" size="40" maxlength="250" name="username">
+                        <input id ="username" type="text" size="40" maxlength="250" name="username" placeholder = "Username">
                         <label for = "username"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
-                        <input id = "email" type="email" name="email" maxlength="250"><br/>
+                        <input id = "email" type="email" name="email" maxlength="250" placeholder = "E-Mail"><br/>
                         <label for = "E-Mail"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
-                        <input id = "password" type="password" name="passwort" maxlength="250"><br/>
+                        <input id = "password" type="password" name="passwort" maxlength="250" placeholder = "Passwort"><br/>
                         <label for = "Passwort"></label>
                         <div class = "bar"></div>
                     </div>
                     <div class = "input-container">
-                        <input id = "password" type="password" name="passwort2" maxlength="250"><br/>
+                        <input id = "password" type="password" name="passwort2" maxlength="250" placeholder = "Passwort wiederholen"><br/>
                         <label for = "Passwort wiederholen"></label>
                         <div class = "bar"></div>
                     </div>
