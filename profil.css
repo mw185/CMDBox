@@ -4,9 +4,6 @@ html body {
     overflow-x: hidden;
     background-color: slategray;
     margin: 0 auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .container {
@@ -14,7 +11,6 @@ html body {
     width: 100vw;
     padding: 20px 30px;
     position: inherit;
-
 
 }
 .nav ul li {
@@ -43,34 +39,6 @@ html body {
 
 
 
-/* Profil */
-
-.profil {
-    position: relative;
-    top: 20px;
-    overflow: visible;
-    text-align: center;
-
-}
-
-.profilkopf {
-    background-color:slategray;
-    background-size: auto;
-    height: 135px;
-}
-
-.profilbody {
-    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
-    margin: 8px 14px 0 14px;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight:normal;
-    color: #98D2E6;
-    display: block;
-    overflow: hidden;
-}
-
-
 img {
     float: left;
     width: auto;
@@ -94,10 +62,6 @@ h1 {
     overflow: hidden;
 }
 
-
-.btn {
-    color: #98D2E6;
-}
 
 @media screen and (min-width:320px) {
 
@@ -130,7 +94,7 @@ h1 {
     }
 }
 }
-h2{
+h2 {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 20px 25px 0 130px;
     font-size: 25px;
@@ -140,6 +104,7 @@ h2{
     display: table;
     overflow: hidden;
 }
+
 table {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 20px 25px 0 130px;
