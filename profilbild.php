@@ -54,6 +54,7 @@ if (!isset($_SESSION ['userid'])) {
 
         <div class="container">
 
+
             <ul class="pull-left">
                 <li><a href="upload.php">CMD Upload</a></li>
             </ul>
@@ -70,9 +71,10 @@ if (!isset($_SESSION ['userid'])) {
 
 <form method="POST" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <input type="file" name="file" size="20" value = "Bild auswählen" placeholder="Bild auswählen"><br>
+    <input type="file" name="file" size="20" placeholder="Bild auswählen" value="Bild auswählen"><br>
 
-    <input type="submit" value="Bild hochladen" name="bild_hochladen" placeholder = "Bild hochladen">
+    <input type="submit" name="hochladen" placeholder="Bild hochladen" value = "Bild hochladen">
+
 </form>
 </body>
 </html>
