@@ -6,7 +6,6 @@ include'connection.php';
 
 $fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden");
 
-
 $oldname = $file['filename'];
 $newname = $_POST['newname'];
 
