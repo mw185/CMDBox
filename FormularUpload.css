@@ -13,7 +13,7 @@ input {
     width: 60%;
     background-color: aliceblue;
     border: 2px solid lightslategrey;
-    text-transform: uppercase;
+    text-transform: none;
 }
 .file {
     text-transform: uppercase;
