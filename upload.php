@@ -101,7 +101,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement = $db->prepare($sql);
         $result = $statement->execute();
 
-        echo('Upload erfolgreich!</a>');
+        echo('<h2>Upload erfolgreich!</h2></a>');
     } else {
         echo "please upload file!";
     }

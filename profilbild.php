@@ -16,7 +16,7 @@ if (!isset($_SESSION ['userid'])) {
         if (isset($_FILES['file'])) {
             $zielname = basename($_FILES["file"]["name"]);
             if (move_uploaded_file($_FILES ['file']['tmp_name'], $dir . $zielname)) {
-                rename($dir . $zielname, $dir . $newname);
+                rename($dir . $zielname, $dir . $newname . '.jpg');
                 header('location: profil.php');
             } else {
                 echo "Fehler";
@@ -66,16 +66,10 @@ if (!isset($_SESSION ['userid'])) {
         </div>
     </div>
 </div>
-<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
 
 
-<form name ="Profilbild" method="post" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
-
-    <input type="file" name="file" size="60" maxlength="255" placeholder="Bild auswählen" value="Bild auswählen"><br>
-
-    <input type="Submit" name="submit" placeholder="Bild hochladen" value ="Bild hochladen">
-
-</form>
+<?php include ("profilbild.html");?>
 </body>
 </html>
 

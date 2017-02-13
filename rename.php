@@ -39,7 +39,7 @@ if(isset($errorMessage)) {
                 <li><a href="upload.php">CMD Upload</a></li>
             </ul>
             <ul class="pull-right">
-                <li><a href="../../Desktop/pwaendern.php">Passwort ändern</a></li>
+                <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
