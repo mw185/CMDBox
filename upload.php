@@ -48,7 +48,6 @@
 
 
 <?php
-echo "heil php";
 
 if (isset ($errorMessage)) {
     echo $errorMessage;
