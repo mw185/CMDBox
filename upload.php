@@ -118,7 +118,7 @@ echo "<h2>Bisher hochgeladene Dateien:</h2>";
 
         //while (($entry = readdir($handle)) !== false) {
           // if ($entry != '.' && $entry != '..') {
-echo "<table rules='rows' style='width=25px; border-color:black'>";
+echo "<table rules='rows' style='height: =25px; border-color:black'>";
                 while ($row = $statement->fetch()) {
                     extract($row);
                     echo "<tr>";
@@ -129,7 +129,6 @@ echo "<table rules='rows' style='width=25px; border-color:black'>";
                     echo"<td>" . "<button><a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></button></td>";
                     echo"<td>" . "<button><a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </button></td>";
                     echo"</tr>";
-                    echo "fick";
                     echo"<br/>";
                 }
 echo "</table>";
