@@ -29,7 +29,7 @@ https://mars.iuk.hdm-stuttgart.de/~mw185/share.php?fileID=$fileID";
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
 ?>
 
-<form action="share.php" method="POST">
+<form name ="share" action="<?php echo("?fileID={$fileID}")?>" method="POST">
     <input type="email" name="email">email<br/>
     <input type="submit" value="Senden">Senden<br/>
 </form>
