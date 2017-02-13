@@ -3,7 +3,7 @@ html body{
 }
 form {
     width: 30em;
-    padding-top: 3em;
+    padding-top: 1em;
     position: relative;
     text-transform: uppercase;
     color: slategrey;

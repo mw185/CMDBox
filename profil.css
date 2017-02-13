@@ -80,6 +80,13 @@ table {
 }
 
 td{
-    padding: 1%
+    padding-right: 10%
 
+}
+
+button {
+    margin: 0 0 1em 31%;
+    text-transform: uppercase;
+    background-color: aliceblue;
+    color: slategrey;
 }
