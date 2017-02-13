@@ -81,7 +81,7 @@ if (isset($_GET['password'])) {
         $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
         if ($result) {
             $showFormular = false;
-            echo 'Dein Passwort wurde erfolgreich geändert.';
+            echo '<p>Dein Passwort wurde erfolgreich geändert.</p>';
             ?>
             <a href=upload.php>Zurück</a>
 
