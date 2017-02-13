@@ -13,23 +13,31 @@ $file = $statement->fetch();
 
 if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
     $filename = $file['filename'];
+}
 
+else {
+    $filename = NULL;
+}
 
+if (!$filename) {
+    //File nicht vorhanden.
+}
 
-$path = "Uploads/" . $filename;
-$mime = mime_content_type($path);
-$fsize = filesize ($path);
+else {
+    $path = "Uploads/" . $filename;
+    $mime = mime_content_type($path);
+    $fsize = filesize($path);
 
 
 
     if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
-        header("Content-Disposition: attachment; fileID= . '$fileID'");
+        header('Content-Disposition: attachment; filename=' . $filename );
         header('Content-Transfer-Encoding: binary');
         readfile($path);
         echo $fsize;
-        
+
         $file = @ fopen($path, 'rb');
 
         if ($file) {
@@ -40,4 +48,3 @@ $fsize = filesize ($path);
         }
     }
 }
-?>
