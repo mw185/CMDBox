@@ -63,12 +63,12 @@ if (isset($_GET['password'])) {
     $passwort_neu2 = $_POST['passwort_neu2'];
 
     if ($passwort_neu != $passwort_neu2) {
-        echo 'Die neuen Passwörter stimmen nicht überein';
+        echo '<p>Die neuen Passwörter stimmen nicht überein</p>';
         $error = true;
     }
 
     if ($passwort_neu == $passwort_alt) {
-        echo 'Das neue Passwort ist unverändert';
+        echo '<p>Das neue Passwort ist unverändert</p>';
         $error = true;
     }
 
@@ -98,7 +98,7 @@ if($showFormular) {
 
         <input type="password" size="40" maxlength="250" name="passwort_alt" placeholder="Altes Passwort"><br>
         <input type="password" size="40" maxlength="250" name="passwort_neu" placeholder = "Neues Passwort"><br>
-        <input type="password" size="40" maxlength="250" name="password_neu2" placeholder = "Passwort wiederholen"><br><br>
+        <input type="password" size="40" maxlength="250" name="password_neu" placeholder = "Passwort wiederholen"><br><br>
 
         <button type="submit">Passwort ändern</button>
         <button type="reset">Eingaben zurücksetzen</button>
