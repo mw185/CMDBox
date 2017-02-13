@@ -118,7 +118,7 @@ echo "<h2>Bisher hochgeladene Dateien:</h2>";
 
         //while (($entry = readdir($handle)) !== false) {
           // if ($entry != '.' && $entry != '..') {
-echo "<table rules='rows' style='border-color:black'>";
+echo "<table rules='rows' style='width=25px; border-color:black'>";
                 while ($row = $statement->fetch()) {
                     extract($row);
                     echo "<tr>";
