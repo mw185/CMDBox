@@ -71,7 +71,7 @@ if (isset($_POST['newname'])) {
 <br/><br/><br/><br/>
 <form name = "rename" enctype="multipart/form-data" action="<?php echo("?fileID={$fileID}")?>" method="post">
 
-    <input type = "text" name="newname" size="60" maxlength="255" id="newname" placeholder="Namen eingeben" value="Namen eingeben"><br/>
+    <input type = "text" name="newname" size="60" maxlength="255" id="newname" placeholder="Neuen Namen eingeben"><br/>
 
     <input type="Submit" name="submit"  id="submit" value = "Umbenennen">
 
