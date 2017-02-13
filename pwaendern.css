@@ -3,6 +3,7 @@ form {
     padding-top: 3em;
     position: relative;
     text-transform: uppercase;
+    color: aliceblue;
 }
 input {
     margin: 0 0 1em 31%;
