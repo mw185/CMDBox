@@ -3,7 +3,7 @@
 session_start();
 include ("connection.php");
 
-$fileID = $_GET['file'];
+$fileID = $_POST['file'];
 
 $sql = "SELECT * FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
@@ -49,3 +49,5 @@ else {
     }
 }
 ?>
+
+
