@@ -1,3 +1,4 @@
+<img src="CMDBox.png" width="285px" alt="Logo"/>
 <?php
 session_start();
 
