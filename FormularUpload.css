@@ -28,4 +28,13 @@ button {
     color: slategrey;
 }
 
+.impressum {
+
+    top: 30vh;
+    color: slategrey;
+    display: inline-block;
+    float: none;
+    padding-right: 10px;
+}
+
 

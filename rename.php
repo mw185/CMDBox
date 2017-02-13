@@ -80,6 +80,13 @@ if (isset($_POST['newname'])) {
     <input type="Submit" name="submit"  id="submit" value = "Umbenennen">
 
 </form>
+<div class="extrainfo">
+    <small class="impressum">Impressum</small>
+    <small class="impressum">|</small>
+    <small class="impressum">Team CMD &copy; 2017</small>
 
+</div>
 </body>
+</html>
+
 
