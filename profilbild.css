@@ -10,7 +10,6 @@ input {
     padding: .2em .5em;
     width: 60%;
     background-color: aliceblue;
-
     text-transform: uppercase;
 }
 .file {
@@ -22,6 +21,4 @@ button {
     text-transform: uppercase;
     background-color: aliceblue;
     color: slategrey;
-
-
 }
