@@ -13,11 +13,12 @@ $file = $statement->fetch();
 
 //if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
     $filename = $file['filename'];
+echo $filename;
 //}
 
-else {
-    $filename = NULL;
-}
+//else {
+   // $filename = NULL;
+//}
 
 if (!$filename) {
     //File nicht vorhanden.
