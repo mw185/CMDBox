@@ -40,11 +40,14 @@ if (!isset($_SESSION ['userid'])) {
     <link href="profil.css" rel="stylesheet">
     <link href="profilbild.css" rel="stylesheet">
     <title>Profilbild ändern</title>
+
+
 </head>
 
-
 <body>
-
+<div class="extrainfo">
+    <img src="CMDBox.png" width="250px" alt="Logo"/>
+</div>
 <ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?>" width="285px" alt="Profilbild"/>
         <h1><?php echo ($_SESSION['userid'])?></h1></li></ul>
 
@@ -66,6 +69,8 @@ if (!isset($_SESSION ['userid'])) {
 
 
 <?php include ("profilbild.html");?>
+
+
 </body>
 </html>
 

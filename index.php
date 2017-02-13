@@ -1,3 +1,5 @@
+<p><img src="CMDBox.png" width="250px" alt="Logo"/></p>
+
 <?php
 session_start();
 
@@ -156,14 +158,12 @@ if($showFormular) {
     <?php
 }       #ShowFormular endet hier
 ?>
-
-
-
         <div class="extrainfo">
-            <small class="credits">Team CMD &copy; 2017  |</small>
             <small class="impressum">Impressum</small>
+            <small class="impressum">|</small>
+            <small class="impressum">Team CMD &copy; 2017</small>
+
         </div>
-    </div>
 
 </body>
 </html>

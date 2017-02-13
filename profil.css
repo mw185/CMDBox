@@ -6,6 +6,7 @@ html body {
     margin: 0 auto;
 }
 
+
 .container {
     background-color: aliceblue;
     width: 100vw;
@@ -35,15 +36,21 @@ html body {
     opacity: 0.5;
 }
 
-img {
-    float: left;
+.extrainfo img{
+    padding: 20px 30px ;
     width: auto;
     height: auto;
+    float: right;
+    margin: 1em 0 4em 12%;
+}
+
+img {
+    float: left;
+    width: 150px;
+    height: 150px;
     max-width: 200px;
     max-height: 200px;
     border-radius: 5%;
-    border: 2px solid;
-    border-color: slategrey;
     position: absolute;
 }
 
@@ -91,3 +98,4 @@ button {
     background-color: aliceblue;
     color: slategrey;
 }
+

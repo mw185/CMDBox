@@ -1,3 +1,5 @@
+<p><img src="CMDBox.png" width="250px" alt="Logo"/></p>
+
 <?php
 session_start();
 
@@ -95,6 +97,11 @@ if(isset($errorMessage)) {
             </div>
         </div>
     </div>
+    <div class="extrainfo">
+        <small class="impressum">Impressum</small>
+        <small class="impressum">|</small>
+        <small class="impressum">Team CMD &copy; 2017</small>
+    </div>
 </body
-</html
+</html>
 
