@@ -66,12 +66,13 @@
 
 
 .card .button-container button, a{
+    margin: 5%;
     cursor: pointer;
     position: relative;
     display: inline-block;
-    background: lightgrey;
+    background: slategrey;
     width: 14vw;
-    border: 2px solid #e3e3e3;
+    border: 2px solid #708090;
     padding: 20px 0;
     font-size: 16px;
     font-weight: 300;
@@ -80,19 +81,12 @@
     -webkit-transition: .3s ease;
     transition: .3s ease;
 }
-.card .button-container button span {
-    position: relative;
-    z-index: 1;
-    color: #ddd;
-    -webkit-transition: .3s ease;
-    transition: .3s ease;
-}
 
-.card .button-container button, a:hover, .card .button-container button, a:active, .card .button-container button, a:focus {
-    border-color: #fd6e6e;
+.card .button-container button, a {
+    border-color: aliceblue;
 }
-.card .button-container button,a :hover span, .card .button-container button, a:active span, .card .button-container button, a:focus span {
-    color: #fd6e6e;
+.card .button-container button,a {
+    color: aliceblue;
 }
 
 .cardfooter {
@@ -137,16 +131,8 @@
     display:inline-block;
 }
 
-.credits, .impressum {
-    /*position:relative;*/
-    top: 6vh;
-    color: #ffffff;
-    display: inline-block;
 
-    float:right;
-    padding-right: 10px;
 
-}
 
 .extrainfo {
     margin-bottom: 2vh;

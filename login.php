@@ -79,11 +79,11 @@ if(isset($errorMessage)) {
                 </div>
 
                 <div class = "button-container">
-                    <button type = "reset" name = "Eingabe zurücksetzen">Eingabe zurücksetzen</button>
+                    <button type = "submit" name = "Einloggen">Einloggen</button>
                 </div>
 
                  <div class = "button-container">
-                    <button type = "submit" name = "Einloggen">Einloggen</button>
+                     <button type = "reset" name = "Eingabe zurücksetzen">Eingabe zurücksetzen</button>
                  </div>
                     <br/><br/>
 
