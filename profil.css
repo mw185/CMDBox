@@ -57,37 +57,6 @@ h1 {
     overflow: hidden;
 }
 
-@media screen and (min-width:320px) {
-
-    .nav {
-        float: left;
-        width: 25%;
-    }
-
-    .pull-left {
-        padding: 0px 0px 0px 200px;
-    }
-
-    .pull-right {
-        padding: 0px 200px 0px 200px;
-    }
-
-    @media screen and (max-width: 768px) {
-        .pull-left {
-            padding: 0px 0px 0px 200px;
-        }
-
-        .pull-right {
-            padding: 0px 200px 0px 200px;
-        }
-        @media screen and (min-width: 768px) {
-            .nav li {
-                display: inline;
-
-            }
-    }
-}
-}
 h2 {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 20px 25px 0 130px;
@@ -110,3 +79,6 @@ table {
     overflow: hidden;
 }
 
+td{
+    padding: 1%
+}
