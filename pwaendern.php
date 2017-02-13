@@ -27,16 +27,18 @@ if(isset($errorMessage)) {
 ?>
 
 <body>
+
+
 <div class="extrainfo">
     <img src="CMDBox.png" width="250px" alt="Logo"/>
 </div>
-<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="285px" alt="Profilbild"/>
-        <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
-
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?>" width="285px" alt="Profilbild"/>
+        <h1><?php echo ($_SESSION['userid'])?></h1></li></ul>
 
 
 <div>
     <div class="nav">
+
         <div class="container">
             <ul class="pull-right">
                 <li><a href="upload.php">CMD Upload</a></li>
@@ -47,8 +49,6 @@ if(isset($errorMessage)) {
         </div>
     </div>
 </div>
-
-
 <?php
 $showFormular = true;
 
@@ -81,9 +81,9 @@ if (isset($_GET['password'])) {
         $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
         if ($result) {
             $showFormular = false;
-            echo '<p>Dein Passwort wurde erfolgreich geändert.</p>';
+            echo '<h3>Dein Passwort wurde erfolgreich geändert.</h3>';
             ?>
-            <a href=upload.php>Zurück</a>
+            <a href=upload.php> <h4>Zurück</h4></a>
 
             <?php
         }

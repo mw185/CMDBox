@@ -88,10 +88,6 @@ table {
     overflow: hidden;
 }
 
-td, a{
-    padding-right: 10%;
-    color:aliceblue;
-}
 
 button {
     margin: 0 0 1em 31%;
