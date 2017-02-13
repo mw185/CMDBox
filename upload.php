@@ -125,9 +125,9 @@ echo "<table>";
                     echo"<td>" . "<button><a href= 'download.php?file=" . $row['fileID'] . "'>Download</a></button></td>";
                     echo"<td>" . "<button><a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></button></td>";
                     echo"<td>" . "<button><a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></button></td>";
-                    //echo "<td>" . "<button><a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </button></td>";
-                    echo "</tr>";
-                    echo "<br/>";
+                    echo"<td>" . "<button><a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </button></td>";
+                    echo"</tr>";
+                    echo"<br/>";
                 }
 echo "</table>";
 
