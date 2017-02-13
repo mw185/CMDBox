@@ -24,25 +24,27 @@ if (!$filename) {
 }
 
 else {
-    $path = "Uploads/" . $filename;
-    $mime = mime_content_type($path);
+    echo $path = "Uploads/" . $filename;
+    echo $mime = mime_content_type($path);
+
+
     //$fsize = filesize($path);
 
     #mimetype in variable & pfad nicht absolut - sichergehn, dass der stimmt
     #meine variablen
+#path kaputt
 
 
+#
+ #   header("Content-Type:".$mime);
+  #  header("Content-Disposition:attachment;filename=".$filename);
+   # header("Content-Type: application/download");
+    #header("Content-Description: File Transfer");
+    #header("Content-Length: ". filesize($path));
+
+    #readfile($path);
 
 
-    header("Content-Type:".$mime);
-    header("Content-Disposition:attachment;filename=".$filename);
-    header("Content-Type: application/download");
-    header("Content-Description: File Transfer");
-    header("Content-Length: ". filesize($path));
-
-    readfile($path);
-
-    
   /*  if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
