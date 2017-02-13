@@ -146,7 +146,7 @@ if($showFormular) {
                         <a href="login.php" class="btn btn-default">Zum Login</a>
                     </div>
 
-                    <div class="cardfooter">
+
 
                 </form>
             </div>
