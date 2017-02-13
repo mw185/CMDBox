@@ -41,9 +41,10 @@ img {
     height: auto;
     max-width: 200px;
     max-height: 200px;
-    border-radius: 2%;
-    border: 1px solid;
+    border-radius: 5%;
+    border: 2px solid;
     border-color: slategrey;
+    position: absolute;
 }
 
 h1 {
@@ -81,8 +82,7 @@ table {
 }
 
 td{
-    padding-right: 10%
-
+    padding-right: 10%;
 }
 
 button {

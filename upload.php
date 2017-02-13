@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width" initial-scale=1.0 />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <script src="./js/dropzone.js"></script>
     <link href="./css/basic.css" rel="stylesheet">
     <link href="./css/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -35,10 +34,8 @@
 <div>
     <div class="nav">
         <div class="container">
-            <ul class="pull-left">
-                <li><a href="upload.php">CMD Upload</a></li>
-            </ul>
             <ul class="pull-right">
+                <li><a href="upload.php">CMD Upload</a></li>
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
@@ -101,7 +98,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $statement = $db->prepare($sql);
         $result = $statement->execute();
 
-        echo('Upload erfolgreich!</a>');
+        echo('<h2>Upload erfolgreich!</h2></a>');
     } else {
         echo "please upload file!";
     }
@@ -127,9 +124,9 @@ echo "<table>";
                     echo"<td>" . "<button><a href= 'download.php?file=" . $row['fileID'] . "'>Download</a></button></td>";
                     echo"<td>" . "<button><a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></button></td>";
                     echo"<td>" . "<button><a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></button></td>";
-                    //echo "<td>" . "<button><a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </button></td>";
-                    echo "</tr>";
-                    echo "<br/>";
+                    echo"<td>" . "<button><a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a> </button></td>";
+                    echo"</tr>";
+                    echo"<br/>";
                 }
 echo "</table>";
 

@@ -36,10 +36,8 @@ if(isset($errorMessage)) {
 <div>
     <div class="nav">
         <div class="container">
-            <ul class="pull-left">
-                <li><a href="upload.php">CMD Upload</a></li>
-            </ul>
             <ul class="pull-right">
+                <li><a href="upload.php">CMD Upload</a></li>
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
@@ -97,11 +95,7 @@ if($showFormular) {
     <form action="pwaendern.php?password=1" method="post">
 
         <input type="password" size="40" maxlength="250" name="passwort_alt" placeholder="Altes Passwort"><br>
-
-
         <input type="password" size="40" maxlength="250" name="passwort_neu" placeholder = "Neues Passwort"><br>
-
-
         <input type="password" size="40" maxlength="250" name="password_neu2" placeholder = "Passwort wiederholen"><br><br>
 
         <button type="submit">Passwort ändern</button>
