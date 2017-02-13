@@ -53,12 +53,8 @@ if (!isset($_SESSION ['userid'])) {
     <div class="nav">
 
         <div class="container">
-
-
-            <ul class="pull-left">
-                <li><a href="upload.php">CMD Upload</a></li>
-            </ul>
             <ul class="pull-right">
+                <li><a href="upload.php">CMD Upload</a></li>
                 <li><a href="pwaendern.php">Passwort ändern</a></li>
                 <li><a href="profilbild.php">Profilbild ändern</a></li>
                 <li><a href="logout.php">Logout</a></li>
