@@ -24,8 +24,8 @@ if (!$filename) {
 }
 
 else {
-    echo $path = "Uploads/" . $filename;
-    echo $mime = mime_content_type($path);
+    $path = "Uploads/" . $filename;
+    $mime = mime_content_type($path);
 
 
     //$fsize = filesize($path);
@@ -35,14 +35,14 @@ else {
 #path kaputt
 
 
-#
- #   header("Content-Type:".$mime);
-  #  header("Content-Disposition:attachment;filename=".$filename);
-   # header("Content-Type: application/download");
-    #header("Content-Description: File Transfer");
-    #header("Content-Length: ". filesize($path));
 
-    #readfile($path);
+    header("Content-Type:".$mime);
+    header("Content-Disposition:attachment;filename=".$filename);
+    header("Content-Type: application/download");
+    header("Content-Description: File Transfer");
+    header("Content-Length: ". filesize($path));
+
+    readfile($path);
 
 
   /*  if (file_exists($path) && is_readable($path)) {
