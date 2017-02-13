@@ -66,16 +66,10 @@ if (!isset($_SESSION ['userid'])) {
         </div>
     </div>
 </div>
-<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
 
 
-<form name ="Profilbild" method="post" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
-
-    <input type="file" name="file" size="60" maxlength="255" placeholder="Bild auswählen" value="Bild auswählen"><br>
-
-    <input type="Submit" name="submit" placeholder="Bild hochladen" value ="Bild hochladen">
-
-</form>
+<?php include ("profilbild.html");?>
 </body>
 </html>
 
