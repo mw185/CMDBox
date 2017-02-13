@@ -58,6 +58,7 @@ h1 {
 }
 
 h2 {
+    padding-top: 2%;
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 20px 25px 0 130px;
     font-size: 25px;
@@ -70,7 +71,7 @@ h2 {
 
 table {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
-    margin: 10px 25px 20px 130px;
+    margin: 10px 10px 10px 130px;
     font-size: 16px;
     line-height: 25px;
     font-weight: lighter;
