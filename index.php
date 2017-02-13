@@ -156,14 +156,12 @@ if($showFormular) {
     <?php
 }       #ShowFormular endet hier
 ?>
-
-
-
         <div class="extrainfo">
-            <small class="credits">Team CMD &copy; 2017  |</small>
             <small class="impressum">Impressum</small>
+            <small class="impressum">|</small>
+            <small class="impressum">Team CMD &copy; 2017</small>
+
         </div>
-    </div>
 
 </body>
 </html>

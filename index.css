@@ -96,7 +96,16 @@
     position: relative;
 }
 
-.credits {
-    text-align: end;
+.credits, .impressum {
+    text-align: center;
+    padding-bottom: 2vh;
 }
 
+.impressum {
+
+    top: 30vh;
+    color: slategrey;
+    display: inline-block;
+    float: none;
+    padding-right: 10px;
+}
