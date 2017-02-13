@@ -15,9 +15,11 @@ input {
     width: 60%;
     background-color: aliceblue;
     text-transform: none;
+    color: slategrey;
 }
 .file {
     text-transform: uppercase;
+
 }
 
 button {
