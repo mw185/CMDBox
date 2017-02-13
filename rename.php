@@ -53,8 +53,9 @@ if(isset($errorMessage)) {
 
 $fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden");
 
-$statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
-$statement->execute(array('fileID' => $fileID));
+$sql = "SELECT * FROM file WHERE fileID = :fileID";
+$statement = $db->prepare($sql);
+$statement->execute(array('fileID'=> $fileID));
 
 $file = $statement->fetch();
 
