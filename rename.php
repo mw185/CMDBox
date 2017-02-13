@@ -53,6 +53,11 @@ if(isset($errorMessage)) {
 
 $fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden");
 
+$statement = $db->prepare("SELECT * FROM file WHERE fileID = :fileID");
+$statement->execute(array('fileID' => $fileID));
+
+$file = $statement->fetch();
+
 $oldname = $file['filename'];
 $newname = $_POST['newname'];
 
@@ -61,7 +66,7 @@ if (isset($_POST['newname'])) {
     $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
     $result = $statement->execute(array('filename' => $newname, 'fileID' => $fileID));
 
-    rename("Uploads/" . $fileID, $newname);
+    rename ("Uploads/".$oldname, "Uploads/".$newname);
 
     header("location: upload.php");
 }
