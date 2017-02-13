@@ -6,6 +6,7 @@ html body {
     margin: 0 auto;
 }
 
+
 .container {
     background-color: aliceblue;
     width: 100vw;
@@ -33,6 +34,14 @@ html body {
 .nav a:hover {
     background-color: slategrey;
     opacity: 0.5;
+}
+
+.extrainfo img{
+    padding: 20px 30px ;
+    width: auto;
+    height: auto;
+    float: right;
+    margin: 1em 0 4em 12%;
 }
 
 img {
@@ -89,3 +98,4 @@ button {
     background-color: aliceblue;
     color: slategrey;
 }
+
