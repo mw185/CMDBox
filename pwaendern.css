@@ -23,6 +23,6 @@ button {
     color: slategrey;
 }
 
-p{
+p, a{
     margin: 0 0 2em 31%;
 }
