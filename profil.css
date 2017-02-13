@@ -88,8 +88,9 @@ table {
     overflow: hidden;
 }
 
-td{
+td, a{
     padding-right: 10%;
+    color:aliceblue;
 }
 
 button {

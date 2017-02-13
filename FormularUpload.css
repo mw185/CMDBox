@@ -1,5 +1,6 @@
 html body{
     border: 2px;
+
 }
 form {
     width: 30em;
@@ -25,7 +26,7 @@ button {
     margin: 0 0 1em 31%;
     text-transform: uppercase;
     background-color: aliceblue;
-    color: slategrey;
+    color: aliceblue;
 }
 
 
