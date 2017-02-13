@@ -133,11 +133,5 @@ echo "</table>";
 
 ?>
 
-<div class="extrainfo">
-    <small class="impressum">Impressum</small>
-    <small class="impressum">|</small>
-    <small class="impressum">Team CMD &copy; 2017</small>
-
-</div>
 </body>
 </html>
