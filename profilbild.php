@@ -16,7 +16,7 @@ if (!isset($_SESSION ['userid'])) {
         if (isset($_FILES['file'])) {
             $zielname = basename($_FILES["file"]["name"]);
             if (move_uploaded_file($_FILES ['file']['tmp_name'], $dir . $zielname)) {
-                rename($dir . $zielname, $dir . $newname);
+                rename($dir . $zielname, $dir . $newname . '.jpg');
                 header('location: profil.php');
             } else {
                 echo "Fehler";
