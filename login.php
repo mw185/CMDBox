@@ -1,4 +1,4 @@
-<div style="text-align:center;"><img src="CMDBox.png" width="250px" alt="Logo"/>
+<p><img src="CMDBox.png" width="250px" alt="Logo"/></p>
 
 <?php
 session_start();

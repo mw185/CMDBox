@@ -1,4 +1,7 @@
-/* ---------------------------Login Seite------------------------------------------------*/
+
+p{
+    padding: 1%;
+}
 .loginsite {
     background-color: slategray;
     height:100vh;
@@ -107,5 +110,5 @@
     color: slategrey;
     display: inline-block;
     float: none;
-    padding-right: 10px;
+    padding: 10px;
 }
