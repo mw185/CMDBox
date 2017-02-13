@@ -14,7 +14,7 @@ if (isset($_POST['newname'])) {
     $statement = $db->prepare("UPDATE file SET filename = :newname WHERE fileID = :fileID");
     $result = $statement->execute(array('filename' => $newname, 'fileID' => $fileID));
 
-    rename ("Uploads/". $oldname, $newname);
+    rename ($oldname, $newname);
 
     header("location: upload.php");
 }
