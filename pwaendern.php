@@ -60,7 +60,7 @@ if (isset($_GET['password'])) { #eingegebene Daten werden aus Formular ausgelese
         $error = true;
     }
 
-    if ($passwort_neu == $passwort_alt) {   #prüft, ob das neue und das alte Passwort überein stimmen, wenn ja -> wie oben
+    if ($passwort_neu == $passwort_alt) {   #prüft, ob das neue und das alte Passwort überein stimmen, wenn ja -> wie oben.
         echo '<p>Das neue Passwort ist unverändert!</p>';
         $error = true;
     }
