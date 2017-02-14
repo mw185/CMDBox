@@ -12,11 +12,7 @@
 <?php
 session_start();
 
-include 'connection.php';
-
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
+include 'connection.php';   #Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
 ?>
 
 <body>
@@ -43,38 +39,38 @@ if(isset($errorMessage)) {
     </div>
 </div>
 <?php
-$showFormular = true;
+$showFormular = true;       #Die Variable ShowFormular wird auf true gesetzt-> Formular wird angezeigt
 
-if (isset($_SESSION['userid'])){
-    $username = $_SESSION['userid'];
+if (isset($_SESSION['userid'])){    #Wenn der Nutzr in der Session angemeldet ist, wird eine userid übergeben
+    $username = $_SESSION['userid']; #der userid wird die Variable $username zugewiesen
     }
 
-if (isset($_GET['password'])) {
-    $error = false;
+if (isset($_GET['password'])) { #eingegebene Daten werden aus Formular ausgelesen
+    $error = false; #Die Variable $error wird auf false gesetzt
     $passwort_alt = $_POST['passwort_alt'];
     $passwort_neu = $_POST['passwort_neu'];
     $passwort_neu2 = $_POST['passwort_neu2'];
 
-    if ($passwort_neu != $passwort_neu2) {
-        echo '<p>Die neuen Passwörter stimmen nicht überein!</p>';
+    if ($passwort_neu != $passwort_neu2) {  #Es wird geprüft, ob die neuen Passwörter überein stimmen, ansonsten wird eine Fehlermeldung ausgegeben
+        echo '<p>Die neuen Passwörter stimmen nicht überein!</p>';  #und die Variable $error auf true gesetzt -> Änderung wird nicht ausgeführt
         $error = true;
     }
 
-    if ($passwort_neu == $passwort_alt) {
+    if ($passwort_neu == $passwort_alt) {   #prüft, ob das neue und das alte Passwort überein stimmen, wenn ja -> wie oben
         echo '<p>Das neue Passwort ist unverändert!</p>';
         $error = true;
     }
 
-# Passwort kann jetzt geändert werden
+# Kein Error, Passwort kann jetzt geändert werden
 
     if (!$error) {
-        $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT);
+        $passwort_hash = password_hash($passwort_neu, PASSWORD_DEFAULT); #Das neue Passwort wird gehasht
 
-        $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username");
+        $statement = $db->prepare("UPDATE person SET password = :password WHERE username = :username"); #SQL Statement Updated das Passwort in der DB
         $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
-        if ($result) {
-            $showFormular = false;
-            echo '<h3>Dein Passwort wurde erfolgreich geändert!</h3>';
+        if ($result) {      # Wenn das Statement ausgeführt wurde und das Passwort geändert wurde,
+            $showFormular = false;  #wird das Formular ausgeblendet
+            echo '<h3>Dein Passwort wurde erfolgreich geändert!</h3>'; #und eine Bestätigungsnachricht ausgegeben
             ?>
             <a href=upload.php><h4>Zurück</h4></a>
 
@@ -82,7 +78,7 @@ if (isset($_GET['password'])) {
         }
     }
 }
-if($showFormular) {
+if($showFormular) { #Das wird angezeigt, wenn $showFormular = true ist
 ?>
     <br/><br/><br/><br/><br/>
     <br/><br/>
