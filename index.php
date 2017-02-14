@@ -78,14 +78,22 @@ if(isset($_GET['register'])) {
             $betreff = "Herzlich Willkommen bei CMD Box!";
             $text = "Hallo ".$_POST['username']."
 
+
 Du kannst jetzt deine Box verwalten und Dateien teilen.
 Wir wünschen dir viel Spaß.
 
-Dies ist eine automatisch generierte e-mail, bitte nicht darauf antworten.";
+Hier geht's zum Login: https://mars.iuk.hdm-stuttgart.de/~mw185/login.php
+
+
+Liebe Grüße, 
+
+dein CMDBox-Team
+
+Dies ist eine automatisch generierte E-Mail, bitte nicht darauf antworten.";
             mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
-            echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine e-mail Adresse gesendet.'
+            echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine E-Mail Adresse gesendet.'
             ?>
-            <a href = login.php>Zum Login</a>
+            <a href =login.php>Zum Login</a>
             <?php
         }
         else {
@@ -113,7 +121,6 @@ if($showFormular) {
 
     <div class = 'loginsite'>
         <div class="loginbox">
-            <div class="firstcard"></div>
             <div class="card">
                 <h1 class ="title">Registrieren</h1>
                 <form action="?register=1" method="post">

@@ -1,3 +1,16 @@
+h3 {
+    margin: 0 0 2em 31%;
+    color: #e0e0e0;
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    font-size: 20px;
+}
+h4{
+    margin: 0 0 2em 31%;
+    color: #122b40;
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    font-size: 20px;
+
+}
 form {
     width: 30em;
     padding-top: 3em;
@@ -23,6 +36,3 @@ button {
     color: slategrey;
 }
 
-p{
-    margin: 0 0 2em 31%;
-}
