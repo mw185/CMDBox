@@ -119,7 +119,7 @@ echo "<table rules='rows'>";
 
                     echo "<tr>";
                     echo "FICKEN";
-                    echo"<td>" . $row['filename']; echo "</td>";
+                    echo"<td>" . $row[$filename]; echo "</td>";
                     //echo"<td>" . $row['datasize']; echo "</td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'download.php?file=" . $row['fileID'] . "'>Download</a></td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></td>";
