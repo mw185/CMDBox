@@ -29,9 +29,10 @@ else {
     $mime = mime_content_type($path);
     $fsize = filesize($path);
 
+
     #mimetype in variable & pfad nicht absolut - sichergehn, dass der stimmt
     #meine variablen 
-    
+
   if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
@@ -51,3 +52,4 @@ else {
     }
 }
 ?>
+

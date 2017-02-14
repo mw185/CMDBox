@@ -33,3 +33,57 @@ button {
     margin: 1em 0 4em 12%;
 
 }
+
+
+.fileUpload1 {
+    position: relative;
+    overflow: hidden;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    padding-right: 259px;
+    padding-left: 300px;
+    border: none;
+    font-size: 16px;
+    color: dimgrey;
+    background-color: aliceblue;
+    font-weight: 300;
+}
+.fileUpload1 input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    border: none;
+}
+
+.fileUpload2 {
+    position: relative;
+    overflow: hidden;
+    margin-left: 400px;
+    padding-right: 363px;
+    padding-left: 300px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color:dimgrey;
+    font-weight: 300;
+    background-color: aliceblue;
+
+}
+.fileUpload2 input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    border-radius: 5px;
+}

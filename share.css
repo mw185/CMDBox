@@ -22,3 +22,10 @@ button {
     background-color: aliceblue;
     color: slategrey;
 }
+
+h3 {
+    margin: 0 0 2em 31%;
+    color: #e0e0e0;
+    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
+    font-size: 20px;
+}

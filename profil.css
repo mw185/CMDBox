@@ -87,6 +87,7 @@ table {
     overflow: hidden;
     line-height:250%;
     border-color:darkred;
+    padding-bottom: 20px;
 }
 
 table td{
