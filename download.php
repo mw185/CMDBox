@@ -33,7 +33,7 @@ else {
     $mime = mime_content_type($path); #weißt $mime die möglichen datentypen zu
     $fsize = filesize($path); #fsize bekommt die Datengrößen zugewiesen
     
-
+#alles unten - die Befehle, die den download einleiten
   if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
         header('Content-Length: ' . $fsize);
@@ -42,9 +42,9 @@ else {
         readfile($path);
         echo $fsize;
 
-        $file = @ fopen($path, 'rb');
+        $file = @ fopen($path, 'rb'); #befehl zum Download
 
-        if ($file) {
+        if ($file) { #download ausführen
             fpassthru($file);
             exit;
         } else {
