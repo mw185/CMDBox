@@ -116,7 +116,7 @@ echo "<table rules='rows'>";
                 while ($row = $statement->fetch()) {
                     extract($row);
                     echo "<tr>";
-                    echo"<td>" . $row['filename']; echo "</td>";
+                    echo"<td>" . $row['fileID']; echo "</td>";
                     //echo"<td>" . $row['datasize']; echo "</td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'download.php?file=" . $row['fileID'] . "'>Download</a></td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></td>";
