@@ -11,8 +11,6 @@ $statement->execute(array('fileID'=> $fileID));
 
 $fileA = $statement->fetch();
 
-var_dump($fileA);
-/*
 
 if (isset($fileA['filename'])) {
     $filename = $fileA['filename'];
@@ -53,5 +51,3 @@ else {
     }
 }
 ?>
-
-*/
