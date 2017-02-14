@@ -54,7 +54,7 @@ if(isset($_SESSION['userid'])){
     $username = $_SESSION['userid']; #wenn Session existiert wird der Variable username die userid zugewiesen
 }
 
-$target_dir = "/Uploads/$directorywert/"; #Speicherziel definieren
+$target_dir = "/Uploads/"; #Speicherziel definieren
 
 
 $filename = $_FILES["file"]["name"]; #übernahme des Filenames aus Furmularupload.php
