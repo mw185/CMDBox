@@ -9,7 +9,7 @@ $array = array(
 );
 
 $fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden");
-$username = isset($_GET['username']);
+$username = $_SESSION['userid'];
 
 $sql->execute($array);
 
@@ -25,7 +25,7 @@ $absendermail = "automatic@CMD-Box.de";
 $betreff = "$username hat Dir eine Datei gesendet!";
 $text = "Der Nutzer $username hat dir eine Datei gesendet.
 Du kannst die Datei unter folgendem Link herunterladen:
-https://mars.iuk.hdm-stuttgart.de/~mw185/Uploads/fileID=$fileID";
+https://mars.iuk.hdm-stuttgart.de/~mw185/download.php?fileID=$fileID";
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
 ?>
 
