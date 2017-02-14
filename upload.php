@@ -59,7 +59,7 @@ $datasize = $_FILES["file"]["size"]; #übernahme des filegröße aus Furmularupl
 
 $tmp_name = $_FILES["file"]["tmp_name"]; #vergabe eines temporären namens zur zwischenspeicherung
 
-if ($_FILES ["file"]["name"] <> '') { #KP
+if ($_FILES ["file"]["name"] <> '') { #überprüfung ob es nicht leer ist
 
     $location = "Uploads/"; #zuweißung der Variable location zum pfad "Uploads
 

@@ -7,7 +7,7 @@ if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird
     header("login.php");
 }
 
-$fileID = $_GET['file'];
+$fileID = $_GET['file']; #$fileID holt sich alles sachen aus der tabelle file
 
 $sql = "SELECT * FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
@@ -29,13 +29,10 @@ if (!$filename) {
 }
 
 else {
-    $path = "Uploads/" . $filename;
-    $mime = mime_content_type($path);
-    $fsize = filesize($path);
-
-
-    #mimetype in variable & pfad nicht absolut - sichergehn, dass der stimmt
-    #meine variablen 
+    $path = "Uploads/" . $filename; #definiert den pfad über Uploads/ und dem filename
+    $mime = mime_content_type($path); #weißt $mime die möglichen datentypen zu
+    $fsize = filesize($path); #fsize bekommt die Datengrößen zugewiesen
+    
 
   if (file_exists($path) && is_readable($path)) {
         header('Content-Type: ' . $mime);
