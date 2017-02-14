@@ -15,7 +15,6 @@ if (!isset($_SESSION ['userid'])) {
             if (move_uploaded_file($_FILES ['file']['tmp_name'], $dir . $zielname)) {
                 rename($dir . $zielname, $dir . $newname . '.jpg');
                 header('location: profil.php');
-                echo "Dein Profilbild wurde erfolgreich Hochgeladen!";
             } else {
                 echo "Fehler";
             }
