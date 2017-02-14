@@ -19,29 +19,14 @@ input {
     color: slategrey;
 }
 
-.upload {
-    position: relative;
-    cursor: pointer;
 
-}
-/* Upload Button ausblenden */
-.upload::-webkit-file-upload-button {
-    visibility: hidden;
-    opacity: 0;
-}
-.upload:before {
-    /* Beschriftung des Buttons mit CSS content */
-    content: 'datei auswählen';
+button {
+    margin: 0 0 1em 31%;
     text-transform: uppercase;
-
-    /* Aussehen des Buttons */
-    width: 288px;
-    font-size: 16px;
-    height: 35px;
-    color: slategrey;
-    text-align: center;
     background-color: aliceblue;
-
+    color: aliceblue;
+    height:35px;
+    width: 288px;
 }
 
 
