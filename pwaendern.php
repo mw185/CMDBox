@@ -59,6 +59,13 @@ if (isset($_GET['password'])) { #eingegebene Daten werden aus Formular ausgelese
         echo '<p>Das neue Passwort ist unverändert!</p>';
         $error = true;
     }
+    $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+    $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+    $user = $statement->fetch(); #variable user erstellen mit dem entsprechenden uername aus $statement und aus der DB holen
+    if (password_verify($passwort_alt, $user['password'])) {
+        echo '<p>Das alte Passwort ist nicht korrekt!</p>';  #und die Variable $error auf true gesetzt -> Änderung wird nicht ausgeführt
+        $error = true;
+    }
 
 # Kein Error, Passwort kann jetzt geändert werden
 
