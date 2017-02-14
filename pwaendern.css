@@ -1,9 +1,11 @@
+/*Erfolgreich Passwort geändert*/
 h3 {
     margin: 0 0 2em 31%;
     color: #e0e0e0;
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     font-size: 20px;
 }
+/*Zurück Button*/
 h4{
     margin: 0 0 2em 31%;
     color: #122b40;
@@ -11,6 +13,8 @@ h4{
     font-size: 20px;
 
 }
+
+/*Formular für Passwort ändern*/
 form {
     width: 30em;
     padding-top: 3em;
@@ -18,6 +22,7 @@ form {
     text-transform: uppercase;
     color: slategrey;
 }
+/*Eingabefeld*/
 input {
     margin: 0 0 1em 31%;
     padding: .2em .5em;
@@ -25,9 +30,11 @@ input {
     background-color: aliceblue;
     text-transform: none;
 }
+
+/*
 .file {
     text-transform: uppercase;
-}
+}*/
 
 button {
     margin: 0 0 1em 31%;

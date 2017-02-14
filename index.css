@@ -1,4 +1,4 @@
-
+/* Für Registrierung(Index) und Login */
 p{
     padding: 1%;
 }
@@ -14,7 +14,6 @@ p{
     position: relative;
     top: 10vh;
 }
-
 
 .card {
     background: #ffffff;
@@ -92,23 +91,18 @@ p{
     color: aliceblue;
 }
 
+/*Impressum*/
 .extrainfo {
-
     padding-bottom: 2vh;
     text-align: center;
     position: relative;
 }
 
-.credits, .impressum {
+.impressum {
     text-align: center;
     padding-bottom: 2vh;
-}
-
-.impressum {
-
     top: 30vh;
     color: slategrey;
     display: inline-block;
     float: none;
-    padding: 10px;
 }
