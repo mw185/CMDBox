@@ -1,13 +1,8 @@
-html body{
-    border: 2px;
-
-}
 form {
     width: 30em;
-    padding-top: 1em;
+    padding-top: 3em;
     position: relative;
     text-transform: uppercase;
-    font-size: 16px;
     color: slategrey;
 }
 input {
@@ -16,17 +11,14 @@ input {
     width: 60%;
     background-color: aliceblue;
     text-transform: none;
-    color: slategrey;
 }
-
+.file {
+    text-transform: uppercase;
+}
 
 button {
     margin: 0 0 1em 31%;
     text-transform: uppercase;
     background-color: aliceblue;
-    color: aliceblue;
-    height:35px;
-    width: 288px;
-    visibility: collapse;
+    color: slategrey;
 }
-
