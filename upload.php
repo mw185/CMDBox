@@ -93,7 +93,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $file_hash = file_hash($filename);
         $sql = "INSERT INTO file (filename, datasize, username) VALUES ('" . $filename . "','" . $datasize . "','" . $username . "')";
         $statement = $db->prepare($sql);
-        $result = $statement->execute(array('datasize' => $datasize,'username' => $username, 'filename' => $file_hash));
+        $result = $statement->execute();
 
         echo('<h2>Upload erfolgreich!</h2></a>');
     } else {
