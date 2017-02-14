@@ -1,19 +1,27 @@
 <body>
+
+<!-- Link zum Stylesheet -->
 <link href="FormularUpload.css" rel="stylesheet">
 <br/>
 
+<!-- Formular für Profilbild hochladen wird angelegt-->
 <form name = "uploadformular" enctype="multipart/form-data" action="upload.php" method="post" >
 
+    <!-- div container wird angelegt und mit entsprechender Klasse benannt-->
     <div class="fileUpload1 btn btn-primary">
 
+        <!-- Bild wählen Button -->
         <input class="upload" type = "file" name="file" size="60" maxlength="255" id="file">Datei wählen</input>
     </div><br/>
 
+    <!-- div container wird angelegt und mit entsprechender Klasse benannt-->
 <div class="fileUpload2 btn-primary">
 
+    <!-- Bild wählen Button -->
     <input  class="upload" type="Submit" name="submit" size="60" maxlength="255" id="submit" value = "DATEI HOCHLADEN">Hochladen</input>
-</div>
 
+    <!-- Formular, div und body werden geschlossen-->
+</div>
 </form>
 </body>
 

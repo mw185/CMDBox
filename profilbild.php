@@ -31,12 +31,10 @@ if (!isset($_SESSION ['userid'])) {
     <link href="profil.css" rel="stylesheet">
 
     <title>Profilbild ändern</title>
-
-
 </head>
 
-<body>
 
+<body>
 <!-- Logo wird über div container mit dem Namen "extrainfo" eingebunden -->
 <div class="extrainfo">
     <img src="CMDBox.png" width="250px" alt="Logo"/>

@@ -1,7 +1,4 @@
-html body{
-    border: 2px;
-
-}
+/*Formular beim Datei Upload und Profilbild Upload*/
 form {
     width: 30em;
     padding-top: 1em;
@@ -10,6 +7,8 @@ form {
     font-size: 16px;
     color: slategrey;
 }
+
+/*Button für Hochladen*/
 input {
     margin: 0 0 1em 31%;
     padding: .2em .5em;
@@ -19,7 +18,7 @@ input {
     color: slategrey;
 }
 
-
+/* Datei wählen Button*/
 button {
     margin: 0 0 1em 31%;
     text-transform: uppercase;
@@ -28,7 +27,7 @@ button {
     height:35px;
     width: 288px;
 }
-
+/*Button für Hochladen*/
 .fileUpload1 {
     position: relative;
     overflow: hidden;
@@ -42,6 +41,7 @@ button {
     background-color: aliceblue;
     font-weight: 300;
 }
+/**/
 .fileUpload1 input.upload {
     position: absolute;
     top: 0;
@@ -54,7 +54,7 @@ button {
     filter: alpha(opacity=0);
     border: none;
 }
-
+/*Button für Datei wählen*/
 .fileUpload2 {
     position: relative;
     overflow: hidden;
@@ -68,6 +68,7 @@ button {
     font-weight: 300;
     background-color: aliceblue;
 }
+/**/
 .fileUpload2 input.upload {
     position: absolute;
     top: 0;
