@@ -82,7 +82,7 @@ if ($_FILES ["file"]["name"] <> '') {
         //if (isset($_POST["uploadformular"])) {
         //  $fileID = $_POST["fileID"];
         //$filename = $_POST["filename"];
-        //$datasize = $_POST ["datasize"];
+        //$datasize = $_POST ["datasize"];uhg
         //$username = $_POST ["username"];
 
 
