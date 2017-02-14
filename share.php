@@ -2,6 +2,8 @@
 session_start();
 include'connection.php';
 
+$showFormular = true;
+
 ///Daten aus DB herauslesen
 $sql = $db->prepare('SELECT username FROM person WHERE username = :username');
 $array = array(
@@ -26,9 +28,15 @@ $betreff = "$username hat Dir eine Datei gesendet!";
 $text = "Der Nutzer $username hat dir eine Datei gesendet.
 Du kannst die Datei unter folgendem Link herunterladen:
 https://mars.iuk.hdm-stuttgart.de/~mw185/download.php?file=".$fileID;
-mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
+$result = mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
 
-echo "Die E-Mail mit dem Downloadlink wurde an den Empfänger gesendet."
+if ($result) {
+    echo "Die E-Mail mit dem Downloadlink wurde an den Empfänger gesendet.";
+    $showFormular = false;
+
+}
+
+if($showFormular) {
 ?>
 
 <form name ="share" action="<?php echo("?fileID={$fileID}")?>" method="POST">
@@ -36,3 +44,6 @@ echo "Die E-Mail mit dem Downloadlink wurde an den Empfänger gesendet."
     <input type="submit" value="Senden">Senden<br/>
 </form>
 
+    <?php
+}
+?>
