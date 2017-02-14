@@ -40,7 +40,7 @@ if($showFormular) {
 ?>
 
 <form name ="share" action="<?php echo("?fileID={$fileID}")?>" method="POST">
-    <input type="email" name="email" placeholder="Empfänger E-Mail"><br/>
+    <input type="email" name="email" placeholder="Empfänger E-Mail"><br/><br/>
     <button type="submit">Datei teilen</button><br/>
 </form>
 
