@@ -95,7 +95,6 @@ if ($_FILES ["file"]["name"] <> '') {
         $result = $statement->execute();
 
         echo('<h2>Upload erfolgreich!</h2></a>');
-        echo $filename;
     } else {
         echo "please upload file!";
     }
@@ -106,7 +105,7 @@ if ($_FILES ["file"]["name"] <> '') {
      //if ($handle) {
         $sql = "SELECT * FROM file WHERE username = :username";
         $statement = $db->prepare($sql);
-        $statement->execute(array('username'=> $username));
+        $statement->execute(array('username'=> $username, 'filename' => $filename));
         $row = $statement->fetch();
 
 echo "<h2>Bisher hochgeladene Dateien:</h2>";
@@ -118,8 +117,8 @@ echo "<table rules='rows'>";
                     extract($row);
 
                     echo "<tr>";
-                    echo "FICKEN";
-                    echo"<td>" . $row[$filename]; echo "</td>";
+
+                    echo"<td>" . $row['filename']; echo "</td>";
                     //echo"<td>" . $row['datasize']; echo "</td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'download.php?file=" . $row['fileID'] . "'>Download</a></td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></td>";
