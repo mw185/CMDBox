@@ -113,7 +113,6 @@ if($showFormular) {
 
     <div class = 'loginsite'>
         <div class="loginbox">
-            <div class="firstcard"></div>
             <div class="card">
                 <h1 class ="title">Registrieren</h1>
                 <form action="?register=1" method="post">

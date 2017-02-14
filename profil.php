@@ -14,18 +14,16 @@ if (!isset($_SESSION ['userid'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" initial-scale=1.0 />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link href="./css/basic.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
     <title>Profil</title>
 </head>
 
 <body>
 
+<div class="extrainfo">
+    <img src="CMDBox.png" width="250px" alt="Logo"/>
+</div>
 <ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg'; ?>" width="300px" alt="Profilbild"/>
         <h1><?php echo ($_SESSION['userid']) ?></h1></li></ul>
 

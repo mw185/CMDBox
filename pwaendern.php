@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" initial-scale=1.0 />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <script src="./js/dropzone.js"></script>
-    <link href="./css/basic.css" rel="stylesheet">
-    <link href="./css/dropzone.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link href="js/bootstrap.min.js">
     <link href="profil.css" rel="stylesheet">
     <link href="pwaendern.css" rel="stylesheet">
     <title>Passwort ändern</title>
@@ -63,12 +56,12 @@ if (isset($_GET['password'])) {
     $passwort_neu2 = $_POST['passwort_neu2'];
 
     if ($passwort_neu != $passwort_neu2) {
-        echo '<p>Die neuen Passwörter stimmen nicht überein</p>';
+        echo '<p>Die neuen Passwörter stimmen nicht überein!</p>';
         $error = true;
     }
 
     if ($passwort_neu == $passwort_alt) {
-        echo '<p>Das neue Passwort ist unverändert</p>';
+        echo '<p>Das neue Passwort ist unverändert!</p>';
         $error = true;
     }
 
@@ -81,9 +74,9 @@ if (isset($_GET['password'])) {
         $result = $statement->execute(array('password' => $passwort_hash, 'username' => $username));
         if ($result) {
             $showFormular = false;
-            echo '<h3>Dein Passwort wurde erfolgreich geändert.</h3>';
+            echo '<h3>Dein Passwort wurde erfolgreich geändert!</h3>';
             ?>
-            <a href=upload.php> <h4>Zurück</h4></a>
+            <a href=upload.php><h4>Zurück</h4></a>
 
             <?php
         }
