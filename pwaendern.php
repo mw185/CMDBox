@@ -86,7 +86,7 @@ if (isset($_GET['password'])) { #eingegebene Daten werden aus Formular ausgelese
         }
     }
 }
-if($showFormular) { #Das wird angezeigt, wenn $showFormular = true ist */
+if($showFormular) { #Das wird angezeigt, wenn $showFormular = true ist
 ?>
     <br/><br/><br/><br/><br/>
     <br/><br/>
@@ -103,7 +103,7 @@ if($showFormular) { #Das wird angezeigt, wenn $showFormular = true ist */
     </form>
 
 <?php
-//}
+}
 ?>
 </body>
 </html>
