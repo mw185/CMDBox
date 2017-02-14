@@ -4,7 +4,7 @@ session_start();
 include ("connection.php");
 
 if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
-    header("login.php");
+    header("location: login.php");
 }
 
 $fileID = $_GET['file']; #$fileID holt sich alles sachen aus der tabelle file

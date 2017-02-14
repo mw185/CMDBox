@@ -3,7 +3,7 @@ session_start();
 include ("connection.php");
 
 if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
-    header("login.php");
+    header("location: login.php");
 }
 
 #alles unten: die Dateien werden über fileID rausgesucht und auf der Datenbank sowie auf dem Server gelöscht

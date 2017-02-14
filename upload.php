@@ -16,7 +16,7 @@
     include ("FormularUpload.html"); #FormularUpload.html wird eingebunden
 
     if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
-        header("login.php");
+        header("location: login.php");
     }
     ?>
 
