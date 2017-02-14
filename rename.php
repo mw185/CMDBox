@@ -12,6 +12,10 @@
 session_start();    #Die aktuelle Session wird übergeben -> man bleibt angemeldet
 include 'connection.php';   ##Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
 
+if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
+    header("login.php");
+}
+
 ?>
 
 <body>
