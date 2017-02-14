@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="profil.css" rel="stylesheet">
 
+
     <title>Upload</title>
     <?php
 
     session_start(); #beginnt die Session und übernimmt alles was unter $_SESSION gespeichert wurde
     
     include("connection.php"); #connection.php wird eingebunden um Datenbankverbindung aufzubauen
-    include ("FormularUpload.html"); #FormularUpload.html wird eingebunden
 
     if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
         header("location: login.php");
@@ -42,10 +42,13 @@
     </div>
 </div>
 
-<br/><br/><br/><br/><br/>
+<br/><br/><br/>
 
 
 <?php
+
+include ("FormularUpload.html"); #FormularUpload.html wird eingebunden
+
 
 if(isset($_SESSION['userid'])){
     $username = $_SESSION['userid']; #wenn Session existiert wird der Variable username die userid zugewiesen
@@ -100,6 +103,7 @@ echo "<table rules='rows'>";
                     echo"<br/>";
                 }
 echo "</table>";
+
 
 ?>
 
