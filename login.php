@@ -8,52 +8,36 @@ if(isset($errorMessage)) {
     echo $errorMessage;
 }
 
-
-
-
-
 if(isset($_GET['login'])) {     #loginformular senden
     $username = $_POST['username']; #eingegebenen Username $username zuordenen
     $password = $_POST['password']; #eingegebenes Passwort $password zuordnen
 
     $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
     $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
-    $user = $statement->fetch(); #variable username erstellen mit dem entsprechenden uername aus $statement
+    $user = $statement->fetch(); #variable user erstellen mit dem entsprechenden uername aus $statement und aus der DB holen
 
-
-
-
-    //Überprüfung des Passworts
-    if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann
+    if ($user !== false && password_verify($password, $user['password'])) { #wenn $user nicht falsch ist und das Passwort aus einem hash gelesen werden kann weiter machen
 
         $_SESSION['userid'] = $user['username']; #session id erzeugen mit der bezeichung 'userid'
-        $_SESSION['loggedin'] = 1;
-        header("Location: upload.php");
+        header("Location: upload.php"); #weiterleitung zur upload.php
 
-        /*if ($user) {
-            $showFormular = false;  #Formular wird nicht mehr angezeigt
-
-
-            die('Login erfolgreich. Weiter zu <a href="">internen Bereich</a>');
-        }*/
     }
     else {
         $errorMessage = "Username oder Passwort ist ungültig<br>";
     }
 }
 
-
 if(isset($errorMessage)) {
     echo $errorMessage;
 }
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--folgend das Loginformular-->
 
     <meta charset="UFT-8">
     <link href="index.css" rel="stylesheet">
