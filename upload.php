@@ -125,6 +125,7 @@ echo "<table rules='rows'>";
                     echo"<td>" . "<a style ='color:aliceblue;' href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></td>";
                     echo"<td>" . "<a style ='color:aliceblue;' href ='share.php?fileID=" . $row['fileID'] . "'>Share</a></td>";
                     echo"</tr>";
+
                     echo"<br/>";
                 }
 echo "</table>";
