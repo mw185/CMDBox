@@ -35,9 +35,6 @@ include'connection.php';
     </div>
 </div>
 
-</body>
-</html>
-
 <?php
 
 ///Daten aus DB herauslesen
@@ -67,8 +64,13 @@ https://mars.iuk.hdm-stuttgart.de/~mw185/download.php?fileID=".$fileID;
 mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail>");
 ?>
 
+
+
+<br/><br/><br/><br/><br/><br/>
 <form name ="share" action="<?php echo("?fileID={$fileID}")?>" method="POST">
-    <input type="email" name="email">email<br/>
+    <input type="email" name="email" placeholder="Empfänger E-Mail eingeben"><br/>
     <input type="submit" value="Senden"><br/>
 </form>
 
+</body>
+</html>
