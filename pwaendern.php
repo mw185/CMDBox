@@ -38,7 +38,11 @@ include 'connection.php';   #Datenbankverbindung wird hergestellt, indem connect
     </div>
 </div>
 <?php
-$showFormular = true;       #Die Variable ShowFormular wird auf true gesetzt-> Formular wird angezeigt
+$showFormular = true; #Die Variable ShowFormular wird auf true gesetzt-> Formular wird angezeigt
+
+$statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
+$result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
+$user = $statement->fetch(); #variable user erstellen mit dem entsprechenden username aus $statement und aus der DB holen
 
 if (isset($_SESSION['userid'])){    #Wenn der Nutzr in der Session angemeldet ist, wird eine userid übergeben
     $username = $_SESSION['userid']; #der userid wird die Variable $username zugewiesen
@@ -59,9 +63,7 @@ if (isset($_GET['password'])) { #eingegebene Daten werden aus Formular ausgelese
         echo '<p>Das neue Passwort ist unverändert!</p>';
         $error = true;
     }
-    $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #mit der Variable $statement alle usernames in der Datenbank 'person' vorbereiten
-    $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
-    $user = $statement->fetch(); #variable user erstellen mit dem entsprechenden uername aus $statement und aus der DB holen
+
     if (password_verify($passwort_alt, $user['password'])) {
         echo '<p>Das alte Passwort ist nicht korrekt!</p>';  #und die Variable $error auf true gesetzt -> Änderung wird nicht ausgeführt
         $error = true;
