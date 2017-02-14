@@ -119,10 +119,10 @@ echo "<table rules='rows' style='line-height:250%; border-color:darkred;'>";
                     echo "<tr>";
                     echo"<td>" . $row['filename']; echo "</td>";
                     //echo"<td>" . $row['datasize']; echo "</td>";
-                    echo"<td>" . "<a href= 'download.php?file=" . $row['fileID'] . "'>Download</a></td>";
-                    echo"<td>" . "<a href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></td>";
-                    echo"<td>" . "<a href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></td>";
-                    echo"<td>" . "<a href ='share.php?fileID=" . $row['fileID'] . "'>Share</a></td>";
+                    echo"<td>" . "<a style ='color:aliceblue;' href= 'download.php?file=" . $row['fileID'] . "'>Download</a></td>";
+                    echo"<td>" . "<a style ='color:aliceblue;' href= 'delete.php?fileID=" . $row['fileID'] . "'>Löschen</a></td>";
+                    echo"<td>" . "<a style ='color:aliceblue;' href= 'rename.php?fileID=" . $row['fileID'] . "'>Umbenennen</a></td>";
+                    echo"<td>" . "<a style ='color:aliceblue;' href ='share.php?fileID=" . $row['fileID'] . "'>Share</a></td>";
                     echo"</tr>";
                     echo"<br/>";
                 }

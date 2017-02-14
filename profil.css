@@ -81,24 +81,26 @@ table {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 10px 10px 10px 130px;
     font-size: 16px;
-    line-height: 25px;
     font-weight: lighter;
     color: aliceblue;
     display: block;
     overflow: hidden;
+    line-height:250%;
+    border-color:darkred;
 }
 
-table td {
+table td{
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 10px 10px 10px 130px;
     font-size: 16px;
     line-height: 25px;
     font-weight: lighter;
     padding: 15px;
+    color: aliceblue;
 }
 
 button {
-    margin: 0 0 1em 31%;
+    margin: 0 0 1em 130px;
     text-transform: uppercase;
     background-color: aliceblue;
     color: slategrey;
