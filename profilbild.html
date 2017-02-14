@@ -1,9 +1,15 @@
 
 <form name ="Profilbild" method="post" enctype="multipart/form-data" action="profilbild.php?profilbild=1">
 
-    <button><input type="file" name="file" size="60" maxlength="255" placeholder="Bild auswählen" value="Bild auswählen"></button><br>
+    <div class="fileUpload1 btn btn-primary">
 
-    <input type="Submit" name="submit" placeholder="Bild hochladen" value ="Bild hochladen">
+        <input class="upload" type="file" name="file" id="file">Bild wählen</input>
+    </div><br/>
+
+    <div class="fileUpload2 btn-primary">
+
+        <input  class="upload" type="Submit" name="submit" id="submit">Hochladen</input>
+    </div>
 
 </form>
 

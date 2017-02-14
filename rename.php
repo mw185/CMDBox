@@ -9,13 +9,9 @@
 </head>
 
 <?php
-session_start();
+session_start();    #Die aktuelle Session wird übergeben -> man bleibt angemeldet
+include 'connection.php';   ##Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
 
-include 'connection.php';
-
-if(isset($errorMessage)) {
-    echo $errorMessage;
-}
 ?>
 
 <body>
@@ -44,25 +40,25 @@ if(isset($errorMessage)) {
 <?php
 
 
-$fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden");
+$fileID = isset($_GET['fileID'])? $_GET ['fileID']: die("ERROR: ID konnte nicht gefunden werden"); #Die FileID wird übergeben, wenn nicht erscheint eine Fehlermeldung
 
-$sql = "SELECT * FROM file WHERE fileID = :fileID";
+$sql = "SELECT * FROM file WHERE fileID = :fileID"; #Die Datei wird in der Datenbank aufgerufen durch ein SQL STatement
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
-$file = $statement->fetch();
+$file = $statement->fetch();    #Der Variable $file wird die aus der Datenbank ausgelesene fileID zugewiesen
 
-$oldname = $file['filename'];
-$newname = $_POST['newname'];
+$oldname = $file['filename'];   #Der alte Name der Datei wird aus der DB ausgelesen und der Variable $oldname zugewiesen
+$newname = $_POST['newname'];   #Der neue Name wird aus dem Formular ausgelesen
 
-if (isset($_POST['newname'])) {
+if (isset($_POST['newname'])) { #Wenn ein neuer Name über das Formular übergeben wurde,
 
-    $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID");
-    $result = $statement->execute(array('filename' => $newname, 'fileID' => $fileID));
+    $statement = $db->prepare("UPDATE file SET filename = :filename WHERE fileID = :fileID"); #wird über ein SQL Statement der alte Name durch den neuen Namen
+    $result = $statement->execute(array('filename' => $newname, 'fileID' => $fileID));         #in der DB ersetzt
 
-    rename ("Uploads/".$oldname, "Uploads/".$newname);
+    rename ("Uploads/".$oldname, "Uploads/".$newname);  #Auf dem Server wird der alte Name ebenfalls durch den neuen Namen ersetzt
 
-    header("location: upload.php");
+    header("location: upload.php"); #Man wird automatisch auf upload.php zurückgeleitet
 }
 ?>
 
