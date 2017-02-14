@@ -9,7 +9,7 @@
 </head>
 
 <?php
-
+session_start();    #Die aktuelle Session wird übergeben -> man bleibt angemeldet
 include 'connection.php';   ##Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
 
 ?>
