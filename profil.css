@@ -6,20 +6,22 @@ html body {
     margin: 0 auto;
 }
 
-
+/* Menüleiste designen */
 .container {
     background-color: aliceblue;
     width: 100vw;
+    height: 68px;
     padding: 20px 30px;
     position: inherit;
 
 }
+/* Menüpunkte */
 .nav ul li {
     display:inline;
     padding: 20px 20px;
 }
 
-
+/* Menüpunkte */
 .nav li a {
     text-decoration: none;
     text-transform: uppercase;
@@ -30,12 +32,13 @@ html body {
 
 }
 
-/* Hover Effekt beim dr�bergehen*/
+/* Hover Effekt beim drübergehen */
 .nav a:hover {
     background-color: slategrey;
     opacity: 0.5;
 }
 
+/* Logo */
 .extrainfo img{
     padding: 20px 30px ;
     width: auto;
@@ -43,7 +46,7 @@ html body {
     float: right;
     margin: 1em 0 4em 12%;
 }
-
+/* Profilbild User */
 img {
     float: left;
     width: 150px;
@@ -51,20 +54,10 @@ img {
     max-width: 200px;
     max-height: 200px;
     border-radius: 5%;
-    position: absolute;
+    position: relative;
 }
 
-h1 {
-    font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
-    margin: 8px 14px 0 14px;
-    font-size: 20px;
-    line-height: 16px;
-    font-weight: normal;
-    color: slategrey;
-    display: block;
-    overflow: hidden;
-}
-
+/* Bisher hochgeladene Dateien Überschrift */
 h2 {
     padding-top: 2%;
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
@@ -77,6 +70,7 @@ h2 {
     overflow: hidden;
 }
 
+/* Tabelle mit Uploads */
 table {
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 10px 10px 10px 130px;
@@ -90,6 +84,7 @@ table {
     padding-bottom: 20px;
 }
 
+/* Tabellen Dateien einzeln */
 table td{
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
     margin: 10px 10px 10px 130px;
@@ -98,12 +93,5 @@ table td{
     padding: 15px;
     color: aliceblue;
 
-}
-
-button {
-    margin: 0 0 1em 130px;
-    text-transform: uppercase;
-    background-color: aliceblue;
-    color: slategrey;
 }
 
