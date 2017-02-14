@@ -95,6 +95,7 @@ if ($_FILES ["file"]["name"] <> '') {
         $result = $statement->execute();
 
         echo('<h2>Upload erfolgreich!</h2></a>');
+        echo $filename;
     } else {
         echo "please upload file!";
     }
