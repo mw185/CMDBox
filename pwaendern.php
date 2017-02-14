@@ -44,25 +44,7 @@ $statement = $db->prepare("SELECT * FROM person WHERE username = :username"); #m
 $result = $statement->execute(array('username' => $username)); #eingegebenen username mit username aus Datenbank abgleichen
 $user = $statement->fetch(); #variable user erstellen mit dem entsprechenden username aus $statement und aus der DB holen
 
-
-
-
-
-if (isset($_GET['password']) && password_verify($passwort_alt, $user['password'])) {
-    echo '<p>Das alte Passwort ist nicht korrekt!</p>';  #und die Variable $error auf true gesetzt -> Änderung wird nicht ausgeführt
-    $error = true;
-    echo 'geht';
-}else echo 'geht net';
-
-
-
-
-
-/*
-
-
-
-if (isset($_SESSION['userid'])){    #Wenn der Nutzr in der Session angemeldet ist, wird eine userid übergeben
+if (isset($_SESSION['userid'])){    #Wenn der Nutzer in der Session angemeldet ist, wird eine userid übergeben
     $username = $_SESSION['userid']; #der userid wird die Variable $username zugewiesen
     }
 
