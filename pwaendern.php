@@ -121,7 +121,7 @@ if($showFormular) { #Das wird angezeigt, wenn $showFormular = true ist */
     </form>
 
 <?php
-}
+//}
 ?>
 </body>
 </html>
