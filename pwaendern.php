@@ -13,6 +13,11 @@
 session_start();
 
 include 'connection.php';   #Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
+
+if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
+    header("location: login.php");
+}
+
 ?>
 
 <body>
