@@ -15,7 +15,6 @@ include 'connection.php';   ##Datenbankverbindung wird hergestellt, indem connec
 if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
     header("login.php");
 }
-
 ?>
 
 <body>
