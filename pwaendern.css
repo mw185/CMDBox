@@ -1,5 +1,5 @@
 /*Erfolgreich Passwort geändert*/
-h3, p {
+h3 {
     margin: 0 0 2em 31%;
     color: #e0e0e0;
     font-family: "Raleway", "Helvetica Neue", "Arial", "sans-serif";
@@ -22,7 +22,7 @@ form {
     text-transform: uppercase;
     color: slategrey;
 }
-
+/*Eingabefeld*/
 input {
     margin: 0 0 1em 31%;
     padding: .2em .5em;
@@ -31,9 +31,10 @@ input {
     text-transform: none;
 }
 
+/*
 .file {
     text-transform: uppercase;
-}
+}*/
 
 button {
     margin: 0 0 1em 31%;
