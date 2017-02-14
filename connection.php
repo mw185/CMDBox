@@ -1,15 +1,14 @@
 <?php
+session_start(); //Session wird gestartet
 
-session_start();
-
-$dsn="mysql:host=localhost;dbname=u-db104"; #Datenbankverbindung aufbauen
-$dbuser="db104";
+$dsn="mysql:host=localhost;dbname=u-db104"; //Datenbankverbindung aufbauen
+$dbuser="db104";                //Datenbankeigentümer und Passwort
 $dbpass="anohk4Aepu";
 
 try {
-    $db=new PDO($dsn,$dbuser,$dbpass);
+    $db=new PDO($dsn,$dbuser,$dbpass); // Datenbank definieren
 }
-catch(PDOException $e){
+catch(PDOException $e){     //Fehler bei Datenbankverbindung abfangen
     echo $e->getMessage();
     die();
 }
