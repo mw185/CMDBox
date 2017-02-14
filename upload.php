@@ -105,7 +105,7 @@ if ($_FILES ["file"]["name"] <> '') {
      //if ($handle) {
         $sql = "SELECT * FROM file WHERE username = :username";
         $statement = $db->prepare($sql);
-        $statement->execute(array('username'=> $username, 'filename' => $filename));
+        $statement->execute(array('username'=> $username));
         $row = $statement->fetch();
 
 echo "<h2>Bisher hochgeladene Dateien:</h2>";
