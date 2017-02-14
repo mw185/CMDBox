@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!--hier wird gebootstrapped-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" initial-scale=1.0 />
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -10,10 +10,11 @@
     <title>Upload</title>
     <?php
 
-    session_start();
-    include("connection.php");
+    session_start(); #beginnt die Session und übernimmt alles was unter $_SESSION gespeichert wurde
+    
+    include("connection.php"); #connection.php wird eingebunden um Datenbankverbindung aufzubauen
 
-    if(!isset($_SESSION['userid'])) {
+    if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
         header("login.php");
     }
     ?>

@@ -1,9 +1,9 @@
 <p><img src="CMDBox.png" width="250px" alt="Logo"/></p>
 
 <?php
-session_start(); #beginnt eine neue Session
+session_start(); #beginnt die Session und übernimmt alles was unter $_SESSION gespeichert wurde
 
-include 'connection.php'; #Datenbankverbindung wird hergestellt, indem connection.php aufgerufen wird
+include 'connection.php'; #Datenbankverbindung wird hergestellt, indem connection.php aufgerufen/includiert wird
 ?>
 
 <?php

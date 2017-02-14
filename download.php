@@ -3,6 +3,10 @@
 session_start();
 include ("connection.php");
 
+if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
+    header("login.php");
+}
+
 $fileID = $_GET['file'];
 
 $sql = "SELECT * FROM file WHERE fileID = :fileID";
