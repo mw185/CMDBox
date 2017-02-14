@@ -27,6 +27,6 @@ button {
     color: aliceblue;
     height:35px;
     width: 288px;
-    visibility: hidden;
+    visibility: collapse;
 }
 
