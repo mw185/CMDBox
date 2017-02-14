@@ -16,7 +16,7 @@
     include("connection.php"); #connection.php wird eingebunden um Datenbankverbindung aufzubauen
 
     if(!isset($_SESSION['userid'])) { #es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
-        header("login.php");
+        header("location: login.php");
     }
     ?>
 
