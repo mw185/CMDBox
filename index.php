@@ -92,7 +92,7 @@ Dies ist eine automatisch generierte E-Mail, bitte nicht darauf antworten.";
 
             echo 'Du wurdest erfolgreich registriert. Wir haben eine Bestätigungsmail an deine E-Mail Adresse gesendet.' #Ausgabe im Browser nach Registrierung
             ?>
-            <a href =login.php>Zum Login</a> #Weiterleitung zum Login
+            <a href =login.php>Zum Login</a>
             <?php
         }
         else {  #Wenn es einen Fehler beim Abspreichern in der DAtenbank gab, wird die Fehlermeldung ausgegeben
