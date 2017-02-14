@@ -11,7 +11,9 @@ $statement->execute(array('fileID'=> $fileID));
 
 $fileA = $statement->fetch();
 
-if (isset($fileA['filename'])) {
+//if (isset($fileA['filename'])) {
+
+if (true) {
     $filename = $fileA['filename'];
 }
 
