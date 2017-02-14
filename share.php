@@ -69,7 +69,8 @@ $result = mail($empfaenger, $betreff, $text, "From: $absendername <$absendermail
                                                                                     #Die Empfänger E-Mail Adresse wird aus dem Formular übergeben
 if ($result) { #wenn die E-Mail erfolgreich versendet wurde, wird eine Bestätigungsnachricht ausgegeben
     echo "<h3>Die E-Mail mit dem Downloadlink wurde an den Empfänger gesendet.</h3>";
-    $showFormular = false;?> #Das Formular wird ausgeblendet
+    $showFormular = false;#Das Formular wird ausgeblendet
+    ?>#Das Formular wird ausgeblendet
     <a href=upload.php><h4>Zurück</h4></a>
 <?php
 }
