@@ -85,9 +85,6 @@ if($showFormular) { #wenn $showFormular = true ist, wird folgendes Formular ange
 </form>
 
 
-
-
-
     <?php
 }
 ?>
