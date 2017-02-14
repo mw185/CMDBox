@@ -3,13 +3,10 @@
 session_start();
 
 if (!isset($_SESSION ['userid'])) {
-    //header("location: login.php");
-    //exit;
+   //wenn Session nicht existiert wird UserID übergeben
 }
-?>
 
-<?php
-
+//wenn
     if (isset($_GET ['profilbild'])) {
         $dir = "Profilbild/";
         $newname = $_SESSION ['userid'];
@@ -24,7 +21,7 @@ if (!isset($_SESSION ['userid'])) {
         }
     }
 ?>
-
+<!--html Teil fängt an und entsprechende Styles, Bootstrap und Viewport wird eingebunden-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,20 +29,23 @@ if (!isset($_SESSION ['userid'])) {
     <meta name="viewport" content="width=device-width" initial-scale=1.0 />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="profil.css" rel="stylesheet">
-    <link href="profilbild.css" rel="stylesheet">
+
     <title>Profilbild ändern</title>
 
 
 </head>
 
 <body>
+
+<!-- Logo wird über div container mit dem Namen "extrainfo" eingebunden -->
 <div class="extrainfo">
     <img src="CMDBox.png" width="250px" alt="Logo"/>
 </div>
-<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?>" width="285px" alt="Profilbild"/>
-        <h1><?php echo ($_SESSION['userid'])?></h1></li></ul>
 
+<!-- Profilbild wird aus der Datenbank über UserID gezogen -->
+<ul><li><img src="<?php echo 'Profilbild/'.$_SESSION ['userid'].'.jpg';?>" width="285px" alt="Profilbild"/></li></ul>
 
+<!-- Menüleiste wird eingefügt, die zu anderen Seiten weiterleiten -->
 <div>
     <div class="nav">
         <div class="container">
@@ -60,7 +60,7 @@ if (!isset($_SESSION ['userid'])) {
 </div>
 <br/><br/><br/><br/><br/>
 
-
+<!--Formular wird included-->
 <?php include ("profilbild.html");?>
 
 
