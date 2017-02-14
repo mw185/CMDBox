@@ -25,7 +25,7 @@ else {
 }
 
 if (!$filename) {
-    echo "File nicht vorhanden.";
+    echo "File nicht vorhanden!";
 }
 
 else {
