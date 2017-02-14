@@ -40,9 +40,22 @@ if($showFormular) {
 ?>
 
 <form name ="share" action="<?php echo("?fileID={$fileID}")?>" method="POST">
-    <input type="email" name="email">email<br/>
-    <input type="submit" value="Senden">Senden<br/>
+    <input type="email" name="email" placeholder="Empfänger E-Mail"><br/>
+    <button type="submit">Datei teilen</button><br/>
 </form>
+
+
+    <form action="pwaendern.php?password=1" method="post">
+
+        <input type="password" size="40" maxlength="250" name="passwort_alt" placeholder="Altes Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu" placeholder = "Neues Passwort"><br>
+        <input type="password" size="40" maxlength="250" name="passwort_neu2" placeholder = "Passwort wiederholen"><br><br>
+
+        <button type="submit">Passwort ändern</button>
+        <button type="reset">Eingaben zurücksetzen</button>
+
+    </form>
+
 
     <?php
 }
