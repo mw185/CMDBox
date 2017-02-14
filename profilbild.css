@@ -21,6 +21,8 @@ button {
     text-transform: uppercase;
     background-color: aliceblue;
     color: slategrey;
+    height:33px;
+    width: 252px;
 }
 
 .extrainfo img{
@@ -29,4 +31,5 @@ button {
     height: auto;
     float: right;
     margin: 1em 0 4em 12%;
+
 }
