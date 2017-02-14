@@ -9,10 +9,10 @@ $sql = "SELECT * FROM file WHERE fileID = :fileID";
 $statement = $db->prepare($sql);
 $statement->execute(array('fileID'=> $fileID));
 
-$file = $statement->fetch();
+$fileA = $statement->fetch();
 
-if (isset($file['filename']) && basename($file['filename']) == $file['filename']) {
-    $filename = $file['filename'];
+if (isset($fileA['filename'])) {
+    $filename = $fileA['filename'];
 }
 
 else {
@@ -20,7 +20,7 @@ else {
 }
 
 if (!$filename) {
-    //File nicht vorhanden.
+    echo "File nicht vorhanden.";
 }
 
 else {
