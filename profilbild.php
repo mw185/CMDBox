@@ -6,7 +6,10 @@ if (!isset($_SESSION ['userid'])) {
    //wenn Session nicht existiert wird UserID übergeben
 }
 
-//wenn
+//überprüft ob in Adresszeile Eingabe vorhanden
+//legt fest: im Ordner Profilbild unter UserID gespeichert
+//Geprüft, ob Bild in Variablen $Files gespeichert, hochgeladen, umbenannt und zurück auf profil.php
+//sonst Fehlermeldung
     if (isset($_GET ['profilbild'])) {
         $dir = "Profilbild/";
         $newname = $_SESSION ['userid'];
@@ -32,9 +35,9 @@ if (!isset($_SESSION ['userid'])) {
 
     <title>Profilbild ändern</title>
 </head>
-
-
 <body>
+
+
 <!-- Logo wird über div container mit dem Namen "extrainfo" eingebunden -->
 <div class="extrainfo">
     <img src="CMDBox.png" width="250px" alt="Logo"/>
@@ -57,6 +60,8 @@ if (!isset($_SESSION ['userid'])) {
     </div>
 </div>
 <br/><br/><br/><br/><br/>
+
+
 
 <!--Formular wird included-->
 <?php include ("profilbild.html");?>

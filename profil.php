@@ -3,7 +3,7 @@
 // Session starten
 session_start();
 
-//wenn
+
 if (!isset($_SESSION ['userid'])) { //es wird geprüft ob eingelogt, ansonsten wird auf login.php weitergeleitet
     header("location: login.php");
 }
